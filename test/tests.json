@@ -1,0 +1,10 @@
+{
+    "analysis": {
+        "input": "analysis-input.txt",
+        "mode": "hbo-disam"
+    },
+    "generation": {
+        "input": "generation-input.txt",
+        "mode": "hbo-gener"
+    }
+}

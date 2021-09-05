@@ -3,6 +3,6 @@ exec_prefix=${prefix}
 srcdir=@datarootdir@/apertium/apertium-hbo
 
 Name: apertium-hbo
-Description: Finite-state morphological transducer and constraint grammar for hbo
+Description: Finite-state morphological transducer and constraint grammar for Ancient Hebrew
 Version: @VERSION@
 

@@ -23,7 +23,6 @@ LEXICON VerbInfl(4)
 <v><perf><p3><pl><m>: ָ   ַ  ו
 <v><perf><p3><pl><f>: ָ   ַ  ו
 
-
 LEXICON VerbRoot(3)
 א כ ל
 א כ ף
@@ -34,6 +33,7 @@ LEXICON VerbRoot(3)
 א ש ר
 ב ח ר
 ב ל ע
+ב ר א
 ב ר ח
 ג א ל
 ג ד ל
@@ -153,3 +153,20 @@ LEXICON VerbRoot(3)
 ת פ ס
 ת ק ף
 
+PATTERNS
+PrefixPrep? NounRoot(1) [<n>:] NounRoot(2):
+PrepRoot [<pr>:]
+
+LEXICON PrepRoot
+את:אֵת
+
+PATTERN PrefixPrep
+PrefixPrepRoot [<pr>+:]
+
+LEXICON PrefixPrepRoot
+ב
+מ
+ל
+
+LEXICON NounRoot(2)
+ראשׁ:רֹאֹשׁ <m>

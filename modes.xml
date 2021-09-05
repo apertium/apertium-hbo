@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <modes>
 
-  <mode name="hbo-twol" install="yes">
+  <mode name="hbo-twol" install="no">
     <pipeline>
       <program name="hfst-strings2fst -S"/>
       <program name="hfst-compose-intersect">
@@ -19,7 +19,8 @@
     </pipeline>
   </mode>
 
-  <mode name="hbo-lexd" install="yes">
+
+  <mode name="hbo-lexd" install="no">
     <pipeline>
       <program name="hfst-lookup">
         <file name=".deps/hbo.LR.lexd.hfst"/>
