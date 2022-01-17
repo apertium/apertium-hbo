@@ -28,6 +28,9 @@ TARGETS_COMMON =			\
 .deps/$(LANG1).twol.hfst: $(BASENAME).$(LANG1).twol .deps/.d
 	hfst-twolc $< -o $@
 
+.deps/$(LANG1).ortho.twol.hfst: $(BASENAME).$(LANG1)-ortho.twol .deps/.d
+	hfst-twolc $< -o $@
+
 .deps/$(LANG1).RL.lexd: $(BASENAME).$(LANG1).lexd .deps/.d
 	cat $< | grep -v 'Dir/LR' > $@
 
@@ -42,11 +45,17 @@ TARGETS_COMMON =			\
 	lexd -U $< .deps/$(LANG1).LR.lexd.att
 	hfst-txt2fst .deps/$(LANG1).LR.lexd.att -o $@
 
-.deps/$(LANG1).RL.hfst: .deps/$(LANG1).RL.lexd.hfst .deps/$(LANG1).twol.hfst
+.deps/$(LANG1).RL-lat.hfst: .deps/$(LANG1).RL.lexd.hfst .deps/$(LANG1).twol.hfst
 	hfst-compose-intersect -1 .deps/$(LANG1).RL.lexd.hfst -2 .deps/$(LANG1).twol.hfst -o $@
 
-.deps/$(LANG1).LR.hfst: .deps/$(LANG1).LR.lexd.hfst .deps/$(LANG1).twol.hfst
+.deps/$(LANG1).LR-lat.hfst: .deps/$(LANG1).LR.lexd.hfst .deps/$(LANG1).twol.hfst
 	hfst-compose-intersect -1 .deps/$(LANG1).LR.lexd.hfst -2 .deps/$(LANG1).twol.hfst -o $@
+
+.deps/$(LANG1).RL.hfst: .deps/$(LANG1).RL-lat.hfst .deps/$(LANG1).ortho.twol.hfst
+	hfst-compose-intersect -1 .deps/$(LANG1).RL-lat.hfst -2 .deps/$(LANG1).ortho.twol.hfst | hfst-invert | hfst-compose-intersect -1 - -2 .deps/$(LANG1).ortho.twol.hfst | hfst-invert -o $@
+
+.deps/$(LANG1).LR.hfst: .deps/$(LANG1).LR-lat.hfst .deps/$(LANG1).ortho.twol.hfst
+	hfst-compose-intersect -1 .deps/$(LANG1).LR-lat.hfst -2 .deps/$(LANG1).ortho.twol.hfst | hfst-invert | hfst-compose-intersect -1 - -2 .deps/$(LANG1).ortho.twol.hfst | hfst-invert -o $@
 
 $(LANG1).autogen.hfst: .deps/$(LANG1).RL.hfst
 	hfst-fst2fst -O $< -o $@

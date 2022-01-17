@@ -2,171 +2,173 @@ PATTERNS
 :VerbInfl(1) VerbRoot(1) :VerbInfl(2) VerbRoot(2) :VerbInfl(3) VerbRoot(3) :VerbInfl(4) VerbInfl(1):
 
 LEXICON VerbInfl(4)
-<v><impf><p1><sg>:אֶ :  ֹ :
-<v><impf><p1><pl>:נִ :  ֹ :
-<v><impf><p2><sg><m>:תִ  :  ֹ :
-<v><impf><p2><sg><f>:תִ  :  ֹ  ִי
-<v><impf><p2><pl><m>:תִ :  ֹ ו
-<v><impf><p2><pl><f>:תִ  :  ֹ נָה
-<v><impf><p3><sg><m>:יִ  :  ֹ :
-<v><impf><p3><sg><f>:תִ  :  ֹ  :
-<v><impf><p3><pl><m>:יִ  :  ֹ  ו
-<v><impf><p3><pl><f>:תִ  :  ֹ  נָה
-<v><perf><p1><sg>: ָ   ַ  תִי
-<v><perf><p1><pl>: ָ   ַ  נו
-<v><perf><p2><sg><m>: ָ   ַ  תָ
-<v><perf><p2><sg><f>: ָ   ַ  ת
-<v><perf><p2><pl><m>: ָ   ַ  תֶמ
-<v><perf><p2><pl><f>: ָ   ַ  תֶנ
-<v><perf><p3><sg><m>: ָ   ַ  :
-<v><perf><p3><sg><f>: ָ   ַ  ָה
-<v><perf><p3><pl><m>: ָ   ַ  ו
-<v><perf><p3><pl><f>: ָ   ַ  ו
+<v><impf><p1><sg>:'é : o :
+<v><impf><p1><pl>:ni : o :
+<v><impf><p2><sg><m>:ti : o :
+<v><impf><p2><sg><f>:ti : o iy
+<v><impf><p2><pl><m>:ti : o w
+<v><impf><p2><pl><f>:ti : o náh
+<v><impf><p3><sg><m>:yi : o :
+<v><impf><p3><sg><f>:ti : o :
+<v><impf><p3><pl><m>:yi : o w
+<v><impf><p3><pl><f>:ti : o náh
+<v><perf><p1><sg>: á a tiy
+<v><perf><p1><pl>: á a nw
+<v><perf><p2><sg><m>: á a tá
+<v><perf><p2><sg><f>: á a t
+<v><perf><p2><pl><m>: á a tém
+<v><perf><p2><pl><f>: á a tén
+<v><perf><p3><sg><m>: á a :
+<v><perf><p3><sg><f>: á a áh
+<v><perf><p3><pl><m>: á a w
+<v><perf><p3><pl><f>: á a w
 
 LEXICON VerbRoot(3)
-א כ ל
-א כ ף
-א מ ר
-א ס ף
-א ס ר
-א ר ך
-א ש ר
-ב ח ר
-ב ל ע
-ב ר א
-ב ר ח
-ג א ל
-ג ד ל
-ג ז ז
-ג ז ר
-ג נ ב
-ג נ ח
-ג ר ד
-ד ח ס
-ד ע ך
-ה י ה
-ה ל ך
-ה פ ך
-ה פ ר
-ה ר ג
-ה ר ס
-ז כ ה
-ז ר ח
-ז ר ק
-ח ב ר
-ח ד ר
-ח ל ב
-ח ל ה
-ח ל ם
-ח נ ק
-ח ס ם
-ח פ ר
-ח פ ש
-ח ש ב
-ח ש ף
-ט ח ן
-ט ע ם
-ט ר ף
-י ד ע
-י כ ל
-י צ א
-י צ ר
-י ר ד
-י ר ק
-י ש ב
-י ש ן
-כ ל ל
-כ ת ב
-ל ח ץ
-ל ק ח
-מ ד ד
-מ ח א
-מ כ ר
-מ ס ר
-מ צ א
-מ ר ח
-מ ש ך
-נ ג ע
-נ ז ף
-נ צ ץ
-נ ש א
-נ ש ך
-נ ת ן
-ס ג ר
-ס ד ק
-ס ח ט
-ס ל ח
-ס פ ר
-ס ר ח
-ס ת ם
-ע ב ד
-ע ז ב
-ע ז ר
-ע כ ר
-ע מ ד
-ע צ ר
-ע ש ה
-ע ש ק
-פ ג ע
-פ נ ה
-פ ר ם
-פ ר ץ
-פ ר ק
-פ ש ט
-פ ת ח
-צ ב ט
-צ ב ע
-צ ח ק
-צ ל ל
-צ ע ק
-ק ב ל
-ק ב ר
-ק פ ץ
-ק צ ץ
-ק ר א
-ק ר ב
-ק ר ה
-ק ש ר
-ר א ה
-ר ז ה
-ר כ ב
-ר ע ד
-ר צ ה
-ר ק ד
-ר ת ח
-ש א ל
-ש ב ר
-ש ח ה
-ש ט ף
-ש ל ח
-ש ל ל
-ש מ ח
-ש מ ע
-ש נ א
-ש ק ט
-ש ק ל
-ש ר ף
-ש ר ץ
-ש ת ה
-ת ל ה
-ת ס ס
-ת פ ס
-ת ק ף
+' k l
+' k p
+' m r
+' s p
+' s r
+' r k
+' {sh} r
+b x r
+b l {'}
+b r '
+b r x
+g ' l
+g d l
+g z z
+g z r
+g n b
+g n x
+g r d
+d x s
+d {'} k
+h y h
+h l k
+h p k
+h p r
+h r g
+h r s
+z k h
+z r x
+z r q
+x b r
+x d r
+x l b
+x l h
+x l m
+x n q
+x s m
+x p r
+x p {sh}
+x {sh} b
+x {sh} p
+v x n
+v {'} m
+v r p
+y d {'}
+y k l
+y c '
+y c r
+y r d
+y r q
+y {sh} b
+y {sh} n
+k l l
+k t b
+l x c
+l q x
+m d d
+m x '
+m k r
+m s r
+m c '
+m r x
+m {sh} k
+n g {'}
+n z p
+n c c
+n {sh} '
+n {sh} k
+n t n
+s g r
+s d q
+s x v
+s l x
+s p r
+s r x
+s t m
+{'} b d
+{'} z b
+{'} z r
+{'} k r
+{'} m d
+{'} c r
+{'} {sh} h
+{'} {sh} q
+p g {'}
+p n h
+p r m
+p r c
+p r q
+p {sh} v
+p t x
+c b v
+c b {'}
+c x q
+c l l
+c {'} q
+q b l
+q b r
+q p c
+q c c
+q r '
+q r b
+q r h
+q {sh} r
+r ' h
+r z h
+r k b
+r {'} d
+r c h
+r q d
+r t x
+{sh} ' l
+{sh} b r
+{sh} x h
+{sh} v p
+{sh} l x
+{sh} l l
+{sh} m x
+{sh} m {'}
+{sh} n '
+{sh} q v
+{sh} q l
+{sh} r p
+{sh} r c
+{sh} t h
+t l h
+t s s
+t p s
+t q p
 
 PATTERNS
 PrefixPrep? NounRoot(1) [<n>:] NounRoot(2):
 PrepRoot [<pr>:]
 
 LEXICON PrepRoot
-את:אֵת
+'t:'et
 
 PATTERN PrefixPrep
-PrefixPrepRoot [<pr>+:]
+PrefixPrepRoot [<pr>+:@]
 
 LEXICON PrefixPrepRoot
-ב
-מ
-ל
+b
+l
+m
 
 LEXICON NounRoot(2)
-ראשׁ:רֹאֹשׁ <m>
+'lhym:'ëlohiym <m>
+r'{sh}:ro'o{sh} <m>
+r'{sh}:re'{sh}iyt <m><cnst>

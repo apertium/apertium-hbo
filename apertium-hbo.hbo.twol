@@ -1,17 +1,17 @@
 Alphabet
- א ב ג ד ה ו ז ח ט י כ ל מ נ ס ע פ צ ק ר ש ת
- ַ ָ ֶ ֵ ִ ֹ ֻ
- ּ
+%' b g d h w z x v y k l m n s %{'%} p c q r %{s%} %{sh%} t
+a á e é i o u %@ ä ë ö
+.
  ;
 
 Sets
 
-Begedkefet = ב ג ד כ פ ת ;
+Begedkefet = b g d k p t ;
 
 Rules
 
 "insert dagesh"
-0:ּ <=> .#. Begedkefet _ ;
+0:. => .#. Begedkefet _ ;
 
 ! Resources:
 ! http://wiki.apertium.org/wiki/Starting_a_new_language_with_HFST#Enter_twol

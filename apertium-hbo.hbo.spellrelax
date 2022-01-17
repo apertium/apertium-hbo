@@ -3,5 +3,10 @@
 	[ ?* [ ' (->) [ %` | ʻ | ’ | ‘ | ʼ ] ] ?* ] .o.
 
 	! Accept input without diacritics
-	[ ?* [ á (->) a ] ?* ]
+	[ ?* [ á (->) a ] ?* ] .o.
+
+    ! multichar sin
+    [ ?* [ שׂ (->) שׂ ] ?* ] .o.
+    ! multichar shin
+    [ ?* [ שׁ (->) שׁ ] ?* ]
 ]
