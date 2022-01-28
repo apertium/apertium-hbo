@@ -24,8 +24,7 @@ LEXICON VerbInfl(4)
 <v><perf><p3><pl><f>: á a w
 
 LEXICON ConjPrefix
-w<cnjcoo>+:w{V}
-w<cnjcoo>+:w. # TODO
+w<cnjcoo>+:w{and}
 
 LEXICON PerfSuffix
 <p1><mf><sg>:@t.iy
@@ -105,6 +104,7 @@ z r x
 z r q
 x b r
 x d r
+x y h
 x l b
 x l h
 x l m
@@ -245,15 +245,16 @@ l
 m
 
 PATTERNS
-['t<pr>+hw'<prn>:] PrepPron(1): :PrepPron(2)
-[l<pr>+hw'<prn>:] PrepPron(1): :PrepPron(3)
+ConjPrefix? ['t<pr>+hw'<prn>:] PrepPron(1): :PrepPron(2)[-skip]
+ConjPrefix? [l<pr>+hw'<prn>:] PrepPron(1): :PrepPron(3)[-skip]
 
 LEXICON PrepPron(3)
-<p1><mf><sg> '.t.iy   l.iy
+<p1><mf><sg> 'it.iy   liy
+<p1><mf><sg> :[skip]  l.iy # Dir/LR
 <p1><mf><pl> 'ot.enw. l.w.
 <p3><m><sg> 'otow l.ow
 <p3><f><sg> 'otáh. lah.
-<p3><m><pl> 'otám láhám
+<p3><m><pl> 'otám láhém
 
 LEXICON NounRoot(2)
 'lhym:'ëlohiym <m>
@@ -1005,6 +1006,13 @@ LEXICON Pronouns(3)
 <p3><f>  :[skip] hen.áh
 
 PATTERNS
+ConjPrefix? Det? [zh<prn><dem>:] DemPronouns(1): :DemPronouns(2)
+
+LEXICON DemPronouns(2)
+<m><sg> zéh
+<mf><pl> 'el.éh
+
+PATTERNS
 Conjunctions
 
 LEXICON Conjunctions
@@ -1018,8 +1026,8 @@ PATTERN PrnSuf
 [+hw'<prn><pers>:] PronounSuffixForms(1): [<pl>:] :PronounSuffixForms(3)
 
 LEXICON PronounSuffixForms(3)
-<p1><mf> {V}y {V}nw.
-<p2><m>  {V}ká  {V}kém
-<p2><f>  {V}k@  {V}kén
-<p3><m>  {V}w   {V}m # TODO
-<p3><f>  {V}há  {V}n
+<p1><mf> {ps}y   {ps}nw.
+<p2><m>  {ps}ká  {ps}kém
+<p2><f>  {ps}k@  {ps}kén
+<p3><m>  {ps}ow  {ps}m # TODO
+<p3><f>  {ps}há  {ps}n

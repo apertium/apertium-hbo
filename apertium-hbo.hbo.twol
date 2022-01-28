@@ -9,6 +9,10 @@ a á e é i o u %@ ä ë ö
 %{V%}:a %{V%}:á %{V%}:e %{V%}:é %{V%}:i %{V%}:o %{V%}:u
 %{V%}:%@ %{V%}:ä %{V%}:ë %{V%}:ö
 
+%{ps%}:0 %{ps%}:%@ %{ps%}:é %{ps%}:á %{ps%}:e
+
+%{and%}:%. %{and%}:a %{and%}:%@
+
 %{%~a%}:a %{%~a%}:%@
 %{%~á%}:á %{%~á%}:%@
 %{%~e%}:e %{%~e%}:%@
@@ -33,6 +37,7 @@ Rules
 "insert dagesh"
 0:. => .#. Begedkefet _ :Vowel ;
        %{consec%}: ? _ ;
+       %{h%}: a: %>: [ z: | %{sh%}: ] _ ;
 
 "insert yod"
 0:y => %{%~iy%}:i _ ;
@@ -55,13 +60,28 @@ h:0 <=> _ %>: %{short%}: ;
 
 "i → a in impf with lamed-he"
 i:a <=> _ %>: ?* h:0 %>: %{short%}: ;
-    except _ %>: %' ;
+    except _ %>: [ %' | ?* y: ? h:0 %>: ] ;
+
+"*yh in short"
+i:%@ <=> _ %>: ?* y: ? h:0 %>: ;
+
+"and the vowel"
+%@:i <=> _ y ? h:0 %>: %{short%}: ;
 
 "definite segolate nouns"
 é:á <=> %{h%}: a: %>: %': _ ;
 
 "blah"
 a:á <=> %{h%}: _ %>: %': ;
+
+"e:é cons"
+e:é <=> _ ?* %{cons%}: .#. ;
+
+"e:@ cons pl"
+e:%@ <=> _ ?* %{cons%}: e: y: ;
+
+"{and} before b"
+%{and%}:%. <=> _ b: ;
 
 ! Resources:
 ! http://wiki.apertium.org/wiki/Starting_a_new_language_with_HFST#Enter_twol
