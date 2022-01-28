@@ -2,16 +2,66 @@ Alphabet
 %' b g d h w z x v y k l m n s %{'%} p c q r %{s%} %{sh%} t
 a á e é i o u %@ ä ë ö
 .
+
+%>:0
+
+! the lazy vowel
+%{V%}:a %{V%}:á %{V%}:e %{V%}:é %{V%}:i %{V%}:o %{V%}:u
+%{V%}:%@ %{V%}:ä %{V%}:ë %{V%}:ö
+
+%{%~a%}:a %{%~a%}:%@
+%{%~á%}:á %{%~á%}:%@
+%{%~e%}:e %{%~e%}:%@
+%{%~o%}:o %{%~o%}:%@ %{%~o%}:á %{%~o%}:é
+
+%{%~iy%}:i %{%~iy%}:0
+
+%{h%}:h %{h%}:0
+
+%{short%}:0
+%{consec%}:0
+%{cons%}:0
  ;
 
 Sets
 
 Begedkefet = b g d k p t ;
+Vowel = a á e é i o u %@ ä ë ö ;
 
 Rules
 
 "insert dagesh"
-0:. => .#. Begedkefet _ ;
+0:. => .#. Begedkefet _ :Vowel ;
+       %{consec%}: ? _ ;
+
+"insert yod"
+0:y => %{%~iy%}:i _ ;
+
+"{h} → 0 after vowel"
+%{h%}:0 <=> Vowel: ( %>: ) _ ;
+
+"schwa deletes"
+%@:0 <=> _ ( %>: ) %{h%}: ;
+         %' _ ;
+
+"peh-aleph verbs"
+i:o <=> _ %>: %' ;
+
+"lamed-he verbs"
+h:0 <=> _ %>: %{short%}: ;
+
+"lamed-he continued"
+%{%~o%}:0 <=> _ h:0 %>: %{short%}: ;
+
+"i → a in impf with lamed-he"
+i:a <=> _ %>: ?* h:0 %>: %{short%}: ;
+    except _ %>: %' ;
+
+"definite segolate nouns"
+é:á <=> %{h%}: a: %>: %': _ ;
+
+"blah"
+a:á <=> %{h%}: _ %>: %': ;
 
 ! Resources:
 ! http://wiki.apertium.org/wiki/Starting_a_new_language_with_HFST#Enter_twol

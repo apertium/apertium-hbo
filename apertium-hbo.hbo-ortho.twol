@@ -37,6 +37,8 @@ u:ֻ
 
 %.:ּ
 
+%<n%> %<v%> %<pr%> %<cnjsub%>
+
  ;
 
 Sets
@@ -45,11 +47,15 @@ Alpha = ' b g d h w z x v y k l m n s %{'%} p c q r %{s%} %{sh%} t
 a á e é i o u %@ ä ë ö
 %. %{.%} ;
 
+Vowel = a á e é i o y %@ ä ë ö ;
+
+Tag = %<n%> %<v%> %<pr%> %<cnjsub%> ;
+
 Rules
 
 "final consonant"
-CL:CH <=> _ .#. ;
-          _ [ ? - Alpha: ] ;
+CL:CH <=> _ ( Vowel: ) .#. ;
+          _ Tag ;
       where CL in ( k m n p c )
             CH in ( ך ם ן ף ץ )
       matched ;
