@@ -1,3 +1,6 @@
+PATTERNS
+[l<pr>+'mr<v><actv><inf>:le'mor] # I think this one might be weird
+
 #PATTERNS
 #:VerbInfl(1) VerbRoot(1) :VerbInfl(2) VerbRoot(2) :VerbInfl(3) VerbRoot(3) :VerbInfl(4) VerbInfl(1):
 
@@ -247,14 +250,15 @@ m
 PATTERNS
 ConjPrefix? ['t<pr>+hw'<prn>:] PrepPron(1): :PrepPron(2)[-skip]
 ConjPrefix? [l<pr>+hw'<prn>:] PrepPron(1): :PrepPron(3)[-skip]
+ConjPrefix? ['l<pr>+hw'<prn>:] PrepPron(1): :PrepPron(4)[-skip]
 
-LEXICON PrepPron(3)
-<p1><mf><sg> 'it.iy   liy
-<p1><mf><sg> :[skip]  l.iy # Dir/LR
-<p1><mf><pl> 'ot.enw. l.w.
-<p3><m><sg> 'otow l.ow
-<p3><f><sg> 'otáh. lah.
-<p3><m><pl> 'otám láhém
+LEXICON PrepPron(4)
+<p1><mf><sg> 'it.iy   liy  'elay
+<p1><mf><sg> :[skip]  l.iy :[skip] # Dir/LR
+<p1><mf><pl> 'ot.enw. l.w. 'elenu
+<p3><m><sg> 'otow l.wo 'eláyw
+<p3><f><sg> 'otáh. lah. 'elah
+<p3><m><pl> 'otám láhém 'älehém
 
 LEXICON NounRoot(2)
 'lhym:'ëlohiym <m>
@@ -295,7 +299,7 @@ bt:bat <f>[ot]
 btwlh:b@tw.láh <f>[ot]
 bvn:bávén <f>[ot]
 bvx:bévax <m>[im]
-byt:báyit <m>[im]
+byt:bayit <m>[im]
 cdqh:c@dáqáh <f>[ot]
 {'}c:{'}ec <m>[im]
 chr:cohar <f>[ot]
@@ -334,7 +338,7 @@ gpryt:gáp@riyt <f>[ot]
 gr:ger <m>[im]
 gr:ger <m>[im]
 grm:gárém <m>[im]
-gwy:gowy <m>[im]
+gwy:gwoy <m>[im]
 'hl:'ohél <m>[im]
 hr:héráh <m>[im]
 khn:kohen <m>[im]
@@ -343,7 +347,7 @@ kl:kol <m>[im]
 kl:kol <m>[im]
 'kl:'okél <m>[im]
 knp:kánáp <f>[ot]
-knwr:kin.owr <m>[im]
+knwr:kin.wor <m>[im]
 krm:kárém <mf>[im]
 ksp:kásép <m>[im]
 ksp:késép <m>[im]
@@ -374,10 +378,10 @@ mlk:mélék@ <m>[im]
 mlx:mélax <m>[im]
 mlxmh:mil@xámáh <f>[ot]
 mnwxh:m@nuxáh <f>[ot]
-mnwx:mánowxa <m>[im]
+mnwx:mánwoxa <m>[im]
 mnxh:min@xáh <f>[ot]
 mqnh:miq@néh <m>[im]
-mqwm:máqowm <m>[im]
+mqwm:máqwom <m>[im]
 mr'h:mar@'éh <m>[im]
 mr{'}h:mir@{'}éh <m>[im]
 mrybh:m@riybáh <f>[ot]
@@ -391,11 +395,11 @@ m{sh}qh:ma{sh}@qéh <m>[im]
 m{sh}th:mi{sh}@t.éh <m>[im]
 mspd:mis@p.ed <m>[im]
 mspr:mis@p.ár <m>[im]
-mspw':mis@p.ow' <m>[im]
+mspw':mis@p.wo' <m>[im]
 m{'}{s}r:ma{'}ä{s}er <m>[im]
 'mt:'ëmét <f>[ot]
 m{'}v:m@{'}av <m>[im]
-mvmn:mav@mown <m>[im]
+mvmn:mav@mwon <m>[im]
 m'wmh:m@'w.m.áh <f>[ot]
 m'wmh:m@'w.máh <f>[ot]
 mxr:máxár <m>[im]
@@ -440,7 +444,7 @@ q{s}yvh:q@{s}iyváh <f>[ot]
 rbbh:r@bábáh <f>[ot]
 {'}rb:{'}éréb <m>[im]
 r{'}b:rá{'}áb <m>[im]
-{'}rbwn:{'}erábown <m>[im]
+{'}rbwn:{'}erábwon <m>[im]
 'rc:'ar@cáh <mf>[im]
 'rc:'ár@cáh <mf>[im]
 'rc:'éréc <mf>[im]
@@ -474,8 +478,8 @@ sbyb:sábiyb <mf>[im]
 {sh}l{sh}:{sh}álo{sh} <mf>[im]
 {sh}l{sh}:{sh}@lo{sh}áh <f>[ot]
 {sh}l{sh}wm:{sh}il@{sh}om <m>[im]
-{sh}l{sh}wm:{sh}il@{sh}owm <m>[im]
-{sh}lwm:{sh}álowm <m>[im]
+{sh}l{sh}wm:{sh}il@{sh}wom <m>[im]
+{sh}lwm:{sh}álwom <m>[im]
 '{sh}m:'á{sh}ám <m>[im]
 {sh}m:{sh}em <m>[im]
 {sh}mn:{sh}émén <m>[im]
@@ -492,8 +496,8 @@ sbyb:sábiyb <mf>[im]
 {sh}{sh}:{sh}e{sh} <m>[im]
 {sh}{sh}:{sh}.i{sh}áh <f>[ot]
 {sh}'wl:{sh}@'oláh <mf>[im]
-{sh}'wl:{sh}@'owláh <mf>[im]
-{sh}wr:{sh}owr <m>[im]
+{sh}'wl:{sh}@'woláh <mf>[im]
+{sh}wr:{sh}wor <m>[im]
 {sh}wr:{sh}w.r <m>[im]
 slm:sul.ám <m>[im]
 slt:solét <f>[ot]
@@ -506,39 +510,38 @@ slt:solét <f>[ot]
 {'}{s}rh:{'}ä{s}áráh <f>[ot]
 {'}{s}rh:{'}é{s}@reh <mf>[im]
 {s}'t:{s}@'et <f>[ot]
-'swn:'ásown <m>[im]
-{'}{s}wr:{'}á{s}owr <m>[im]
+'swn:'áswon <m>[im]
+{'}{s}wr:{'}á{s}wor <m>[im]
 sws:sw.s <m>[im]
 tbn:tébén <m>[im]
-thwm:t@howm <f>[ot]
-thwm:t@howm <f>[ot]
+thwm:t@hwom <f>[ot]
 thw:tohw. <m>[im]
 t'nh:t@'enáh <f>[ot]
 trdmh:tar@d.emáh <f>[ot]
 t'r:to'ar <m>[im]
 t'r:to'ar <m>[im]
 t{sh}{'}:te{sh}a{'} <mf>[im]
-tw{'}bh:tow{'}ebáh <f>[ot]
+tw{'}bh:two{'}ebáh <f>[ot]
 t'wh:ta'äwáh <f>[ot]
 txt:táxat <m>[im]
 vbx:vébax <m>[im]
 vrm:vérém <mf>[im]
 vryph:v@repáh <f>[ot]
-vwbh:vowbáh <f>[ot]
+vwbh:vwobáh <f>[ot]
 {'}wd:{'}od <m>[im]
-{'}wd:{'}owd <m>[im]
+{'}wd:{'}wod <m>[im]
 wld:wálád <m>[im]
-{'}wlm:{'}owlám <m>[im]
-{'}wp:{'}owp <m>[im]
-'wr:'owr <mf>[im]
-{'}wr:{'}owr <m>[im]
-'wt:'owt <mf>[im]
+{'}wlm:{'}wolám <m>[im]
+{'}wp:{'}wop <m>[im]
+'wr:'wor <mf>[im]
+{'}wr:{'}wor <m>[im]
+'wt:'wot <mf>[im]
 'x:'áx <m>[im]
 'xd:'axat <f>[ot]
 'xd:'éxád <mf>[im]
 'xd:'éxát <f>[ot]
 xlq:xeléq <m>[im]
-xlwm:xälowm <m>[im]
+xlwm:xälwom <m>[im]
 xm'h:xém@'áh <f>[ot]
 xmr:xemár <m>[im]
 xm{sh}:xáme{sh} <mf>[im]
@@ -560,7 +563,7 @@ x{sh}kh:xä{sh}ekáh <f>[ot]
 xtn:xátán <m>[im]
 xv'h:xävá'áh <f>[ot]
 xv't:xav.á't <f>[ot]
-'xwr:'áxowr <m>[im]
+'xwr:'áxwor <m>[im]
 xyh:xay.áh <f>[ot]
 xyl:xayil <m>[im]
 'xzh:'äxuz.áh <f>[ot]
@@ -577,7 +580,7 @@ yrq:yéréq <m>[im]
 'y{sh}:'iy{sh} <m>[im]
 y{sh}:ye{sh} <mf>[im]
 y{sh}:yé{sh} <mf>[im]
-ywm:yowm <m>[im]
+ywm:ywom <m>[im]
 yyn:yayin <m>[im]
 yyn:yáyin <m>[im]
 {'}z:{'}áz <m>[im]
@@ -593,7 +596,7 @@ zyt:zayit <m>[im]
 LEXICON ProperNoun(2)
 'brhm:'ab@ráhám <m>
 'brm:'ab@rám <m>
-ywsp:yowsep <m>
+ywsp:ywosep <m>
 y{'}qb:ya{'}äqob <m>
 ycxq:yic@xáq <m>
 lbn:lábán <m>
@@ -604,7 +607,7 @@ nx:noxa <m>
 
 
 
-yhwh:y@howáh <m>
+yhwh:y@hwoáh <m>
 yhwh:y@hwáh <m>
 
 
@@ -624,13 +627,13 @@ yhwh:y@hwáh <m>
 'dny:'ädonáy <m>
 '{sh}r:'á{sh}er <mf>
 'hlybmh:'áhöliybámáh <f>
-{'}kbwr:{'}ak@b.owr <m>
-'lmwdd:'al@mowdád <m>
+{'}kbwr:{'}ak@b.wor <m>
+'lmwdd:'al@mwodád <m>
 {'}lwh:{'}al@wáh <mf>
 {'}lwn:{'}al@wán <m>
 {'}mlq:{'}ämáleq <mf>
 {'}mrh:{'}ämoráh <mf>
-{'}mwn:{'}am.own <mf>
+{'}mwn:{'}am.won <mf>
 'mrpl:'am@rápél <m>
 {'}nh:{'}änáh <m>
 {'}nr:{'}áner <m>
@@ -638,7 +641,7 @@ yhwh:y@hwáh <m>
 'rrv:'äráráv <mf>
 'rpk{sh}d:'ar@p.ak@{sh}ad <m>
 'rpk{sh}d:'ar@p.ak@{sh}ád <m>
-'rywk:'ar@yowk@ <m>
+'rywk:'ar@ywok@ <m>
 {sh}b{'}:{sh}.ába{'} <mf>
 {sh}b{'}:{sh}ába{'} <mf>
 {sh}dy:{sh}ad.ay <m>
@@ -676,21 +679,21 @@ bnymn:bin@yámin <mf>
 bnymn:bin@yámiyn <mf>
 bnymn:bin@yámiyn <mf>
 br{sh}{'}:bir@{sh}a{'} <m>
-b{'}wr:b@{'}owr <m>
+b{'}wr:b@{'}wor <m>
 bry{'}h:b@riy{'}áh <m>
 btw'l:b@tw.'el <m>
 btw'l:b@tw.'el <m>
 bwz:bw.z <m>
-cb'ym:c@bowyim <mf>
-cb{'}wn:cib@{'}own <m>
+cb'ym:c@bwoyim <mf>
+cb{'}wn:cib@{'}won <m>
 clh:cil.áh <f>
-cpywn:cip@yown <m>
+cpywn:cip@ywon <m>
 cydwn:ciydon <mf>
 c{'}r:co{'}äráh <mf>
 c{'}r:co{'}ar <mf>
-c{'}r:cow{'}ar <mf>
+c{'}r:cwo{'}ar <mf>
 cxr:coxar <m>
-cpw:c@pow <m>
+cpw:c@pwo <m>
 dm{s}q:dam.é{s}éq <mf>
 dn:dán <mf>
 dn:dán <mf>
@@ -707,7 +710,7 @@ dtn:dotáy@náh <mf>
 {'}br:{'}ebér <m>
 'cr:'ecér <m>
 {'}dn:{'}edén <mf>
-'dwm:'ëdowm <mf>
+'dwm:'ëdwom <mf>
 {'}{s}q:{'}e{s}éq <mf>
 'lh:'eláh <m>
 'lsr:'él.ásár <mf>
@@ -715,13 +718,13 @@ dtn:dotáy@náh <mf>
 'ly{'}zr:'ëliy{'}ézér <m>
 'lypz:'ëliypaz <m>
 'lypz:'ëliypáz <m>
-'nw{sh}:'ënow{sh} <m>
+'nw{sh}:'ënwo{sh} <m>
 'prt:'ép@rátáh <f>
 'prt:'ép@rát <f>
 'prym:'ép@rayim <mf>
 'prym:'ép@ráyim <mf>
 {'}prwn:{'}ép@ron <m>
-{'}prwn:{'}ép@rown <m>
+{'}prwn:{'}ép@rwon <m>
 {'}ry:{'}eriy <m>
 {'}r:{'}er <m>
 {sh}b{'}:{sh}éba{'} <mf>
@@ -735,7 +738,7 @@ dtn:dotáy@náh <mf>
 'xy:'exiy <m>
 {'}ylm:{'}eylám <mf>
 'ylwn:'eylon <m>
-'ylwn:'eylown <m>
+'ylwn:'eylwon <m>
 {'}ynym:{'}eynayim <mf>
 {'}yph:{'}eypáh <mf>
 gd:gád <mf>
@@ -744,12 +747,12 @@ gl{'}d:gal@{'}ed <mf>
 g{'}tm:ga{'}@t.ám <m>
 gxm:gaxam <m>
 gr':gerá' <m>
-gr{sh}wn:ger@{sh}own <m>
-gyxwn:giyxown <mf>
+gr{sh}wn:ger@{sh}won <m>
+gyxwn:giyxwon <mf>
 g{sh}n:go{sh}én <mf>
 gmr:gomér <m>
 g{sh}n:go{sh}@náh <mf>
-gwym:gowyim <mf>
+gwym:gwoyim <mf>
 grr:g@ráráh <mf>
 grr:g@ráráh <mf>
 grr:g@rár <mf>
@@ -758,15 +761,15 @@ hbl:hábél <m>
 hdd:hädad <m>
 hdd:hädád <m>
 hdr:hädar <m>
-hdwrm:hädowrám <m>
+hdwrm:hädworám <m>
 hgr:hágár <f>
 hrn:hárán <m>
 hbl:hébél <m>
 {sh}b{'}h:{sh}ib@{'}áh <mf>
-{sh}m{'}wn:{sh}im@{'}own <mf>
+{sh}m{'}wn:{sh}im@{'}won <mf>
 {sh}n'b:{sh}in@'áb <m>
 {sh}n{'}r:{sh}in@{'}ár <mf>
-{sh}lw:{sh}iylow <mf>
+{sh}lw:{sh}iylwo <mf>
 {s}vnh:{s}iv@náh <mf>
 {'}yrd:{'}iyrád <m>
 {'}yrm:{'}iyrám <m>
@@ -787,8 +790,8 @@ lmk:lámék@ <m>
 l'h:le'áh <f>
 lmk:lémék@ <m>
 lwy:lewiy <mf>
-lwvn:lowván <m>
-lwv:lowv <m>
+lwvn:lwován <m>
+lwv:lwov <m>
 lwz:lw.záh <mf>
 lwz:lw.z <mf>
 m{'}kh:ma{'}äkáh <mf>
@@ -811,8 +814,8 @@ mdyn:mid@yán <mf>
 mlkh:mil@k.áh <f>
 mzh:miz.áh <m>
 mn{sh}h:m@na{sh}.éh <mf>
-mw'b:mow'áb <mf>
-mwrh:mowréh <mf>
+mw'b:mwo'áb <mf>
+mwrh:mworéh <mf>
 mtw{sh}'l:m@tw.{sh}á'el <m>
 mtw{sh}lx:m@tw.{sh}álax <m>
 mtw{sh}lx:m@tw.{sh}élax <m>
@@ -822,20 +825,20 @@ n{'}mh:na{'}ämáh <f>
 npy{sh}:nápiy{sh} <m>
 nptly:nap@t.áliy <mf>
 nxt:naxat <m>
-nxwr:náxowr <m>
+nxwr:náxwor <m>
 nbywt:n@báyot <mf>
-nbywt:n@báyowt <mf>
+nbywt:n@báywot <mf>
 nmrd:nim@rod <m>
 nynwh:niyn@weh <mf>
-nwd:nowd <mf>
+nwd:nwod <mf>
 nx:noxa <m>
 'n:'on <mf>
-{sh}wbl:{sh}owbál <m>
-{'}wbl:{'}owbál <m>
-'wmr:'owmár <m>
-'wnn:'ownán <m>
-'n:'own <mf>
-'wpyr:'owpir <mf>
+{sh}wbl:{sh}wobál <m>
+{'}wbl:{'}wobál <m>
+'wmr:'womár <m>
+'wnn:'wonán <m>
+'n:'won <mf>
+'wpyr:'wopir <mf>
 plg:pálég <m>
 p'rn:pá'rán <mf>
 prc:páréc <m>
@@ -845,10 +848,10 @@ plg:pélég <m>
 prc:péréc <m>
 pld{sh}:pil@d.á{sh} <m>
 pynn:piynon <m>
-py{sh}wn:piy{sh}own <mf>
+py{sh}wn:piy{sh}won <mf>
 pny'l:p@niy'el <mf>
 pnw'l:p@nw.'el <mf>
-pwvypr:powviypar <m>
+pwvypr:pwoviypar <m>
 prt:p@rát <mf>
 prt:p@rát <mf>
 qd{sh}:qáde{sh} <mf>
@@ -870,7 +873,7 @@ r'wbn:r@'w.ben <mf>
 r{'}w'l:r@{'}w.'el <m>
 r'wmh:r@'w.máh <f>
 r{'}w:r@{'}w. <m>
-rxbwt:r@xobowt <mf>
+rxbwt:r@xobwot <mf>
 sb':s@bá' <mf>
 sdm:s@domáh <mf>
 sdm:s@dom <mf>
@@ -879,7 +882,7 @@ srd:séréd <m>
 {sh}km:{sh}@kémáh <mf>
 {sh}km:{sh}@kém <m>
 {sh}m:{sh}em <m>
-{sh}pw:{sh}@pow <m>
+{sh}pw:{sh}@pwo <m>
 {sh}w{'}:{sh}w.{'}a <m>
 {sh}wny:{sh}w.niy <m>
 {sh}wr:{sh}w.r <mf>
@@ -887,7 +890,7 @@ srd:séréd <m>
 spr:s@páráh <mf>
 {s}rwg:{s}@rw.g <m>
 skwt:suk.otáh <mf>
-skwt:suk.owt <mf>
+skwt:suk.wot <mf>
 tmr:támár <f>
 trx:tárax <m>
 tx{sh}:taxa{sh} <m>
@@ -897,30 +900,29 @@ tymn:teymán <mf>
 tmnh:tim@nátáh <f>
 tmnh:tim@nátáh <f>
 tmn{'}:tim@ná{'} <mf>
-twl{'}:towlá{'} <m>
+twl{'}:twolá{'} <m>
 vbx:vébax <m>
 {'}wc:{'}w.c <m>
 'wzl:'w.zál <m>
 xcrmwt:xäcar@máwét <mf>
 xdd:xädad <m>
-xmwr:xämowr <m>
+xmwr:xämwor <m>
 xm:xám <mf>
-xnwk:xänowk@ <m>
-xnwk:xänowk@ <mf>
+xnwk:xänwok@ <m>
 xrn:xáránáh <mf>
 xrn:xárán <mf>
 xwh:xaw.áh <f>
 xwylh:xäwiyláh <mf>
-xzw:xäzow <m>
+xzw:xäzwo <m>
 xbr:xébér <m>
-xbrwn:xéb@rown <mf>
-xcrwn:xéc@rown <m>
+xbrwn:xéb@rwon <mf>
+xcrwn:xéc@rwon <m>
 xmdn:xém@d.án <m>
 xt:xet <m>
 xdql:xid.éqél <mf>
 xyrh:xiyráh <m>
 xry:xoriy <m>
-xwbh:xowbáh <mf>
+xwbh:xwobáh <mf>
 x{sh}m:xu{sh}ám <m>
 y{'}qb:ya{'}äqob <m>
 ybl:yábál <m>
@@ -947,9 +949,8 @@ y{sh}m{'}'l:yi{sh}@má{'}e'l <m>
 yskh:yis@k.áh <f>
 y{s}r'l:yi{s}@rá'el <mf>
 ymw'l:y@mw.'el <m>
-ywbb:yowbáb <m>
-ywbb:yowbáb <mf>
-ywsp:yowsep <m>
+ywbb:ywobáb <m>
+ywsp:ywosep <m>
 ytt:y@tet <m>
 yvwr:y@vw.r <m>
 ywbl:yw.bál <m>
@@ -984,8 +985,8 @@ LEXICON AdverbItg
 mh:mah
 
 PATTERNS
-[hw'<prn><pers>:] Pronouns(1): [<sg>:] :Pronouns(2)[-skip]
-[hw'<prn><pers>:] Pronouns(1): [<pl>:] :Pronouns(3)[-skip]
+ConjPrefix? [hw'<prn><pers>:] Pronouns(1): [<sg>:] :Pronouns(2)[-skip]
+ConjPrefix? [hw'<prn><pers>:] Pronouns(1): [<pl>:] :Pronouns(3)[-skip]
 
 LEXICON Pronouns(3)
 <p1><mf> 'äniy   'änax@nw.
@@ -1029,5 +1030,5 @@ LEXICON PronounSuffixForms(3)
 <p1><mf> {ps}y   {ps}nw.
 <p2><m>  {ps}ká  {ps}kém
 <p2><f>  {ps}k@  {ps}kén
-<p3><m>  {ps}ow  {ps}m # TODO
+<p3><m>  {ps}wo  {ps}m # TODO
 <p3><f>  {ps}há  {ps}n
