@@ -230,11 +230,14 @@ NounRoot(1) [<n>:] NounRoot(2):
 
 LEXICON PrepRoot
 'l:'él
+'xry:'axärey
 't:'et
 't:'ét
+byn:beyn
 mn:min
 {'}d:{'}ad
 {'}l:{'}al
+{'}m:{'}im
 
 PATTERNS
 PrefixPrepRoot [<pr>:] PrnSuf
@@ -256,7 +259,7 @@ LEXICON PrepPron(4)
 <p1><mf><sg> 'it.iy   liy  'elay
 <p1><mf><sg> :[skip]  l.iy :[skip] # Dir/LR
 <p1><mf><pl> 'ot.enw. l.w. 'elenu
-<p3><m><sg> 'otow l.wo 'eláyw
+<p3><m><sg> 'otwo l.wo 'eláyw
 <p3><f><sg> 'otáh. lah. 'elah
 <p3><m><pl> 'otám láhém 'älehém
 
@@ -280,19 +283,13 @@ b{'}l:bá{'}al <m>[im]
 'bl:'ebél <m>[im]
 'bn:'ábén <f>[ot]
 bn:ben <m>[im]
-bn:ben <m>[im]
 bq{'}:béqa{'} <m>[im]
 bq{'}h:biq@{'}áh <f>[ot]
 bqr:báqár <mf>[im]
-bqr:báqár <mf>[im]
 bqr:boqér <m>[im]
 br:bár <m>[im]
-br:bár <m>[im]
-b'r:b@'er <f>[ot]
 b'r:b@'er <f>[ot]
 brkh:b@rákáh <f>[ot]
-brkh:b@rákáh <f>[ot]
-bryt:b@riyt <f>[ot]
 bryt:b@riyt <f>[ot]
 b{s}r:bá{s}ár <m>[im]
 bt:bat <f>[ot]
@@ -314,7 +311,6 @@ cyd:cáyi <m>[im]
 cydh:cedáh <f>[ot]
 {'}d:{'}ad <m>[im]
 dbr:dábár <m>[im]
-dbr:dábár <m>[im]
 db{sh}:d@ba{sh} <m>[im]
 {'}d:{'}ed <m>[im]
 dgn:dágán <m>[im]
@@ -327,7 +323,6 @@ drk:dérék@ <mf>[im]
 d{sh}':dé{sh}é' <m>[im]
 gbwr:gib.or <m>[im]
 gbyr:g@biyr <m>[im]
-gbyr:g@biyr <m>[im]
 gdwd:g@dw.d <m>[im]
 gl:gál <m>[im]
 {'}glh:{'}ég@láh <f>[ot]
@@ -336,7 +331,6 @@ gpn:gépén <mf>[im]
 gpr:gopér <m>[im]
 gpryt:gáp@riyt <f>[ot]
 gr:ger <m>[im]
-gr:ger <m>[im]
 grm:gárém <m>[im]
 gwy:gwoy <m>[im]
 'hl:'ohél <m>[im]
@@ -344,13 +338,11 @@ hr:héráh <m>[im]
 khn:kohen <m>[im]
 klh:káláh <f>[ot]
 kl:kol <m>[im]
-kl:kol <m>[im]
 'kl:'okél <m>[im]
 knp:kánáp <f>[ot]
 knwr:kin.wor <m>[im]
 krm:kárém <mf>[im]
 ksp:kásép <m>[im]
-ksp:késép <m>[im]
 ksp:késép <m>[im]
 lbnh:lib@néh <m>[im]
 'l:'el <m>[im]
@@ -422,7 +414,6 @@ nzyd:náziyd <m>[im]
 plg{sh}:piylégé{sh} <f>[ot]
 {'}pr:{'}ápár <m>[im]
 prc:páréc <m>[im]
-pr{'}h:par@{'}oh <m>[im]
 pr{'}h:par@{'}oh <m>[im]
 prt:porát <f>[ot]
 pry:p@riy <m>[im]
@@ -519,7 +510,6 @@ thw:tohw. <m>[im]
 t'nh:t@'enáh <f>[ot]
 trdmh:tar@d.emáh <f>[ot]
 t'r:to'ar <m>[im]
-t'r:to'ar <m>[im]
 t{sh}{'}:te{sh}a{'} <mf>[im]
 tw{'}bh:two{'}ebáh <f>[ot]
 t'wh:ta'äwáh <f>[ot]
@@ -571,7 +561,7 @@ yd:yád <mf>[im]
 'yl:'ayil <m>[im]
 'ylh:'ay.áláh <f>[ot]
 'ymh:'eymáh <f>[ot]
-ym:yám.áh <m>[im]
+ym:yam <m>[im]
 ymyn:yámiyn <f>[ot]
 {'}yn:{'}áyin <f>[ot]
 'yn:'ayin <m>[im]
@@ -665,23 +655,18 @@ bbl:bábél <mf>
 bl{'}:bála{'} <m>
 brd:báréd <mf>
 b{s}mt:bá{s}@mat <f>
-b{s}mt:bá{s}@mat <f>
 bdd:b@dad <m>
 bl{'}:béla{'} <m>
 bl{'}:béla{'} <mf>
 br{'}:béra{'} <m>
 b'ry:b@'eriy <m>
 blhh:bil@háh <f>
-blhh:bil@háh <f>
 blhn:bil@hán <m>
 bnymn:bin@yámin <mf>
-bnymn:bin@yámin <mf>
-bnymn:bin@yámiyn <mf>
 bnymn:bin@yámiyn <mf>
 br{sh}{'}:bir@{sh}a{'} <m>
 b{'}wr:b@{'}wor <m>
 bry{'}h:b@riy{'}áh <m>
-btw'l:b@tw.'el <m>
 btw'l:b@tw.'el <m>
 bwz:bw.z <m>
 cb'ym:c@bwoyim <mf>
@@ -696,9 +681,7 @@ cxr:coxar <m>
 cpw:c@pwo <m>
 dm{s}q:dam.é{s}éq <mf>
 dn:dán <mf>
-dn:dán <mf>
 dbwrh:d@boráh <f>
-ddn:d@dán <mf>
 ddn:d@dán <mf>
 dnhbh:din@hábáh <mf>
 dy{sh}wn:di{sh}on <m>
@@ -742,7 +725,6 @@ dtn:dotáy@náh <mf>
 {'}ynym:{'}eynayim <mf>
 {'}yph:{'}eypáh <mf>
 gd:gád <mf>
-gd:gád <mf>
 gl{'}d:gal@{'}ed <mf>
 g{'}tm:ga{'}@t.ám <m>
 gxm:gaxam <m>
@@ -754,8 +736,6 @@ gmr:gomér <m>
 g{sh}n:go{sh}@náh <mf>
 gwym:gwoyim <mf>
 grr:g@ráráh <mf>
-grr:g@ráráh <mf>
-grr:g@rár <mf>
 grr:g@rár <mf>
 hbl:hábél <m>
 hdd:hädad <m>
@@ -780,8 +760,6 @@ kdrl{'}mr:k@dár־lá{'}omér <m>
 kdrl{'}mr:k@dár@lá{'}omér <m>
 k{s}d:ké{s}éd <m>
 kn{'}n:k@na{'}an <mf>
-kn{'}n:k@na{'}an <mf>
-kn{'}n:k@ná{'}an <mf>
 kn{'}n:k@ná{'}an <mf>
 kw{sh}:kw.{sh} <m>
 l{sh}{'}:lá{sh}a{'} <mf>
@@ -844,7 +822,6 @@ p'rn:pá'rán <mf>
 prc:páréc <m>
 p{'}w:pá{'}w. <mf>
 plg:pélég <m>
-plg:pélég <m>
 prc:péréc <m>
 pld{sh}:pil@d.á{sh} <m>
 pynn:piynon <m>
@@ -852,7 +829,6 @@ py{sh}wn:piy{sh}won <mf>
 pny'l:p@niy'el <mf>
 pnw'l:p@nw.'el <mf>
 pwvypr:pwoviypar <m>
-prt:p@rát <mf>
 prt:p@rát <mf>
 qd{sh}:qáde{sh} <mf>
 qyn:qayin <m>
@@ -895,9 +871,7 @@ tmr:támár <f>
 trx:tárax <m>
 tx{sh}:taxa{sh} <m>
 trx:térax <m>
-trx:térax <m>
 tymn:teymán <mf>
-tmnh:tim@nátáh <f>
 tmnh:tim@nátáh <f>
 tmn{'}:tim@ná{'} <mf>
 twl{'}:twolá{'} <m>

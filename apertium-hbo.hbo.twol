@@ -81,14 +81,22 @@ a:á <=> %{h%}: _ %>: %': ;
 "e:é cons"
 e:é <=> _ ?* %{cons%}: .#. ;
 
-"e:@ cons pl"
+"e:@ cons pl or final"
 e:%@ <=> _ ?* %{cons%}: e: y: ;
+         _ ? %{cons%}: ;
 
 "{and} before b"
 %{and%}:%. <=> _ b: ;
 
 "ay → ey cons"
 a:e <=> _ y ?* %{cons%}: ;
+
+"final a → @ cons"
+a:%@ <=> _ ? %{cons%}: ;
+         except _ y ;
+
+"final é → @ cons"
+é:%@ <=> _ ? %{cons%}: ;
 
 "impf delete initial cons"
 Cx:0 <=> i %>: _ ;

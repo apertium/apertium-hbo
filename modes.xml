@@ -13,6 +13,9 @@
 
   <mode name="hbo-morph" install="yes">
     <pipeline>
+      <program name="python3">
+        <file name="normalize.py"/>
+      </program>
       <!--<program name="lt-proc -w">
         <file name="hbo.automorf.bin"/>
         </program>-->

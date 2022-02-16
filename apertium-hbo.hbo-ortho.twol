@@ -4,7 +4,7 @@ b:ב
 g:ג
 d:ד
 h:ה
-w:ו
+w:ו w:וֹ
 z:ז
 x:ח
 v:ט
@@ -28,7 +28,7 @@ a:ַ
 e:ֵ
 é:ֶ
 i:ִ
-o:ֹ
+o:ֹ o:0
 u:ֻ
 %@:ְ
 ä:ֲ
@@ -59,6 +59,12 @@ CL:CH <=> _ ( Vowel: ) .#. ;
       where CL in ( k m n p c )
             CH in ( ך ם ן ף ץ )
       matched ;
+
+"holam male 1"
+w:וֹ <=> _ o: ;
+
+"holam male 2"
+o:0 <=> w: _ ;
 
 ! Resources:
 ! http://wiki.apertium.org/wiki/Starting_a_new_language_with_HFST#Enter_twol
