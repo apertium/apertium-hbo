@@ -43,6 +43,9 @@ Rules
        %{h%}: a: %>: DageshAble: _ ;
        i %>: [ l:0 | y:0 | n:0 ] %@:0 ? _ ;
 
+"insert @ after final k"
+0:%@ <=> k :0* _ .#. ;
+
 "insert yod"
 0:y => %{%~iy%}:i _ ;
 
@@ -89,6 +92,9 @@ a:e <=> _ y ?* %{cons%}: ;
 "impf delete initial cons"
 Cx:0 <=> i %>: _ ;
      where Cx in ( l y n ) ;
+
+"yiy -> yi"
+y:0 <=> y i _ ;
 
 "3sg poss after y"
 o:0 <=> y %{ps%}: w: _ ;

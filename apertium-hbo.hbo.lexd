@@ -590,6 +590,9 @@ PATTERNS
 ConjPrefix? PrefixPrep? Noun
 ConjPrefix? PrepRoot [<pr>:]
 
+# iic = is irregular construct
+# hic = has irregular construct
+
 PATTERN CommonNoun
 NounStem[-iic,-plonly] [<sg>:]
 NounStem[im] [<pl>:iym]
@@ -625,6 +628,7 @@ PrefixPrepRoot [<pr>+:@>]
 
 LEXICON PrefixPrepRoot
 b
+k
 l
 m
 
@@ -634,12 +638,17 @@ ConjPrefix? [l<pr>+hw'<prn>:] PrepPron(1): :PrepPron(3)[-skip]
 ConjPrefix? ['l<pr>+hw'<prn>:] PrepPron(1): :PrepPron(4)[-skip]
 
 LEXICON PrepPron(4)
-<p1><mf><sg> 'it.iy   liy  'elay
-<p1><mf><sg> :[skip]  l.iy :[skip] # Dir/LR
-<p1><mf><pl> 'ot.enw. l.w. 'elenu
-<p3><m><sg> 'otwo l.wo 'eláyw
-<p3><f><sg> 'otáh. lah. 'elah
-<p3><m><pl> 'otám láhém 'älehém
+<p1><mf><sg> 'otiy    liy   'elay
+<p1><mf><sg> :[skip]  l.iy  :[skip] # Dir/LR
+<p1><mf><pl> 'ot.enw. lánw. 'elenu
+<p2><m><sg>  'ot@ká   l@ká  :[skip]
+<p2><f><sg>  'oták    lák   :[skip]
+<p2><m><pl>  'ét@kém  lákém :[skip]
+<p2><f><pl>  :[skip]  lákén :[skip]
+<p3><m><sg>  'otwo    lwo   'eláyw
+<p3><f><sg>  'otáh.   láh.  'elah
+<p3><m><pl>  'otám    láhém 'älehém
+<p3><f><pl>  'ét@hén  láhén :[skip]
 
 LEXICON NounRoot(2)
 'lhym:'ëlohiym <m>
@@ -648,6 +657,8 @@ kl:kál <m>
 pnym:pán <f>[plonly,im]
 r'{sh}:ro'o{sh} <m>
 r'{sh}:re'{sh}iyt <m><cnst>
+{sh}mym:{sh}ámay <m>[plonly,im]
+mym:may <m>[plonly,im]
 
 # TODO: Hebrew order
 # TODO: vowels might be wrong
@@ -676,7 +687,8 @@ bt:bat <f>[ot]
 btwlh:b@tw.láh <f>[ot]
 bvn:bávén <f>[ot]
 bvx:bévax <m>[im]
-byt:bayit <m>[im]
+byt:bayit <m>[im,hic]
+byt:beyt <m>[im,iic]
 cdqh:c@dáqáh <f>[ot]
 {'}c:{'}ec <m>[im]
 chr:cohar <f>[ot]
@@ -1358,7 +1370,7 @@ LEXICON Pronouns(3)
 <p3><m>  :[skip] hem.áh    # Dir/LR
 <p3><m>  :[skip] hém       # Dir/LR
 <p3><f>  hiy'    hen
-<p3><f>  :[skip] hén       # Dir/LR
+<p3><f>  hiw'    hén       # Dir/LR
 <p3><f>  :[skip] hen.áh
 
 PATTERNS
@@ -1394,3 +1406,21 @@ LEXICON PronounSuffixForms(3)
 <p2><f>  {ps}k@  {ps}kén
 <p3><m>  {ps}wo  {ps}m # TODO
 <p3><f>  {ps}há  {ps}n
+
+PATTERNS
+Numerals(1): [<num><m>:] :Numerals(2)
+Numerals(1): [<num><m><cons>:] :Numerals(3)
+Numerals(1): [<num><f>:] :Numerals(4)
+Numerals(1): [<num><f><cons>:] :Numerals(5)
+
+LEXICON Numerals(5)
+'xd        'éxád         'axad         'axat       'axat       #  1
+{sh}nym    {sh}@nayim    {sh}@ney      {sh}@t.ayim {sh}@t.ey   #  2
+{sh}l{sh}h {sh}@lo{sh}áh {sh}@lo{sh}ét {sh}álo{sh} {sh}álo{sh} #  3
+'rb{'}h    'ar@b.á{'}áh  'ar@b.a{'}at  'ar@b.a{'}  'ar@b.a{'}  #  4
+xm{sh}h    xämi{sh}.áh   xäme{sh}ét    xáme{sh}    xäme{sh}    #  5
+{sh}{sh}h  {sh}i{sh}.áh  {sh}e{sh}ét   {sh}e{sh}   {sh}e{sh}   #  6
+{sh}b{'}h  {sh}ib@{'}áh  {sh}ib@{'}at  {sh}éba{'}  {sh}@ba{'}  #  7
+{sh}mnh    {sh}@monáh    {sh}@monat    {sh}@monéh  {sh}@monéh  #  8
+t{sh}{'}h  ti{sh}@{'}áh  ti{sh}@{'}at  te{sh}a{'}  t@{sh}a{'}  #  9
+{'}{s}rh   {'}ä{s}áráh   {'}ä{s}érét   {'}é{s}ér   {'}é{s}ér   # 10
