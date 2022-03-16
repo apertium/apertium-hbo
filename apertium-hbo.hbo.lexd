@@ -659,6 +659,7 @@ r'{sh}:ro'o{sh} <m>
 r'{sh}:re'{sh}iyt <m><cnst>
 {sh}mym:{sh}ámay <m>[plonly,im]
 mym:may <m>[plonly,im]
+ym:yám <m>[im]
 
 # TODO: Hebrew order
 # TODO: vowels might be wrong
@@ -1260,6 +1261,7 @@ spr:s@páráh <mf>
 {s}rwg:{s}@rw.g <m>
 skwt:suk.otáh <mf>
 skwt:suk.wot <mf>
+tbh:tebáh <m>
 tmr:támár <f>
 trx:tárax <m>
 tx{sh}:taxa{sh} <m>
@@ -1392,6 +1394,7 @@ Conjunctions
 
 LEXICON Conjunctions
 'm<cnjsub>:'im
+w<cnjcoo>+'m<cnjsub>:w@'im
 '{sh}r<cnjsub>:'ä{sh}ér
 k<pr>+'{sh}r<cnjsub>:k.a'ä{sh}ér
 ky<cnjsub>:kiy
