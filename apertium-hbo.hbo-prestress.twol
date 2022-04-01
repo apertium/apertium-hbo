@@ -1,0 +1,37 @@
+Alphabet
+%' b g d h w z x v y k l m n s %{'%} p c q r %{s%} %{sh%} t
+a á e é i o u %@ ä ë ö
+.
+
+%>
+
+%{%*%}
+
+%{%*%?%}:0 %{%*%?%}:%{%*%}
+
+%{%<%*%}
+%{%*%>%}
+
+%{V%} %{ps%} %{and%}
+%{%~a%}
+%{%~á%}
+%{%~e%}
+%{%~o%}
+
+%{%~iy%}
+
+%{h%}
+
+%{i%}
+
+%{cons%}
+ ;
+
+Sets
+
+Stress = %{%*%} %{%*%?%} ;
+
+Rules
+
+"delete maybe stress if actual stress"
+%{%*%?%}:0 <=> _ :* Stress: ;

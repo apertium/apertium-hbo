@@ -5,16 +5,20 @@
 LANG1=hbo
 BASENAME=apertium-$(LANG1)
 
-TARGETS_COMMON =			\
-	$(LANG1).automorf.hfst		\
-	$(LANG1).automorf.bin		\
-	$(LANG1).automorf.att.gz	\
-	$(LANG1).autogen.hfst		\
-	$(LANG1).autogen.bin		\
-	$(LANG1).autogen.att.gz		\
-	$(LANG1).autopgen.bin		\
-	$(LANG1).rlx.bin            \
-	$(LANG1).zhfst
+TARGETS_HFST = \
+	$(LANG1).automorf.hfst \
+	$(LANG1).autogen.hfst \
+	$(LANG1).autopgen.bin \
+	$(LANG1).rlx.bin
+
+TARGETS_LT = \
+	$(LANG1).automorf.bin \
+	$(LANG1).automorf.att.gz \
+	$(LANG1).autogen.bin \
+	$(LANG1).autogen.att.gz
+
+#TARGETS_COMMON = $(TARGETS_HFST) $(TARGETS_LT) $(LANG1).zhfst
+TARGETS_COMMON = $(TARGETS_HFST)
 
 # $(LANG1).prob
 
@@ -31,6 +35,12 @@ TARGETS_COMMON =			\
 .deps/$(LANG1).ortho.twol.hfst: $(BASENAME).$(LANG1)-ortho.twol .deps/.d
 	hfst-twolc $< -o $@
 
+.deps/$(LANG1)-stress.twol.hfst: $(BASENAME).$(LANG1)-stress.twol .deps/.d
+	hfst-twolc $< -o $@
+
+.deps/$(LANG1)-prestress.twol.hfst: $(BASENAME).$(LANG1)-prestress.twol .deps/.d
+	hfst-twolc $< -o $@
+
 .deps/$(LANG1).RL.lexd: $(BASENAME).$(LANG1).lexd .deps/.d
 	cat $< | grep -v 'Dir/LR' > $@
 
@@ -45,11 +55,23 @@ TARGETS_COMMON =			\
 	lexd -U $< .deps/$(LANG1).LR.lexd.att
 	hfst-txt2fst .deps/$(LANG1).LR.lexd.att -o $@
 
-.deps/$(LANG1).RL-lat.hfst: .deps/$(LANG1).RL.lexd.hfst .deps/$(LANG1).twol.hfst
-	hfst-compose-intersect -1 .deps/$(LANG1).RL.lexd.hfst -2 .deps/$(LANG1).twol.hfst -o $@
+.deps/$(LANG1).RL.lexd-prestress.hfst: .deps/$(LANG1).RL.lexd.hfst .deps/$(LANG1)-prestress.twol.hfst
+	hfst-compose-intersect -1 .deps/$(LANG1).RL.lexd.hfst -2 .deps/$(LANG1)-prestress.twol.hfst -o $@
 
-.deps/$(LANG1).LR-lat.hfst: .deps/$(LANG1).LR.lexd.hfst .deps/$(LANG1).twol.hfst
-	hfst-compose-intersect -1 .deps/$(LANG1).LR.lexd.hfst -2 .deps/$(LANG1).twol.hfst -o $@
+.deps/$(LANG1).LR.lexd-prestress.hfst: .deps/$(LANG1).LR.lexd.hfst .deps/$(LANG1)-prestress.twol.hfst
+	hfst-compose-intersect -1 .deps/$(LANG1).LR.lexd.hfst -2 .deps/$(LANG1)-prestress.twol.hfst -o $@
+
+.deps/$(LANG1).RL.lexd-stress.hfst: .deps/$(LANG1).RL.lexd-prestress.hfst .deps/$(LANG1)-stress.twol.hfst
+	hfst-compose-intersect -1 .deps/$(LANG1).RL.lexd-prestress.hfst -2 .deps/$(LANG1)-stress.twol.hfst -o $@
+
+.deps/$(LANG1).LR.lexd-stress.hfst: .deps/$(LANG1).LR.lexd-prestress.hfst .deps/$(LANG1)-stress.twol.hfst
+	hfst-compose-intersect -1 .deps/$(LANG1).LR.lexd-prestress.hfst -2 .deps/$(LANG1)-stress.twol.hfst -o $@
+
+.deps/$(LANG1).RL-lat.hfst: .deps/$(LANG1).RL.lexd-stress.hfst .deps/$(LANG1).twol.hfst
+	hfst-compose-intersect -1 .deps/$(LANG1).RL.lexd-stress.hfst -2 .deps/$(LANG1).twol.hfst -o $@
+
+.deps/$(LANG1).LR-lat.hfst: .deps/$(LANG1).LR.lexd-stress.hfst .deps/$(LANG1).twol.hfst
+	hfst-compose-intersect -1 .deps/$(LANG1).LR.lexd-stress.hfst -2 .deps/$(LANG1).twol.hfst -o $@
 
 .deps/$(LANG1).RL.hfst: .deps/$(LANG1).RL-lat.hfst .deps/$(LANG1).ortho.twol.hfst
 	hfst-compose-intersect -1 .deps/$(LANG1).RL-lat.hfst -2 .deps/$(LANG1).ortho.twol.hfst | hfst-invert | hfst-compose-intersect -1 - -2 .deps/$(LANG1).ortho.twol.hfst | hfst-invert -o $@
@@ -64,7 +86,7 @@ $(LANG1).autogen.hfst: .deps/$(LANG1).RL.hfst
 	hfst-regexp2fst -S -o $@ $<
 
 $(LANG1).automorf.hfst: .deps/$(LANG1).LR.hfst .deps/$(LANG1).spellrelax.hfst
-	hfst-compose -1 $< -2 .deps/$(LANG1).spellrelax.hfst | hfst-invert | hfst-fst2fst -O -o $@
+	hfst-compose -1 $< -2 .deps/$(LANG1).spellrelax.hfst | hfst-invert | hfst-minimize | hfst-fst2fst -O -o $@
 
 $(LANG1).autogen.att.gz: $(LANG1).autogen.hfst
 	hfst-fst2txt $< | gzip -9 -c -n > $@
@@ -72,13 +94,14 @@ $(LANG1).autogen.att.gz: $(LANG1).autogen.hfst
 $(LANG1).automorf.att.gz: $(LANG1).automorf.hfst
 	hfst-fst2txt $< | gzip -9 -c -n > $@
 
+# lt-comp classes everything as word chars anyway, so -S should be faster
 $(LANG1).autogen.bin: $(LANG1).autogen.att.gz .deps/.d
 	zcat < $< > .deps/$(LANG1).autogen.att
-	lt-comp lr .deps/$(LANG1).autogen.att $@
+	lt-comp -S lr .deps/$(LANG1).autogen.att $@
 
 $(LANG1).automorf.bin: $(LANG1).automorf.att.gz .deps/.d
 	zcat < $< > .deps/$(LANG1).automorf.att
-	lt-comp lr .deps/$(LANG1).automorf.att $@
+	lt-comp -S lr .deps/$(LANG1).automorf.att $@
 
 $(LANG1).autopgen.bin: $(BASENAME).post-$(LANG1).dix
 	lt-comp lr $< $@

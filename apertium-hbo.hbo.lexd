@@ -1,58 +1,33 @@
 PATTERNS
 [l<pr>+'mr<v><actv><inf>:le'mor] # I think this one might be weird
 
-#PATTERNS
-#:VerbInfl(1) VerbRoot(1) :VerbInfl(2) VerbRoot(2) :VerbInfl(3) VerbRoot(3) :VerbInfl(4) VerbInfl(1):
-
-LEXICON VerbInfl(4)
-<v><impf><p1><sg>:'é : o :
-<v><impf><p1><pl>:ni : o :
-<v><impf><p2><sg><m>:ti : o :
-<v><impf><p2><sg><f>:ti : o iy
-<v><impf><p2><pl><m>:ti : o w
-<v><impf><p2><pl><f>:ti : o náh
-<v><impf><p3><sg><m>:yi : o :
-<v><impf><p3><sg><f>:ti : o :
-<v><impf><p3><pl><m>:yi : o w
-<v><impf><p3><pl><f>:ti : o náh
-<v><perf><p1><sg>: á a tiy
-<v><perf><p1><pl>: á a nw
-<v><perf><p2><sg><m>: á a tá
-<v><perf><p2><sg><f>: á a t
-<v><perf><p2><pl><m>: á a tém
-<v><perf><p2><pl><f>: á a tén
-<v><perf><p3><sg><m>: á a :
-<v><perf><p3><sg><f>: á a áh
-<v><perf><p3><pl><m>: á a w
-<v><perf><p3><pl><f>: á a w
-
 LEXICON ConjPrefix
 w<cnjcoo>+:w{and}
 
 LEXICON PerfSuffix
-<p1><mf><sg>:@t.iy
-<p1><mf><pl>:@nw.
-<p2><m><sg>:@t.á
-<p2><m><pl>:@t.ém
+<p1><mf><sg>:@t.i{*}y
+<p1><mf><pl>:@nw.{*}
+<p2><m><sg>:@t.á{*}
+<p2><m><pl>:@t.é{*}m
 <p2><f><sg>:@t.@
-<p2><f><pl>:@t.én
+<p2><f><pl>:@t.é{*}n
 <p3><m><sg>:
-<p3><f><sg>:áh
-<p3><mf><pl>:w.
+<p3><f><sg>:á{*}h
+<p3><mf><pl>:w.{*}
 
 LEXICON ImperfAffix(3)
 <p1><mf><sg> 'é :
-<p1><mf><pl> ni :
-<p2><m><sg> t.i :
-<p2><m><pl> t.i w.
-<p2><f><sg> t.i .y
-<p2><f><pl> t.i @nah
-<p3><m><sg> yi :
-<p3><f><sg> t.i :
-<p3><mf><pl> yi w.
+<p1><mf><pl> n{i} :
+<p2><m><sg> t.{i} :
+<p2><m><pl> t.{i} w.{*}
+<p2><f><sg> t.{i} .y
+<p2><f><pl> t.{i} @na{*}h
+<p3><m><sg> y{i} :
+<p3><f><sg> t.{i} :
+<p3><mf><pl> y{i} w.{*}
 
 PATTERN VerbStem
-:Binyanim(2) VerbRoot(1) :Binyanim(3) VerbRoot(2) :Binyanim(4) VerbRoot(3) :Binyanim(5) [<v>:] Binyanim(1):
+:Binyanim(2) VerbRoot(1) :Binyanim(3) VerbRoot(2) :Binyanim(4) VerbRoot(3) [<v>:] Binyanim(1)
 
 PATTERN Verb
 VerbStem[perf] [<perf>:>] PerfSuffix
@@ -60,20 +35,20 @@ VerbStem[perf] [<perf>:>] PerfSuffix
 
 PATTERNS
 ConjPrefix? Verb
-ConjPrefix [:{consec}] Verb [<consec>:{short}]
+ConjPrefix [:{<*}] Verb [<consec>:]
 
-LEXICON Binyanim(5)
-<actv> : {~á} {~a} :[perf]
-<actv> : @ {~o} :[impf]
-<pass> ni @ {~a} :[perf]
-<pass> : á {~e} :[impf]
-<ints> : i {~a} :[perf]
-<ints> : a {~e} :[impf]
-<ints><pass> : u {~a} :
-<caus> hi @ {~iy} :[perf]
-<caus> : @ {~iy} :[impf]
-<caus><pass> {h}á @ {~a} :[perf]
-<recip> {h}it@ a {~e} :[perf,impf]
+LEXICON Binyanim(4)
+<actv>:[perf]       :      {~á} {~a}{*?}
+<actv>:[impf]       :      @    {~o}{*?}
+<pass>:[perf]       ni     @    {~a}{*?}
+<pass>:[impf]       :      á    {~e}{*?}
+<ints>:[perf]       :      i    {~a}{*?}
+<ints>:[impf]       :      a    {~e}{*?}
+<ints><pass>:       :      u    {~a}{*?}
+<caus>:[perf]       hi     @    {~iy}{*?}
+<caus>:[impf]       :      @    {~iy}{*?}
+<caus><pass>:[perf] {h}á   @    {~a}{*?}
+<recip>:[perf,impf] {h}it@ a    {~e}{*?}
 
 LEXICON VerbRoot(3)
 ' b h
@@ -619,6 +594,7 @@ mn:min
 {'}d:{'}ad
 {'}l:{'}al
 {'}m:{'}im
+txt:taxat
 
 PATTERNS
 PrefixPrepRoot [<pr>:] PrnSuf

@@ -36,8 +36,8 @@
 
   <mode name="hbo-gener" install="yes">
     <pipeline>
-      <program name="lt-proc -g">
-        <file name="hbo.autogen.bin"/>
+      <program name="hfst-proc -g">
+        <file name="hbo.autogen.hfst"/>
       </program>
     </pipeline>
   </mode>

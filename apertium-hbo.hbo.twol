@@ -16,15 +16,19 @@ a á e é i o u %@ ä ë ö
 %{%~a%}:a %{%~a%}:%@
 %{%~á%}:á %{%~á%}:%@
 %{%~e%}:e %{%~e%}:%@
-%{%~o%}:o %{%~o%}:%@ %{%~o%}:á %{%~o%}:é %{%~o%}:a
+%{i%}:i %{i%}:o %{i%}:a %{i%}:á %{i%}:%@
+%{%~o%}:o %{%~o%}:%@ %{%~o%}:á %{%~o%}:é %{%~o%}:a %{%~o%}:e
 
-%{%~iy%}:i %{%~iy%}:0
+%{%~iy%}:i %{%~iy%}:0 %{%~iy%}:é
 
 %{h%}:h %{h%}:0
 
 %{short%}:0
 %{consec%}:0
 %{cons%}:0
+
+%{%+%*%}:%{%*%}
+%{%-%*%}:0
  ;
 
 Sets
@@ -35,13 +39,24 @@ Cons = %' b g d h w z x v y k l m n s %{'%} p c q r %{s%} %{sh%} t ;
 
 DageshAble = z y m c %{s%} %{sh%} ;
 
+Stress = %{%+%*%} %{%-%*%} ;
+
+Definitions
+
+ImpfPref = %{i%}: ( %{%+%*%}: ) %>: ;
+ImpfBd = ( Stress: ) %>: ;
+
 Rules
+
+!!!!!!!!!!!!!!!
+!!! INSERTIONS
+!!!!!!!!!!!!!!!
 
 "insert dagesh"
 0:. => .#. Begedkefet _ ;!:Vowel ;
-       %{consec%}: ? _ ;
+       %{and%}: y _ %{i%}: ( %{%+%*%}: ) ;
        %{h%}: a: %>: DageshAble: _ ;
-       i %>: [ l:0 | y:0 | n:0 ] %@:0 ? _ ;
+       [ l:0 | y:0 | n:0 ] %@:0 ? _ ;
 
 "insert @ after final k"
 0:%@ <=> k :0* _ .#. ;
@@ -49,55 +64,110 @@ Rules
 "insert yod"
 0:y => %{%~iy%}:i _ ;
 
+!!!!!!!!!!!!!!!
+!!! {h}
+!!!!!!!!!!!!!!!
+
 "{h} → 0 after vowel"
 %{h%}:0 <=> Vowel: ( %>: ) _ ;
+
+!!!!!!!!!!!!!!!
+!!! h
+!!!!!!!!!!!!!!!
+
+"lamed-he verbs"
+h:0 <=> _ %>: %{short%}: ;
+        %{%-%*%}: _ ;
+
+!!!!!!!!!!!!!!!
+!!! @
+!!!!!!!!!!!!!!!
 
 "schwa deletes"
 %@:0 <=> _ ( %>: ) %{h%}: ;
          %' _ ;
-         i %>: [ l:0 | y:0 | n:0 ] _ ;
-
-"peh-aleph verbs"
-i:o <=> _ %>: %' ;
-
-"lamed-he verbs"
-h:0 <=> _ %>: %{short%}: ;
-
-"lamed-he continued"
-%{%~o%}:0 <=> _ h:0 %>: %{short%}: ;
-
-"i → a in impf with lamed-he"
-i:a <=> _ %>: ?* h:0 %>: %{short%}: ;
-    except _ %>: [ %' | ?* y: ? h:0 %>: ] ;
-
-"*yh in short"
-i:%@ <=> _ %>: ?* y: ? h:0 %>: ;
+         ImpfPref [ l:0 | y:0 | n:0 ] _ Cons 0:* %{%~o%}: ;
+         ImpfPref Cons _ w: ;
 
 "and the vowel"
-%@:i <=> _ y ? h:0 %>: %{short%}: ;
+%@:i <=> _ y ? %{%-%*%}: h:0 ;
          _ %>: Cons :%@ ;
 
-"definite segolate nouns"
-é:á <=> %{h%}: a: %>: %': _ ;
+"impf hifil"
+%@:o <=> ImpfPref y: _ Cons %{%~iy%}: ;
+
+!!!!!!!!!!!!!!!
+!!! {i}
+!!!!!!!!!!!!!!!
+
+"peh-aleph verbs"
+%{i%}:o <=> _ ImpfBd %' ;
+
+"i → a in impf with lamed-he"
+%{i%}:a <=> _ ImpfBd ?* %{%-%*%}: h:0 ;
+            except _ ImpfBd [ %' | ?* y: ? %{%-%*%}: h:0 %>: ] ;
+
+"i → á in impf hollow verbs"
+%{i%}:á <=> _ ImpfBd [ Cons - %' ] %@: w: ;
+
+"*yh in short"
+%{i%}:%@ <=> _ ImpfBd ?* y: ? %{%-%*%}: h:0 %>: ;
+             except _ ImpfBd %' ;
+
+"drop impf i"
+%{i%}:0 <=> _ ImpfBd y:w ;
+
+"whatever"
+%{i%}:e <=> _ ImpfBd y:0 ;
+
+!!!!!!!!!!!!!!!
+!!! {~o}
+!!!!!!!!!!!!!!!
+
+"lamed-he continued"
+%{%~o%}:0 <=> _ %{%-%*%}: h:0 ;
+
+"{~o} only é if @:0"
+%{%~o%}:é <=> [ Cons: - %' ] 0:* %@:0 Cons 0:* _ ;
+              except _ ( Stress: ) [ x | %{%'%} ] ;
+
+!!!!!!!!!!!!!!!
+!!! a
+!!!!!!!!!!!!!!!
 
 "blah"
 a:á <=> %{h%}: _ %>: [ %': | %{%'%}: ] ;
 
-"{and} before b"
-%{and%}:%. <=> _ b: ;
-
 "ay → ey cons"
 a:e <=> _ y ?* %{cons%}: ;
 
-"impf delete initial cons"
-Cx:0 <=> i %>: _ ;
-     where Cx in ( l y n ) ;
+!!!!!!!!!!!!!!!
+!!! OTHER
+!!!!!!!!!!!!!!!
 
-"yiy -> yi"
-y:0 <=> y i _ ;
+"definite segolate nouns"
+é:á <=> %{h%}: a: %>: %': _ ;
+
+"{and} before b"
+%{and%}:%. <=> _ b: ;
+
+"impf delete initial cons"
+Cx:0 <=> ImpfPref _ ;
+     where Cx in ( l n ) ;
+
+"impf delete initial y"
+y:0 <=> ImpfPref _ ;
+        y i _ ;
+        except _ %@:o ;
+
+"y in impf hifil"
+y:w <=> ImpfPref _ %@:o ;
 
 "3sg poss after y"
 o:0 <=> y %{ps%}: w: _ ;
+
+"hollow verbs w"
+w:0 <=> ImpfPref Cons %@: _ ;
 
 "weaken final vowel in construct"
 V1:V2 <=> _ [ Cons - y ] %{cons%}: ;

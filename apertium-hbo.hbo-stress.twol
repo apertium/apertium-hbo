@@ -1,0 +1,49 @@
+Alphabet
+%' b g d h w z x v y k l m n s %{'%} p c q r %{s%} %{sh%} t
+a á e é i o u %@ ä ë ö
+.
+
+%>
+
+%{%*%}:%{%+%*%} %{%*%}:%{%-%*%}
+
+0:%{%+%*%}
+
+%{%<%*%}:0
+%{%*%>%}:0
+
+%{V%} %{ps%} %{and%}
+%{%~a%}
+%{%~á%}
+%{%~e%}
+%{%~o%}
+
+%{%~iy%}
+
+%{h%}
+
+%{i%}
+
+%{cons%}
+ ;
+
+Sets
+
+Begedkefet = b g d k p t ;
+Vowel = a á e é i o u ä ë ö
+        %{V%} %{ps%} %{and%} %{%~a%} %{%~á%} %{%~e%} %{%~o%} %{i%} ;
+Cons = %' b g d h w z x v y k l m n s %{'%} p c q r %{s%} %{sh%} t . ;
+
+Skip = %' b g d h w z x v y k l m n s %{'%} p c q r %{s%} %{sh%} t . %@ %> ;
+
+DageshAble = z y m c %{s%} %{sh%} ;
+
+Rules
+
+"move stress away"
+%{%*%}:%{%-%*%} <=> %{%<%*%}: :* _ ;
+                    _ :* %{%*%>%}: ;
+
+"move stress to"
+0:%{%+%*%} <=> !%{%*%}: Cons+ Vowel _ :* %{%*%>%}: ;
+               %{%<%*%}: :* Vowel _ Skip+ Vowel %{%*%}: ;
