@@ -96,6 +96,9 @@ h:0 <=> _ %>: %{short%}: ;
 "impf hifil"
 %@:o <=> ImpfPref y: _ Cons %{%~iy%}: ;
 
+"paal lamed-he"
+%@:é <=> ImpfPref Cons _ n :0* .#. ;
+
 !!!!!!!!!!!!!!!
 !!! {i}
 !!!!!!!!!!!!!!!
