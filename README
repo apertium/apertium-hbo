@@ -61,19 +61,18 @@ If you are in the source directory after running make, the following
 commands should work:
 
 ```console
-$ echo "TODO: test sentence" | apertium -d . hbo-morph
-TODO: test analysis result
-
-$ echo "TODO: test sentence" | apertium -d . hbo-tagger
-TODO: test tagger result
+$ echo "וַֽיְהִי עֶרֶב וַֽיְהִי בֹקֶר יֹום אֶחָֽד" | apertium -d . hbo-morph
+^וַֽיְהִי/ו<cnjcoo>+היה<v><actv><impf><p3><m><sg><consec>/ו<cnjcoo>+היה<v><caus><impf><p3><m><sg><consec>$ ^עֶרֶב/ערב<n><m><sg>$ ^וַֽיְהִי/ו<cnjcoo>+היה<v><actv><impf><p3><m><sg><consec>/ו<cnjcoo>+היה<v><caus><impf><p3><m><sg><consec>$ ^בֹקֶר/בקר<n><m><sg>$ ^יוֹם/יום<n><m><sg>/יום<n><m><sg><cons>$ ^אֶחָֽד/אחד<n><mf><sg>/אחד<num><m>$
 ```
 
 Files and data
 -------------------------------------------------------------------------------
 
-
 * [`apertium-hbo.hbo.lexd`](apertium-hbo.hbo.lexd) - Morphotactic dictionary
 * [`apertium-hbo.hbo.twol`](apertium-hbo.hbo.twol) - Morphophonological rules
+* [`apertium-hbo.hbo-prestress.twol`](apertium-hbo.hbo-prestress.twol) - Stress preprocessing rules
+* [`apertium-hbo.hbo-stress.twol`](apertium-hbo.hbo-stress.twol) - Stress movement rules
+* [`apertium-hbo.hbo-ortho.twol`](apertium-hbo.hbo-ortho.twol) - Orthography conversion rules
 * [`apertium-hbo.hbo.rlx`](apertium-hbo.hbo.rlx) - Constraint Grammar disambiguation rules
 * [`apertium-hbo.post-hbo.dix`](apertium-hbo.post-hbo.dix) - Post-generator
 * [`hbo.prob`](hbo.prob) - Tagger model
