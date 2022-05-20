@@ -1,0 +1,99 @@
+Alphabet
+%' b g d h w z x v y k l m n s %{'%} p c q r %{s%} %{sh%} t
+a á e é i o u %@ ä ë ö
+.
+
+%>:0
+
+! the lazy vowel
+%{V%}:a %{V%}:á %{V%}:e %{V%}:é %{V%}:i %{V%}:o %{V%}:u
+%{V%}:%@ %{V%}:ä %{V%}:ë %{V%}:ö
+
+%{ps%}:0 %{ps%}:%@ %{ps%}:é %{ps%}:á %{ps%}:e !%{ps%}:i
+
+%{and%}:%. %{and%}:a %{and%}:%@
+
+%{%~a%}:a %{%~a%}:%@
+%{%~á%}:á %{%~á%}:%@
+%{%~e%}:e %{%~e%}:%@
+
+%{%~iy%}:i %{%~iy%}:0 %{%~iy%}:é
+
+%{short%}:0
+%{consec%}:0
+%{cons%}:0
+
+%{%+%*%}:%{%*%}
+%{%-%*%}:0
+ ;
+
+Sets
+
+Begedkefet = b g d k p t ;
+Vowel = a á e é i o u %@ ä ë ö ;
+Cons = %' b g d h w z x v y k l m n s %{'%} p c q r %{s%} %{sh%} t ;
+
+NonVowCons = b g d h z x v k l m n s %{'%} p c q r %{s%} %{sh%} t ;
+
+Stress = %{%+%*%} %{%-%*%} ;
+
+Rules
+
+"null @"
+0:%@ <=> :NonVowCons _ :NonVowCons ;
+         :NonVowCons _ %' ;
+
+"final y"
+0:i <=> :Cons _ y :0* .#. ;
+
+!!!!!!!!!!!!!!!
+!!! h
+!!!!!!!!!!!!!!!
+
+"lamed-he verbs"
+h:0 <=> _ %>: %{short%}: ;
+        %{%-%*%}: _ ;
+
+!!!!!!!!!!!!!!!
+!!! a
+!!!!!!!!!!!!!!!
+
+"blah"
+a:á <=> _ %{%-%*%}: %' ;
+
+"ay → ey cons"
+a:e <=> _ y ?* %{cons%}: ;
+
+"stress shift a"
+a:é <=> _ %{%-%*%}: ;
+        except _ %{%-%*%}: [ %' | h: | x ] ;
+
+"shress shift é h"
+é:0 <=> _ %{%-%*%}: h: ;
+
+!!!!!!!!!!!!!!!
+!!! OTHER
+!!!!!!!!!!!!!!!
+
+"3sg poss after y"
+o:0 <=> y %{ps%}: w: _ ;
+
+"weaken final vowel in construct"
+V1:V2 <=> _ [ Cons - y - x ] %{cons%}: ;
+      where V1 in ( a  á  e  é  )
+            V2 in ( %@ %@ %@ %@ )
+      matched ;
+
+"weaken final vowel in construct before guttural?"
+á:é <=> _ x %{cons%}: ;
+
+"stress shift to i"
+i:a <=> _ %{%+%*%}: r ; ! ??? r'h but not qr' - now kind of final?
+
+! Resources:
+! http://wiki.apertium.org/wiki/Starting_a_new_language_with_HFST#Enter_twol
+! https://kitwiki.csc.fi/twiki/bin/view/KitWiki/HfstHome
+! https://github.com/hfst/
+! http://wiki.apertium.org/wiki/Twol
+! http://wiki.apertium.org/wiki/Hfst
+
