@@ -6,5 +6,9 @@
     "generation": {
         "input": "generation-input.txt",
         "mode": "hbo-gener"
+    },
+    "קטל-paradigm": {
+        "input": "קטל-paradigm-input.txt",
+        "mode": "hbo-gener"
     }
 }

@@ -5,12 +5,12 @@ LEXICON ConjPrefix
 w<cnjcoo>+:w{and}
 
 LEXICON PerfSuffix
-<p1><mf><sg>:@t.i{*}y
-<p1><mf><pl>:@nw.{*}
-<p2><m><sg>:@t.á{*}
-<p2><m><pl>:@t.é{*}m
-<p2><f><sg>:@t.@
-<p2><f><pl>:@t.é{*}n
+<p1><mf><sg>:t.i{*}y
+<p1><mf><pl>:nw.{*}
+<p2><m><sg>:t.á{*}
+<p2><m><pl>:t.é{*}m
+<p2><f><sg>:t.@
+<p2><f><pl>:t.é{*}n
 <p3><m><sg>:
 <p3><f><sg>:á{*}h
 <p3><mf><pl>:w.{*}
@@ -20,11 +20,12 @@ LEXICON ImperfAffix(3)
 <p1><mf><pl> n{i} :
 <p2><m><sg> t.{i} :
 <p2><m><pl> t.{i} w.{*}
-<p2><f><sg> t.{i} .y
-<p2><f><pl> t.{i} @na{*}h
+<p2><f><sg> t.{i} iy
+<p2><f><pl> t.{i} náh
 <p3><m><sg> y{i} :
 <p3><f><sg> t.{i} :
-<p3><mf><pl> y{i} w.{*}
+<p3><m><pl> y{i} w.{*}
+<p3><f><pl> t{i} náh
 
 PATTERN VerbStem
 :Binyanim(2) VerbRoot(1) :Binyanim(3) VerbRoot(2) :Binyanim(4) VerbRoot(3) [<v>:] Binyanim(1)
@@ -38,17 +39,19 @@ ConjPrefix? Verb
 ConjPrefix [:{<*}] Verb [<consec>:]
 
 LEXICON Binyanim(4)
-<actv>:[perf]       {paal}      {~á} {~a}{*?}
-<actv>:[impf]       {paal}      :    {~o}{*?}
-<pass>:[perf]       {nif}ni     :    {~a}{*?}
-<pass>:[impf]       {nif}       á    {~e}{*?}
-<ints>:[perf]       {piel}      i    {~a}{*?}
-<ints>:[impf]       {piel}      a    .{~e}{*?}
-<ints><pass>:       {pual}      u    {~a}{*?}
-<caus>:[perf]       {hif}hi     :    {~iy}{*?}
-<caus>:[impf]       {hif}       :    {~iy}{*?}
-<caus><pass>:[perf] {hof}{h}á   :    {~a}{*?}
-<recip>:[perf,impf] {hit}{h}it  a    {~e}{*?}
+<actv>:[perf]            {paal}      {~á} {~a}{*?}
+<actv>:[impf]            {paal}      :    {~o}{*?}
+<pass>:[perf]            {nif}ni     :    {~a}{*?}
+<pass>:[impf]            {nif}       .á   {~e}{*?}
+<ints>:[perf]            {piel}      i    .{~a}{*?}
+<ints>:[impf]            {piel}      a    .{~e}{*?}
+<ints><pass>:[perf,impf] {pual}      u    .{~a}{*?}
+<caus>:[perf]            {hif}hi     :    {~iy}y{*?}
+<caus>:[impf]            {hif}       :    {~iy}y{*?}
+<caus><pass>:[perf]      {hof}{h}á   :    {~a}{*?}
+<caus><pass>:[impf]      {hof}       :    {~a}{*?}
+<recip>:[perf]           {hit}{h}it  a    .{~e}{*?}
+<recip>:[impf]           {hit}t      a    .{~e}{*?}
 
 LEXICON VerbRoot(3)
 ' b h
@@ -443,6 +446,7 @@ q d {sh}
 q w h
 q w m
 q w c
+q v l
 q v n
 q l l
 q n '
@@ -570,8 +574,8 @@ ConjPrefix? PrepRoot [<pr>:]
 
 PATTERN CommonNoun
 NounStem[-iic,-plonly] [<sg>:]
-NounStem[im] [<pl>:iym]
-NounStem[ot] [<pl>:wot]
+NounStem[im] [<pl>:>iym]
+NounStem[ot] [<pl>:>wot]
 NounStem[-hic,-iic,-plonly] [<sg><cons>:{cons}] PrnSuf?
 NounStem[iic] [<sg><cons>:] PrnSuf?
 NounStem[im] [<pl><cons>:{cons}ey] PrnSuf?
@@ -591,6 +595,7 @@ LEXICON PrepRoot
 't:'ét
 byn:beyn
 mn:min
+mn<pr>+{'}l:me{'}al
 {'}d:{'}ad
 {'}l:{'}al
 {'}m:{'}im
@@ -609,30 +614,34 @@ l
 m
 
 PATTERNS
-ConjPrefix? ['t<pr>+hw'<prn>:] PrepPron(1): :PrepPron(2)[-skip]
-ConjPrefix? [l<pr>+hw'<prn>:] PrepPron(1): :PrepPron(3)[-skip]
-ConjPrefix? ['l<pr>+hw'<prn>:] PrepPron(1): :PrepPron(4)[-skip]
+# TODO: should these two be distinguished in some way?
+ConjPrefix? ['t<pr>+hw'<prn>:] PrepPron(1): :PrepPron(2)[-skip] # def
+ConjPrefix? ['t<pr>+hw'<prn>:] PrepPron(1): :PrepPron(3)[-skip] # with
 
-LEXICON PrepPron(4)
-<p1><mf><sg> 'otiy    liy   'elay
-<p1><mf><sg> :[skip]  l.iy  :[skip] # Dir/LR
-<p1><mf><pl> 'ot.enw. lánw. 'elenu
-<p2><m><sg>  'ot@ká   l@ká  :[skip]
-<p2><f><sg>  'oták    lák   :[skip]
-<p2><m><pl>  'ét@kém  lákém :[skip]
-<p2><f><pl>  :[skip]  lákén :[skip]
-<p3><m><sg>  'otwo    lwo   'eláyw
-<p3><f><sg>  'otáh.   láh.  'elah
-<p3><m><pl>  'otám    láhém 'älehém
-<p3><f><pl>  'ét@hén  láhén :[skip]
+ConjPrefix? [l<pr>+hw'<prn>:] PrepPron(1): :PrepPron(4)[-skip]
+ConjPrefix? ['l<pr>+hw'<prn>:] PrepPron(1): :PrepPron(5)[-skip]
+
+LEXICON PrepPron(5)
+<p1><mf><sg> 'otiy    'itiy    liy   'elay
+<p1><mf><sg> :[skip]  :[skip]  l.iy  :[skip] # Dir/LR
+<p1><mf><pl> 'ot.enw. 'it.enw. lánw. 'elenu
+<p2><m><sg>  'ot@ká   'it@ká   l@ká  :[skip]
+<p2><f><sg>  'oták    'iták    lák   :[skip]
+<p2><m><pl>  'ét@kém  'it@kém  lákém :[skip]
+<p2><f><pl>  :[skip]  :[skip]  lákén :[skip]
+<p3><m><sg>  'otwo    'it.wo   lwo   'eláyw
+<p3><f><sg>  'otáh.   'itáh.   láh.  'elah
+<p3><m><pl>  'otám    'itám    láhém 'älehém
+<p3><f><pl>  'ét@hén  'it@hén  láhén :[skip]
 
 LEXICON NounRoot(2)
+'dn:'ädon <m>[im,iic]
 'lhym:'ëloh <m>[plonly,im]
 'rc:'éréc <m>
 kl:kál <m>
 pnym:pán <f>[plonly,im]
-r'{sh}:ro'o{sh} <m>
-r'{sh}:re'{sh}iyt <m><cons>
+r'{sh}:ro'o{sh} <m>[hic]
+r'{sh}:re'{sh}iyt <m>[iic]
 {sh}mym:{sh}ámay <m>[plonly,im]
 mym:may <m>[plonly,im]
 ym:yám <m>[im]

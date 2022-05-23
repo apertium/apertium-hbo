@@ -3,27 +3,27 @@ Alphabet
 a á e é i o u %@ ä ë ö
 .
 
+y:0 y:o
 
-%@:0 %@:o
+0:.
+
+%@:0
 
 %>:0
-
-! the lazy vowel
-%{V%}
 
 %{ps%}
 
 %{and%}
 
-%{%~a%}
-%{%~á%}
-%{%~e%}
-%{i%}:i %{i%}:o %{i%}:a %{i%}:á %{i%}:%@ %{i%}:e
-%{%~o%}:a %{%~o%}:%@ %{%~o%}:. %{%~o%}:é
+%{%~a%}:a %{%~a%}:%@ %{%~a%}:á
+%{%~á%}:á %{%~á%}:%@
+%{%~e%}:e %{%~e%}:a %{%~e%}:%@
+%{i%}:i %{i%}:o %{i%}:a %{i%}:á %{i%}:%@ %{i%}:e %{i%}:w
+%{%~o%}:%@ %{%~o%}:. %{%~o%}:é %{%~o%}:o %{%~o%}:a %{%~o%}:á %{%~o%}:e
 
 %{%~w%}:w %{%~w%}:o
 
-%{%~iy%}
+%{%~iy%}:i %{%~iy%}:a %{%~iy%}:e
 
 %{h%}:h %{h%}:0
 %{%~h%}:h %{%~h%}:0
@@ -57,6 +57,10 @@ ImpfBd = %>: Binyan: ;
 HollowVerb = Cons [ w: | %{%~w%}: ] ;
 PehGuttural = [ %' | h | %{%'%} | x ] ;
 
+C2Hollow = [ w: | %{%~w%}: ] ;
+V2DelC1 = [ %{%~h%}:0 | n:0 | y:0 ] Cons ( 0:. ) ;
+VbNoSuf = %>: .#. ;
+
 Rules
 
 !!!!!!!!!!!!!!!
@@ -64,19 +68,11 @@ Rules
 !!!!!!!!!!!!!!!
 
 "insert dagesh"
-0:. => .#. Begedkefet _ ;
+0:. => !.#. Begedkefet _ ;
        %{and%}: ( Stress: ) y _ %{i%}: ;
        %{h%}: a: %>: DageshAble: _ ;
-       [ l:0 | y:0 | n:0 ] DageshAble: _ ;
-
-"insert @ after final k"
-0:%@ <=> k :0* _ .#. ;
-
-"insert yod"
-0:y => %{%~iy%}:i _ ;
-
-"insert o"
-0:o => y:w _ ;
+       [ l:0 | y:0 | n:0 ] ( %>: ) DageshAble: _ ;
+       except _ . ;
 
 !!!!!!!!!!!!!!!
 !!! a
@@ -84,6 +80,33 @@ Rules
 
 "determiner before gutturals"
 a:á <=> %{h%}: _ %>: [ %': | %{%'%}: ] ;
+
+!!!!!!!!!!!!!!!
+!!! á
+!!!!!!!!!!!!!!!
+
+"feminine plural drop -áh: á"
+á:0 <=> _ h: %>: w o t ;
+
+!!!!!!!!!!!!!!!
+!!! {~a}
+!!!!!!!!!!!!!!!
+
+"{~a} → á in lamed-hey"
+%{%~a%}:á <=> _ ( Stress ) h ;
+
+"{~a} → a in closed syllables"
+%{%~a%}:a <=> _ ( Stress ) Cons VbNoSuf ;
+              _ ( Stress ) Cons: %>: Cons ;
+              except _ ( Stress ) [ h | Cons %>: w . ] ;
+
+!!!!!!!!!!!!!!!
+!!! {and}
+!!!!!!!!!!!!!!!
+
+"schwa in paal perf V1"
+%{%~á%}:%@ <=> _ :+ %>: t . é %{%*%} [ m | n ] .#. ;
+               _ ?* %>: ?* %>: ;
 
 !!!!!!!!!!!!!!!
 !!! {and}
@@ -106,6 +129,46 @@ a:á <=> %{h%}: _ %>: [ %': | %{%'%}: ] ;
          ImpfPref Cons _ w: ;
 
 !!!!!!!!!!!!!!!
+!!! e
+!!!!!!!!!!!!!!!
+
+"possessed plural construct 3sg"
+e:á <=> %{cons%}: _ y: %{ps%}: w: ;
+
+!!!!!!!!!!!!!!!
+!!! é
+!!!!!!!!!!!!!!!
+
+"1sg impf by binyan"
+é:Vx <=> %' _ %>: Bx: ;
+         where Vx in ( ä        ä        a       á       )
+               Bx in ( %{piel%} %{pual%} %{hif%} %{hof%} )
+         matched ;
+
+!!!!!!!!!!!!!!!
+!!! {~e}
+!!!!!!!!!!!!!!!
+
+!"{~e} in closed non-final syllable"
+!%{%~e%}:a <=> _ ( Stress ) Cons %>: Cons ;
+!              execpt _ ( Stress ) Cons %>: n á ;
+
+"{~e} deletes in open syllables"
+%{%~e%}:%@ <=> _ ( Stress ) Cons %>: [ :Vowel | w . ] ;
+
+"{~e} → e in closed syllables final syllables"
+%{%~e%}:e <=> _ ( Stress ) Cons VbNoSuf ;
+              [ %{piel%}: | %{hit%}: ] ?* _ ( Stress ) Cons: %>: n á ;
+              except _ ( Stress ) [ h | Cons %>: w . ] ;
+
+!!!!!!!!!!!!!!!
+!!! h
+!!!!!!!!!!!!!!!
+
+"feminine plural drop -áh: h"
+h:0 <=> á: _ %>: w o t ;
+
+!!!!!!!!!!!!!!!
 !!! {h}
 !!!!!!!!!!!!!!!
 
@@ -113,34 +176,45 @@ a:á <=> %{h%}: _ %>: [ %': | %{%'%}: ] ;
 %{h%}:0 <=> Vowel: ( %>: ) _ ;
 
 !!!!!!!!!!!!!!!
-!!! i
-!!!!!!!!!!!!!!!
-
-"possessed plural construct 3sg"
-i:á <=> %{cons%}: _ y: %{ps%}: w: ;
-
-!!!!!!!!!!!!!!!
 !!! {i}
 !!!!!!!!!!!!!!!
 
 "paal/nifal {i}"
-%{i%}:i <=> _ %>: [ %{paal%}: | %{nif%}: ] ;
-            except _ ImpfBd [ PehGuttural | HollowVerb ] ;
+%{i%}:i <=> _ %>: [ %{paal%}: | %{nif%}: | %{hit%}: ] ;
+            except _ ImpfBd [ PehGuttural | HollowVerb | y:0 | %{%~h%}:0 ] ;
 
-"{i} before guttural"
+"{i} before guttural or in hiph'il"
 %{i%}:a <=> _ ImpfBd %{%'%} ;
+            _ %>: %{hif%}: ;
+            except _ %>: %{hif%}: y: ;
 
 "i → á in impf hollow verbs"
 %{i%}:á <=> _ ImpfBd HollowVerb ;
+            _ %>: %{hof%}: ;
             except _ [ ImpfBd PehGuttural | %>: %{piel%}: | %>: %{hif%}: ] ;
 
+"i → e in impf peh-yod"
+%{i%}:e <=> _ ImpfBd [ y:0 | %{%~h%}:0 ] ;
+
 "impf → @"
-%{i%}:%@ <=> _ %>: %{piel%}: ;
+%{i%}:%@ <=> _ %>: [ %{piel%}: | %{pual%}: ] ;
              _ %>: %{paal%}: [ h | x ] ;
              except _ %>: Binyan: %{%'%} ;
 
 "drop impf i"
-%{i%}:0 <=> _ %>: %{hif%}: y: ;
+%{i%}:w <=> _ %>: %{hif%}: y: ;
+
+!!!!!!!!!!!!!!!
+!!! {~iy}
+!!!!!!!!!!!!!!!
+
+"{~iy} → e when suffix is náh"
+%{%~iy%}:e <=> _ y: ( Stress ) Cons %>: n á ;
+               %{and%}: %{%<%*%}: ?* %{hif%}: y: ?* _ ;
+
+"{~iy} → a in most closed syllables"
+%{%~iy%}:a <=> _ y: ( Stress ) Cons %>: [ Cons - w ] ;
+               except _ y: ( Stress ) Cons %>: n á ;
 
 !!!!!!!!!!!!!!!
 !!! l, n
@@ -148,16 +222,20 @@ i:á <=> %{cons%}: _ y: %{ps%}: w: ;
 
 "impf delete initial cons"
 Cx:0 <=> %{i%}: %>: [ %{paal%}: | %{hif%}: ] _ ;
-     where Cx in ( %{%~h%} l n ) ;
+     where Cx in ( %{%~h%} l ) ;
+
+"n deletes"
+n:0 <=> %{i%}: %>: [ %{paal%}: | %{hif%}: ] _ ;
+        _ %>: t ;
 
 !!!!!!!!!!!!!!!
 !!! {~o}
 !!!!!!!!!!!!!!!
 
 "{~o} deletes if suffix"
-%{%~o%}:%@ <=> _ :* :Vowel ;
+%{%~o%}:%@ <=> _ :* [ :Vowel - á ] ;
                _ :* w :. ;
-               except [ w: | %{%~w%}: ] _ ;
+               except C2Hollow _ ;
 
 "hollow verbs wo"
 %{%~o%}:. <=> w: _ ;
@@ -165,20 +243,29 @@ Cx:0 <=> %{i%}: %>: [ %{paal%}: | %{hif%}: ] _ ;
 "hollow verbs o"
 %{%~o%}:0 <=> %{%~w%}:o _ ;
 
-"lamed-heh paal"
-%{%~o%}:é <=> _ ( Stress ) h %>: .#. ;
-              except [ w: | %{%~w%}: ] _ ;
+"{~o} in peh-yod"
+%{%~o%}:e <=> V2DelC1 _ ( Stress ) Cons VbNoSuf ;
+              except C2Hollow _ ;
+
+"{~o} special lamed"
+%{%~o%}:Vx <=> _ ( Stress ) Cx VbNoSuf ;
+               except [ C2Hollow | V2DelC1 ] _ ;
+               where Vx in ( a á  é )
+                     Cx in ( x %' h )
+               matched ;
 
 !!!!!!!!!!!!!!!
 !!! y
 !!!!!!!!!!!!!!!
 
 "impf delete initial y"
-y:0 <=> %{i%}: %>: Binyan: _ ;
-        except %{hif%}: _ ;
+y:0 <=> %{i%}: %>: [ Binyan: - %{hif%}: ] _ ;
+        a y %>: i _ ;
+        %{%~iy%}:e _ ;
+        %{%~iy%}:a _ ;
 
 "y in impf hifil"
-y:w <=> %{i%}: %>: %{hif%}: _ ;
+y:o <=> %{i%}: %>: %{hif%}: _ ;
 
 !!!!!!!!!!!!!!!
 !!! OTHER

@@ -1,0 +1,188 @@
+##########
+## Pa'al
+##########
+
+# Perfect
+^קטל<v><actv><perf><p1><mf><sg>$
+^קטל<v><actv><perf><p2><m><sg>$
+^קטל<v><actv><perf><p2><f><sg>$
+^קטל<v><actv><perf><p3><m><sg>$
+^קטל<v><actv><perf><p3><f><sg>$
+^קטל<v><actv><perf><p1><mf><pl>$
+^קטל<v><actv><perf><p2><m><pl>$
+^קטל<v><actv><perf><p2><f><pl>$
+^קטל<v><actv><perf><p3><mf><pl>$
+
+# Imperfect
+^קטל<v><actv><impf><p1><mf><sg>$
+^קטל<v><actv><impf><p2><m><sg>$
+^קטל<v><actv><impf><p2><f><sg>$
+^קטל<v><actv><impf><p3><m><sg>$
+^קטל<v><actv><impf><p3><f><sg>$
+^קטל<v><actv><impf><p1><mf><pl>$
+^קטל<v><actv><impf><p2><m><pl>$
+^קטל<v><actv><impf><p2><f><pl>$
+^קטל<v><actv><impf><p3><m><pl>$
+^קטל<v><actv><impf><p3><f><pl>$
+
+##########
+## Niph'al
+##########
+
+# Perfect
+^קטל<v><pass><perf><p1><mf><sg>$
+^קטל<v><pass><perf><p2><m><sg>$
+^קטל<v><pass><perf><p2><f><sg>$
+^קטל<v><pass><perf><p3><m><sg>$
+^קטל<v><pass><perf><p3><f><sg>$
+^קטל<v><pass><perf><p1><mf><pl>$
+^קטל<v><pass><perf><p2><m><pl>$
+^קטל<v><pass><perf><p2><f><pl>$
+^קטל<v><pass><perf><p3><mf><pl>$
+
+# Imperfect
+^קטל<v><pass><impf><p1><mf><sg>$
+^קטל<v><pass><impf><p2><m><sg>$
+^קטל<v><pass><impf><p2><f><sg>$
+^קטל<v><pass><impf><p3><m><sg>$
+^קטל<v><pass><impf><p3><f><sg>$
+^קטל<v><pass><impf><p1><mf><pl>$
+^קטל<v><pass><impf><p2><m><pl>$
+^קטל<v><pass><impf><p2><f><pl>$
+^קטל<v><pass><impf><p3><m><pl>$
+^קטל<v><pass><impf><p3><f><pl>$
+
+##########
+## Pi'el
+##########
+
+# Perfect
+^קטל<v><ints><perf><p1><mf><sg>$
+^קטל<v><ints><perf><p2><m><sg>$
+^קטל<v><ints><perf><p2><f><sg>$
+^קטל<v><ints><perf><p3><m><sg>$
+^קטל<v><ints><perf><p3><f><sg>$
+^קטל<v><ints><perf><p1><mf><pl>$
+^קטל<v><ints><perf><p2><m><pl>$
+^קטל<v><ints><perf><p2><f><pl>$
+^קטל<v><ints><perf><p3><mf><pl>$
+
+# Imperfect
+^קטל<v><ints><impf><p1><mf><sg>$
+^קטל<v><ints><impf><p2><m><sg>$
+^קטל<v><ints><impf><p2><f><sg>$
+^קטל<v><ints><impf><p3><m><sg>$
+^קטל<v><ints><impf><p3><f><sg>$
+^קטל<v><ints><impf><p1><mf><pl>$
+^קטל<v><ints><impf><p2><m><pl>$
+^קטל<v><ints><impf><p2><f><pl>$
+^קטל<v><ints><impf><p3><m><pl>$
+^קטל<v><ints><impf><p3><f><pl>$
+
+##########
+## Pu'al
+##########
+
+# Perfect
+^קטל<v><ints><pass><perf><p1><mf><sg>$
+^קטל<v><ints><pass><perf><p2><m><sg>$
+^קטל<v><ints><pass><perf><p2><f><sg>$
+^קטל<v><ints><pass><perf><p3><m><sg>$
+^קטל<v><ints><pass><perf><p3><f><sg>$
+^קטל<v><ints><pass><perf><p1><mf><pl>$
+^קטל<v><ints><pass><perf><p2><m><pl>$
+^קטל<v><ints><pass><perf><p2><f><pl>$
+^קטל<v><ints><pass><perf><p3><mf><pl>$
+
+# Imperfect
+^קטל<v><ints><pass><impf><p1><mf><sg>$
+^קטל<v><ints><pass><impf><p2><m><sg>$
+^קטל<v><ints><pass><impf><p2><f><sg>$
+^קטל<v><ints><pass><impf><p3><m><sg>$
+^קטל<v><ints><pass><impf><p3><f><sg>$
+^קטל<v><ints><pass><impf><p1><mf><pl>$
+^קטל<v><ints><pass><impf><p2><m><pl>$
+^קטל<v><ints><pass><impf><p2><f><pl>$
+^קטל<v><ints><pass><impf><p3><m><pl>$
+^קטל<v><ints><pass><impf><p3><f><pl>$
+
+##########
+## Hiph'il
+##########
+
+# Perfect
+^קטל<v><caus><perf><p1><mf><sg>$
+^קטל<v><caus><perf><p2><m><sg>$
+^קטל<v><caus><perf><p2><f><sg>$
+^קטל<v><caus><perf><p3><m><sg>$
+^קטל<v><caus><perf><p3><f><sg>$
+^קטל<v><caus><perf><p1><mf><pl>$
+^קטל<v><caus><perf><p2><m><pl>$
+^קטל<v><caus><perf><p2><f><pl>$
+^קטל<v><caus><perf><p3><mf><pl>$
+
+# Imperfect
+^קטל<v><caus><impf><p1><mf><sg>$
+^קטל<v><caus><impf><p2><m><sg>$
+^קטל<v><caus><impf><p2><f><sg>$
+^קטל<v><caus><impf><p3><m><sg>$
+^קטל<v><caus><impf><p3><f><sg>$
+^קטל<v><caus><impf><p1><mf><pl>$
+^קטל<v><caus><impf><p2><m><pl>$
+^קטל<v><caus><impf><p2><f><pl>$
+^קטל<v><caus><impf><p3><m><pl>$
+^קטל<v><caus><impf><p3><f><pl>$
+
+##########
+## Hoph'al
+##########
+
+# Perfect
+^קטל<v><caus><pass><perf><p1><mf><sg>$
+^קטל<v><caus><pass><perf><p2><m><sg>$
+^קטל<v><caus><pass><perf><p2><f><sg>$
+^קטל<v><caus><pass><perf><p3><m><sg>$
+^קטל<v><caus><pass><perf><p3><f><sg>$
+^קטל<v><caus><pass><perf><p1><mf><pl>$
+^קטל<v><caus><pass><perf><p2><m><pl>$
+^קטל<v><caus><pass><perf><p2><f><pl>$
+^קטל<v><caus><pass><perf><p3><mf><pl>$
+
+# Imperfect
+^קטל<v><caus><pass><impf><p1><mf><sg>$
+^קטל<v><caus><pass><impf><p2><m><sg>$
+^קטל<v><caus><pass><impf><p2><f><sg>$
+^קטל<v><caus><pass><impf><p3><m><sg>$
+^קטל<v><caus><pass><impf><p3><f><sg>$
+^קטל<v><caus><pass><impf><p1><mf><pl>$
+^קטל<v><caus><pass><impf><p2><m><pl>$
+^קטל<v><caus><pass><impf><p2><f><pl>$
+^קטל<v><caus><pass><impf><p3><m><pl>$
+^קטל<v><caus><pass><impf><p3><f><pl>$
+
+##########
+## Hithpa'el
+##########
+
+# Perfect
+^קטל<v><recip><perf><p1><mf><sg>$
+^קטל<v><recip><perf><p2><m><sg>$
+^קטל<v><recip><perf><p2><f><sg>$
+^קטל<v><recip><perf><p3><m><sg>$
+^קטל<v><recip><perf><p3><f><sg>$
+^קטל<v><recip><perf><p1><mf><pl>$
+^קטל<v><recip><perf><p2><m><pl>$
+^קטל<v><recip><perf><p2><f><pl>$
+^קטל<v><recip><perf><p3><mf><pl>$
+
+# Imperfect
+^קטל<v><recip><impf><p1><mf><sg>$
+^קטל<v><recip><impf><p2><m><sg>$
+^קטל<v><recip><impf><p2><f><sg>$
+^קטל<v><recip><impf><p3><m><sg>$
+^קטל<v><recip><impf><p3><f><sg>$
+^קטל<v><recip><impf><p1><mf><pl>$
+^קטל<v><recip><impf><p2><m><pl>$
+^קטל<v><recip><impf><p2><f><pl>$
+^קטל<v><recip><impf><p3><m><pl>$
+^קטל<v><recip><impf><p3><f><pl>$

@@ -13,7 +13,6 @@ a á e é i o u %@ ä ë ö
 
 %{and%}:%. %{and%}:a %{and%}:%@
 
-%{%~a%}:a %{%~a%}:%@
 %{%~á%}:á %{%~á%}:%@
 %{%~e%}:e %{%~e%}:%@
 
@@ -25,6 +24,9 @@ a á e é i o u %@ ä ë ö
 
 %{%+%*%}:%{%*%}
 %{%-%*%}:0
+
+0:%@
+0:i
  ;
 
 Sets
@@ -39,9 +41,10 @@ Stress = %{%+%*%} %{%-%*%} ;
 
 Rules
 
-"null @"
-0:%@ <=> :NonVowCons _ :NonVowCons ;
-         :NonVowCons _ %' ;
+"null @ or @ after final k"
+0:%@ <=> :NonVowCons ( . ) _ :NonVowCons ;
+         :NonVowCons ( . ) _ %' ;
+         k ( :0 | :. )* _ .#. ;
 
 "final y"
 0:i <=> :Cons _ y :0* .#. ;
@@ -71,6 +74,16 @@ a:é <=> _ %{%-%*%}: ;
 "shress shift é h"
 é:0 <=> _ %{%-%*%}: h: ;
 
+"stress shift e"
+e:é <=> _ %{%-%*%}: ;
+        except . _ ; ! TODO: is this right?
+
+"stress shift hollow verbs 1"
+w:á <=> _ .:0 %{%-%*%}: ;
+
+"stress shift hollow verbs 2"
+.:0 <=> w:á _ %{%-%*%}: ;
+
 !!!!!!!!!!!!!!!
 !!! OTHER
 !!!!!!!!!!!!!!!
@@ -85,10 +98,13 @@ V1:V2 <=> _ [ Cons - y - x ] %{cons%}: ;
       matched ;
 
 "weaken final vowel in construct before guttural?"
-á:é <=> _ x %{cons%}: ;
+á:é => _ x %{cons%}: ;
 
 "stress shift to i"
 i:a <=> _ %{%+%*%}: r ; ! ??? r'h but not qr' - now kind of final?
+
+"double schwa"
+%@:i <=> _ Cons :%@ ;
 
 ! Resources:
 ! http://wiki.apertium.org/wiki/Starting_a_new_language_with_HFST#Enter_twol
