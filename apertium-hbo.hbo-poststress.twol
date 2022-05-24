@@ -12,6 +12,7 @@ a á e é i o u %@ ä ë ö
 %{ps%}:0 %{ps%}:%@ %{ps%}:é %{ps%}:á %{ps%}:e !%{ps%}:i
 
 %{and%}:%. %{and%}:a %{and%}:%@
+%{andc%}:a %{andc%}:á
 
 %{%~á%}:á %{%~á%}:%@
 %{%~e%}:e %{%~e%}:%@
@@ -21,6 +22,7 @@ a á e é i o u %@ ä ë ö
 %{short%}:0
 %{consec%}:0
 %{cons%}:0
+%{pause%}:0
 
 %{%+%*%}:%{%*%}
 %{%-%*%}:0
@@ -44,6 +46,7 @@ Rules
 "null @ or @ after final k"
 0:%@ <=> :NonVowCons ( . ) _ :NonVowCons ;
          :NonVowCons ( . ) _ %' ;
+         h _ y [ :Vowel | w: ] ;
          k ( :0 | :. )* _ .#. ;
 
 "final y"
@@ -76,13 +79,23 @@ a:é <=> _ %{%-%*%}: ;
 
 "stress shift e"
 e:é <=> _ %{%-%*%}: ;
-        except . _ ; ! TODO: is this right?
+        except !. _ ; ! TODO: is this right?
+          _ :* %{pause%}: ;
+
+"stress shift to ä"
+ä:a <=> _ %{%+%*%}: ;
+        except _ %{%+%*%}: y :0* .#. ;
+
+"stress shift to äy#"
+ä:i <=> _ %{%+%*%}: y :0* .#. ;
 
 "stress shift hollow verbs 1"
 w:á <=> _ .:0 %{%-%*%}: ;
+        except _ .: %{%-%*%}: .#. ;
 
 "stress shift hollow verbs 2"
 .:0 <=> w:á _ %{%-%*%}: ;
+        %{andc%}: y _ :%@ ;
 
 !!!!!!!!!!!!!!!
 !!! OTHER
@@ -93,8 +106,15 @@ o:0 <=> y %{ps%}: w: _ ;
 
 "weaken final vowel in construct"
 V1:V2 <=> _ [ Cons - y - x ] %{cons%}: ;
+          except .#. Cons ( . ) _ Cons %{cons%}: .#. ;
       where V1 in ( a  á  e  é  )
             V2 in ( %@ %@ %@ %@ )
+      matched ;
+
+"weaken only vowel in construct"
+V1:V2 <=> .#. Cons ( . ) _ [ Cons - y - x ] %{cons%}: .#. ;
+      where V1 in ( e )
+            V2 in ( é )
       matched ;
 
 "weaken final vowel in construct before guttural?"
@@ -105,6 +125,20 @@ i:a <=> _ %{%+%*%}: r ; ! ??? r'h but not qr' - now kind of final?
 
 "double schwa"
 %@:i <=> _ Cons :%@ ;
+
+"vav consec before aleph"
+%{andc%}:á <=> _ %' ;
+               except _ %' ä ;
+
+"stress shift from hiriq male' - i"
+i:é <=> _ y: %{%-%*%}: ;
+        except _ y: %{%-%*%}: %' ;
+
+"stress shift from hiriq male' - iy'"
+i:e <=> _ y: %{%-%*%}: %' ;
+
+"stress shift from hiriq male' - y"
+y:0 <=> [ i:é | i:e ] _ %{%-%*%}: ;
 
 ! Resources:
 ! http://wiki.apertium.org/wiki/Starting_a_new_language_with_HFST#Enter_twol

@@ -28,7 +28,7 @@ LEXICON ImperfAffix(3)
 <p3><f><pl> t{i} náh
 
 PATTERN VerbStem
-:Binyanim(2) VerbRoot(1) :Binyanim(3) VerbRoot(2) :Binyanim(4) VerbRoot(3) [<v>:] Binyanim(1)
+BinyanStems
 
 PATTERN Verb
 VerbStem[perf] [<perf>:>] PerfSuffix
@@ -36,531 +36,582 @@ VerbStem[perf] [<perf>:>] PerfSuffix
 
 PATTERNS
 ConjPrefix? Verb
-ConjPrefix [:{<*}] Verb [<consec>:]
+[w<cnjcoo>+:w{andc}{<*}] Verb[impf] [<consec>:] [<pause>:{pause}]?
 
-LEXICON Binyanim(4)
-<actv>:[perf]            {paal}      {~á} {~a}{*?}
-<actv>:[impf]            {paal}      :    {~o}{*?}
-<pass>:[perf]            {nif}ni     :    {~a}{*?}
-<pass>:[impf]            {nif}       .á   {~e}{*?}
-<ints>:[perf]            {piel}      i    .{~a}{*?}
-<ints>:[impf]            {piel}      a    .{~e}{*?}
-<ints><pass>:[perf,impf] {pual}      u    .{~a}{*?}
-<caus>:[perf]            {hif}hi     :    {~iy}y{*?}
-<caus>:[impf]            {hif}       :    {~iy}y{*?}
-<caus><pass>:[perf]      {hof}{h}á   :    {~a}{*?}
-<caus><pass>:[impf]      {hof}       :    {~a}{*?}
-<recip>:[perf]           {hit}{h}it  a    .{~e}{*?}
-<recip>:[impf]           {hit}t      a    .{~e}{*?}
+PATTERN BinyanStems
+[:{paal}] Pa'al [<v><actv>:]
+[:{nif}] Niph'al [<v><pass>:]
+[:{piel}] Pi'el [<v><ints>:]
+[:{pual}] Pu'al [<v><ints><pass>:]
+[:{hif}] Hiph'il [<v><caus>:]
+[:{hof}] Hoph'al [<v><caus><pass>:]
+[:{hit}] Hitpa'el [<v><recip>:]
+
+# actual line has to be later
+#ALIAS VerbRoot C
+
+PATTERN Pa'al
+C(1) [:{~á}] C(2) [:{~a}{*?}] C(3)[|[reg,1',1x,1y,1n],-3h] [[perf]]
+C(1) [:{~á}] C(2) [:{~á}{*?}] C(3)[3',-2w] [[perf]]
+C(1) [:{~á}] C(2) [:{~á}{*?}] C(3)[3h] [[perf]]
+C(1) C(2): [:{~á}{*?}] C(3)[2w,3'] [[perf]]
+
+C(1) C(2) [:{~o}{*?}] C(3)[reg] [[impf]]
+C(1) C(2) [:{~a}{*?}] C(3)[1'] [[impf]]
+C(1) C(2) [:{~e}{*?}] C(3)[1y] [[impf]]
+C(1) C(2) [:.{~o}{*?}] C(3)[1n] [[impf]]
+C(1) C(2): [:w.{*?}] C(3)[2w,-3'] [[impf]]
+C(1) C(2) [:{~á}{*?}] C(3)[3',-2w] [[impf]]
+C(1) C(2) [:{~é}{*?}] C(3)[3h,-1x] [[impf]]
+C(1) C(2) [:{~a}{*?}] C(3)[3x] [[impf]]
+C(1) [:ä] C(2) [:{~é}{*?}] C(3)[1x,3h] [[impf]]
+C(1): C(2) [:.{~a}{*?}] C(3)[1y,3x] [[impf]]
+C(1) C(2): [:wo{*?}] C(3)[2w,3'] [[impf]]
+C(1) C(2): [:o{*?}] C(3)[2w,3'] [[impf]]
+
+PATTERN Niph'al
+[:ni] C(1) C(2) [:{~a}{*?}] C(3)[reg] [[perf]]
+[:né] C(1) [:é] C(2) [:{~a}{*?}] C(3)[|[1',1x]] [[perf]]
+C(1) [:.á] C(2) [:{~e}{*?}] C(3)[|[reg,1n]] [[impf]]
+C(1) [:á] C(2) [:{~e}{*?}] C(3)[|[1',1x]] [[impf]]
+
+PATTERN Pi'el
+C(1) [:i] C(2) [:.{~a}{*?}] C(3)[|[reg,1',1x]] [[perf]]
+C(1) [:a] C(2) [:.{~e}{*?}] C(3)[|[reg,1',1x]] [[impf]]
+
+PATTERN Pu'al
+C(1) [:u] C(2) [:.{~a}{*?}] C(3)[|[reg,1',1x]] [[perf,impf]]
+
+PATTERN Hiph'il
+[:hi] C(1) C(2) [:{~iy}y{*?}] C(3)[reg] [[perf]]
+[:hé] C(1) [:ë] C(2) [:{~iy}y{*?}] C(3)[|[1',1x]] [[perf]]
+C(1) C(2) [:{~iy}y{*?}] C(3)[reg] [[impf]]
+C(1) [:ä] C(2) [:{~iy}y{*?}] C(3)[|[1',1x]] [[impf]]
+C(1): [:wo] C(2) [:{~iy}y{*?}] C(3)[1y] [[impf]]
+C(1) C(2): [:{~iy}y{*?}] C(3)[2w,3'] [[impf]]
+
+PATTERN Hoph'al
+[:{h}á] C(1) C(2) [:{~a}{*?}] C(3)[reg] [[perf]]
+[:{h}á] C(1) [:ä] C(2) [:{~a}{*?}] C(3)[|[1',1x]] [[perf]]
+C(1) C(2) [:{~a}{*?}] C(3)[reg] [[impf]]
+C(1) [:ä] C(2) [:{~a}{*?}] C(3)[|[1',1x]] [[impf]]
+
+PATTERN Hitpa'el
+[:{h}it] C(1) [:a] C(2) [:.{~e}{*?}] C(3)[|[reg,1',1x]] [[perf]]
+[:t] C(1) [:a] C(2) [:.{~e}{*?}] C(3)[|[reg,1',1x]] [[impf]]
+
+
 
 LEXICON VerbRoot(3)
-' b h
-' b l
-' b q
-' h b
-' h l
-' w c
-' w r
-' w t
-' z n
-' x z
-' x r
-' y b
-' k l
-' k p
-' l m
-' m n
-' m c
-' m r
-' s p
-' s r
-' p h
-' p s
-' p q
-' c l
-' r k
-' r r
-' {sh} r
-b ' {sh}
-b d l
-b h l
-b w:{~w} '
-b w {sh}
-b z h
-b z z
-b x n
-b x r
-b y n
-b k h
-b l h
-b l l
-b l {'}
-b n h
-b {'} l
-b c r
-b q {'}
-b q {sh}
-b r '
-b r x
-b r k
-b {sh} l
-b t r
-g ' l
-g b r
-g d l
-g w d
-g w {'}
-g w r
-g z z
-g z l
-g z r
-g l h
-g l x
-g l l
-g m '
-g m l
-g n b
-g n x
-g {'} r
-g r d
-g r {sh}
-d b q
-d b r
-d g h
-d w n
-d x s
-d y n
-d l q
-d {'} k
-d p q
-d r {sh}
-d {sh} '
-h w h
-h y h
-h:{~h} l k
-h l l
-h p k
-h p r
-h r g
-h r h
-h r s
-z b d
-z b x
-z b l
-z y d
-z k h
-z k r
-z m m
-z n h
-z {'} p
-z q n
-z r x
-z r {'}
-z r q
-x b '
-x b q
-x b r
-x b {sh}
-x d l
-x d r
-x w h
-x w s
-x z q
-x v '
-x y h
-x y l
-x l b
-x l h
-x l l
-x l m
-x l p
-x l q
-x m d
-x m m
-x m {sh}
-x n h
-x n v
-x n n
-x n q
-x s m
-x s r
-x p c
-x p r
-x p {s}
-x p {sh}
-x c h
-x q q
-x r b
-x r d
-x r h
-x r {sh}
-x {sh} b
-x {s} k
-x {sh} p
-x {sh} q
-x t n
-v b x
-v b l
-v h r
-v w b
-v x h
-v x n
-v l '
-v m '
-v m n
-v {'} m
-v {'} n
-v r p
-y ' l
-y b m
-y b {sh}
-y d h
-y d {'}
-y h b
-y x d
-y x l
-y x m
-y v b
-y k x
-y k l
-y l d
-y l h
-y m n
-y n q
-y s p
-y c '
-y c g
-y c q
-y c r
-y q {'}
-y q c
-y r '
-y r d
-y r h
-y r q
-y r {sh}
-y {sh} b
-y {s} m
-y {sh} m
-y {sh} n
-y t r
-k ' b
-k b d
-k b s
-k b {sh}
-k h h
-k w l
-k w n
-k x d
-k x {sh}
-k l '
-k l h
-k l l
-k m r
-k s h
-k s p
-k p r
-k r h
-k r {'}
-k r t
-k t b
-l ' h
-l b n
-l b {sh}
-l w h
-l w {sh}
-l v {sh}
-l x c
-l y n
-l y c
-l {'} v
-l q x
-l q v
-m ' n
-m g n
-m d d
-m h h
-m h r
-m w l
-m w {sh}
-m w t
-m x '
-m x h
-m v r
-m k r
-m l '
-m l v
-m l k
-m l l
-m n h
-m n {'}
-m s r
-m c '
-m r d
-m r x
-m r r
-m {sh} x
-m {sh} k
-m {sh} l
-m {sh} {sh}
-n b v
-n g d
-n g {'}
-n g {sh}
-n d d
-n d r
-n h g
-n h l
-n w d
-n w x
-n w s
-n w {'}
-n z p
-n x h
-n x m
-n x {sh}
-n v h
-n v {'}
-n v {sh}
-n k h
-n k l
-n k r
-n s h
-n s k
-n s {'}
-n {'} m
-n p x
-n p l
-n p c
-n c b
-n c l
-n c c
-n q b
-n q h
-n q m
-n {s} '
-n {sh} '
-n {sh} b
-n {s} g
-n {sh} h
-n {sh} k
-n {sh} q
-n t n
-s b b
-s b l
-s g r
-s d q
-s w r
-s x v
-s x r
-s k l
-s k r
-s l x
-s m k
-s {'} d
-s p d
-s p h
-s p r
-s r x
-s t m
-s t r
-{'} b d
-{'} b r
-{'} w d
-{'} w l
-{'} w p
-{'} z b
-{'} z r
-{'} v p
-{'} k r
-{'} l h
-{'} l p
-{'} m d
-{'} m s
-{'} n h
-{'} n n
-{'} c b
-{'} c m
-{'} c r
-{'} q b
-{'} q d
-{'} q r
-{'} r b
-{'} r h
-{'} r k
-{'} {s} h
-{'} {sh} h
-{'} {s} q
-{'} {sh} q
-{'} {s} r
-{'} {sh} r
-{'} t q
-{'} t r
-p g {'}
-p g {sh}
-p w g
-p w c
-p z z
-p l '
-p l g
-p l l
-p n h
-p {'} m
-p c h
-p c l
-p c r
-p q d
-p q x
-p r d
-p r h
-p r x
-p r m
-p r c
-p r q
-p r r
-p {sh} v
-p t h
-p t x
-p t l
-p t r
-c b v
-c b r
-c b {'}
-c d q
-c w d
-c w h
-c x q
-c l x
-c l l
-c l {'}
-c m x
-c {'} d
-c {'} q
-c p h
-c r r
-q b c
-q b l
-q b r
-q d d
-q d {sh}
-q w h
-q w m
-q w c
-q v l
-q v n
-q l l
-q n '
-q n h
-q p c
-q c p
-q c c
-q r '
-q r b
-q r h
-q r {'}
-q {sh} h
-q {sh} r
-r ' h
-r b b
-r b h
-r b c
-r g z
-r g l
-r d d
-r d h
-r d p
-r w x
-r w m
-r w c
-r z h
-r x b
-r x p
-r x c
-r x q
-r y b
-r y q
-r k b
-r k {sh}
-r m h
-r m {s}
-r {'} b
-r {'} d
-r {'} h
-r {'} {'}
-r p '
-r c h
-r c c
-r q d
-r t x
-{sh} ' b
-{sh} ' h
-{sh} ' l
-{sh} ' r
-{sh} b h
-{sh} b {'}
-{sh} b r
-{sh} b t
-{sh} d p
-{sh} w b
-{s} w x
-{sh} w p
-{sh} x h
-{s} x v
-{sh} x v
-{sh} x t
-{s} v m
-{sh} v p
-{s} y m
-{sh} y t
-{sh} k b
-{sh} k x
-{sh} k k
-{s} k l
-{sh} k l
-{sh} k m
-{sh} k n
-{s} k r
-{sh} k r
-{sh} l x
-{sh} l k
-{sh} l l
-{sh} l m
-{sh} l {sh}
-{sh} m d
-{sh} m x
-{sh} m {'}
-{sh} m r
-{s} n '
-{sh} n '
-{sh} n h
-{sh} {'} h
-{sh} {'} n
-{sh} p v
-{sh} p k
-{sh} q h
-{sh} q v
-{sh} q l
-{sh} q p
-{sh} q r
-{s} r h
-{s} r p
-{sh} r p
-{sh} r c
-{sh} r t
-{sh} t h
-t l h
-t l l
-t m h
-t m k
-t m m
-t {'} h
-t {'} {'}
-t s s
-t p s
-t p r
-t p {s}
-t q {'}
-t q p
+' b h[1',3h]
+' b l[1']
+' b q[1']
+' h b[1']
+' h l[1']
+' w c[1',2w]
+' w r[1',2w]
+' w t[1',2w]
+' z n[1']
+' x z[1',2x]
+' x r[1',2x]
+' y b[1',2w]
+' k l[1']
+' k p[1']
+' l m[1']
+' m n[1']
+' m c[1']
+' m r[1']
+' s p[1']
+' s r[1']
+' p h[1',3h]
+' p s[1']
+' p q[1']
+' c l[1']
+' r k[1']
+' r r[1']
+' {sh} r[1']
+b ' {sh}[reg]
+b d l[reg]
+b h l[reg]
+b w:{~w} '[2w,3']
+b w {sh}[2w]
+b z h[3h]
+b z z[reg]
+b x n[2x]
+b x r[2x]
+b y n[2w]
+b k h[3h]
+b l h[3h]
+b l l[reg]
+b l {'}[3x]
+b n h[3h]
+b {'} l[2x]
+b c r[reg]
+b q {'}[3x]
+b q {sh}[reg]
+b r '[3']
+b r x[3x]
+b r k[reg]
+b {sh} l[reg]
+b t r[reg]
+g ' l[reg]
+g b r[reg]
+g d l[reg]
+g w d[2w]
+g w {'}[2w,3x]
+g w r[2w]
+g z z[reg]
+g z l[reg]
+g z r[reg]
+g l h[3h]
+g l x[3x]
+g l l[reg]
+g m '[3']
+g m l[reg]
+g n b[reg]
+g n x[3x]
+g {'} r[2x]
+g r d[reg]
+g r {sh}[reg]
+d b q[reg]
+d b r[reg]
+d g h[3h]
+d w n[2w]
+d x s[2x]
+d y n[2w]
+d l q[reg]
+d {'} k[2x]
+d p q[reg]
+d r {sh}[reg]
+d {sh} '[3']
+h w h[2w,3h]
+h y h[2w,3h]
+h:{~h} l k[reg]
+h l l[reg]
+h p k[reg]
+h p r[reg]
+h r g[reg]
+h r h[3h]
+h r s[reg]
+z b d[reg]
+z b x[3x]
+z b l[reg]
+z y d[2w]
+z k h[3h]
+z k r[reg]
+z m m[reg]
+z n h[3h]
+z {'} p[2x]
+z q n[reg]
+z r x[3x]
+z r {'}[3x]
+z r q[reg]
+x b '[1x,3']
+x b q[1x]
+x b r[1x]
+x b {sh}[1x]
+x d l[1x]
+x d r[1x]
+x w h[1x,2w,3h]
+x w s[1x,2w]
+x z q[1x]
+x v '[1x,3']
+x y h[1x,2w,3h]
+x y l[1x,2w]
+x l b[1x]
+x l h[1x,3h]
+x l l[1x]
+x l m[1x]
+x l p[1x]
+x l q[1x]
+x m d[1x]
+x m m[1x]
+x m {sh}[1x]
+x n h[1x,3h]
+x n v[1x]
+x n n[1x]
+x n q[1x]
+x s m[1x]
+x s r[1x]
+x p c[1x]
+x p r[1x]
+x p {s}[1x]
+x p {sh}[1x]
+x c h[1x,3h]
+x q q[1x]
+x r b[1x]
+x r d[1x]
+x r h[1x,3h]
+x r {sh}[1x]
+x {sh} b[1x]
+x {s} k[1x]
+x {sh} p[1x]
+x {sh} q[1x]
+x t n[1x]
+v b x[3x]
+v b l[reg]
+v h r[reg]
+v w b[2w]
+v x h[2x,3h]
+v x n[2x]
+v l '[3']
+v m '[3']
+v m n[reg]
+v {'} m[2x]
+v {'} n[2x]
+v r p[reg]
+y ' l[1y]
+y b m[1y]
+y b {sh}[1y]
+y d h[1y,3h]
+y d {'}[1y,3x]
+y h b[1y]
+y x d[1y,2x]
+y x l[1y,2x]
+y x m[1y,2x]
+y v b[1y]
+y k x[1y,3x]
+y k l[1y]
+y l d[1y]
+y l h[1y,3h]
+y m n[1y]
+y n q[1y]
+y s p[1y]
+y c '[1y,3']
+y c g[1y]
+y c q[1y]
+y c r[1y]
+y q {'}[1y,3x]
+y q c[1y]
+y r '[1y,3']
+y r d[1y]
+y r h[1y,3h]
+y r q[1y]
+y r {sh}[1y]
+y {sh} b[1y]
+y {s} m[1y]
+y {sh} m[1y]
+y {sh} n[1y]
+y t r[1y]
+k ' b[reg]
+k b d[reg]
+k b s[reg]
+k b {sh}[reg]
+k h h[3h]
+k w l[2w]
+k w n[2w]
+k x d[2x]
+k x {sh}[2x]
+k l '[3']
+k l h[3h]
+k l l[reg]
+k m r[reg]
+k s h[3h]
+k s p[reg]
+k p r[reg]
+k r h[3h]
+k r {'}[3x]
+k r t[reg]
+k t b[reg]
+l ' h[3h]
+l b n[reg]
+l b {sh}[reg]
+l w h[2w,3h]
+l w {sh}[2w]
+l v {sh}[reg]
+l x c[2x]
+l y n[2w]
+l y c[2w]
+l {'} v[2x]
+l q x[1y,3x]
+l q v[reg]
+m ' n[reg]
+m g n[reg]
+m d d[reg]
+m h h[3h]
+m h r[reg]
+m w l[2w]
+m w {sh}[2w]
+m w t[2w]
+m x '[2x,3']
+m x h[2x,3h]
+m v r[reg]
+m k r[reg]
+m l '[3']
+m l v[reg]
+m l k[reg]
+m l l[reg]
+m n h[3h]
+m n {'}[3x]
+m s r[reg]
+m c '[3']
+m r d[reg]
+m r x[3x]
+m r r[reg]
+m {sh} x[3x]
+m {sh} k[reg]
+m {sh} l[reg]
+m {sh} {sh}[reg]
+n b v[1n]
+n g d[1n]
+n g {'}[1n,3x]
+n g {sh}[1n]
+n d d[1n]
+n d r[1n]
+n h g[1n]
+n h l[1n]
+n w d[1n,2w]
+n w x[1n,2w,3x]
+n w s[1n,2w]
+n w {'}[1n,2w,3x]
+n z p[1n]
+n x h[1n,2x,3h]
+n x m[1n,2x]
+n x {sh}[1n,2x]
+n v h[1n,3h]
+n v {'}[1n,3x]
+n v {sh}[1n]
+n k h[1n,3h]
+n k l[1n]
+n k r[1n]
+n s h[1n,3h]
+n s k[1n]
+n s {'}[1n,3x]
+n {'} m[1n,2x]
+n p x[1n,3x]
+n p l[1n]
+n p c[1n]
+n c b[1n]
+n c l[1n]
+n c c[1n]
+n q b[1n]
+n q h[1n,3h]
+n q m[1n]
+n {s} '[1n,3']
+n {sh} '[1n,3']
+n {sh} b[1n]
+n {s} g[1n]
+n {sh} h[1n,3h]
+n {sh} k[1n]
+n {sh} q[1n]
+n t n[1n]
+s b b[reg]
+s b l[reg]
+s g r[reg]
+s d q[reg]
+s w r[2w]
+s x v[2x]
+s x r[2x]
+s k l[reg]
+s k r[reg]
+s l x[3x]
+s m k[reg]
+s {'} d[2x]
+s p d[reg]
+s p h[3h]
+s p r[reg]
+s r x[3x]
+s t m[reg]
+s t r[reg]
+{'} b d[1x]
+{'} b r[1x]
+{'} w d[1x,2w]
+{'} w l[1x,2w]
+{'} w p[1x,2w]
+{'} z b[1x]
+{'} z r[1x]
+{'} v p[1x]
+{'} k r[1x]
+{'} l h[1x,3h]
+{'} l p[1x]
+{'} m d[1x]
+{'} m s[1x]
+{'} n h[1x,3h]
+{'} n n[1x]
+{'} c b[1x]
+{'} c m[1x]
+{'} c r[1x]
+{'} q b[1x]
+{'} q d[1x]
+{'} q r[1x]
+{'} r b[1x]
+{'} r h[1x,3h]
+{'} r k[1x]
+{'} {s} h[1x,3h]
+{'} {sh} h[1x,3h]
+{'} {s} q[1x]
+{'} {sh} q[1x]
+{'} {s} r[1x]
+{'} {sh} r[1x]
+{'} t q[1x]
+{'} t r[1x]
+p g {'}[3x]
+p g {sh}[reg]
+p w g[2w]
+p w c[2w]
+p z z[reg]
+p l '[3']
+p l g[reg]
+p l l[reg]
+p n h[3h]
+p {'} m[2x]
+p c h[3h]
+p c l[reg]
+p c r[reg]
+p q d[reg]
+p q x[3x]
+p r d[reg]
+p r h[3h]
+p r x[3x]
+p r m[reg]
+p r c[reg]
+p r q[reg]
+p r r[reg]
+p {sh} v[reg]
+p t h[3h]
+p t x[3x]
+p t l[reg]
+p t r[reg]
+c b v[reg]
+c b r[reg]
+c b {'}[3x]
+c d q[reg]
+c w d[2w]
+c w h[2w,3h]
+c x q[2x]
+c l x[3x]
+c l l[reg]
+c l {'}[3x]
+c m x[3x]
+c {'} d[2x]
+c {'} q[2x]
+c p h[3h]
+c r r[reg]
+q b c[reg]
+q b l[reg]
+q b r[reg]
+q d d[reg]
+q d {sh}[reg]
+q w h[2w,3h]
+q w m[2w]
+q w c[2w]
+q v l[reg]
+q v n[reg]
+q l l[reg]
+q n '[3']
+q n h[3h]
+q p c[reg]
+q c p[reg]
+q c c[reg]
+q r '[3']
+q r b[reg]
+q r h[3h]
+q r {'}[3x]
+q {sh} h[3h]
+q {sh} r[reg]
+r ' h[3h]
+r b b[reg]
+r b h[3h]
+r b c[reg]
+r g z[reg]
+r g l[reg]
+r d d[reg]
+r d h[3h]
+r d p[reg]
+r w x[2w,3x]
+r w m[2w]
+r w c[2w]
+r z h[3h]
+r x b[2x]
+r x p[2x]
+r x c[2x]
+r x q[2x]
+r y b[2w]
+r y q[2w]
+r k b[reg]
+r k {sh}[reg]
+r m h[3h]
+r m {s}[reg]
+r {'} b[2x]
+r {'} d[2x]
+r {'} h[2x,3h]
+r {'} {'}[2x,3x]
+r p '[3']
+r c h[3h]
+r c c[reg]
+r q d[reg]
+r t x[3x]
+{sh} ' b[reg]
+{sh} ' h[3h]
+{sh} ' l[reg]
+{sh} ' r[reg]
+{sh} b h[3h]
+{sh} b {'}[3x]
+{sh} b r[reg]
+{sh} b t[reg]
+{sh} d p[reg]
+{sh} w b[2w]
+{s} w x[2w,3x]
+{sh} w p[2w]
+{sh} x h[2x,3h]
+{s} x v[2x]
+{sh} x v[2x]
+{sh} x t[2x]
+{s} v m[reg]
+{sh} v p[reg]
+{s} y m[2w]
+{sh} y t[2w]
+{sh} k b[reg]
+{sh} k x[3x]
+{sh} k k[reg]
+{s} k l[reg]
+{sh} k l[reg]
+{sh} k m[reg]
+{sh} k n[reg]
+{s} k r[reg]
+{sh} k r[reg]
+{sh} l x[3x]
+{sh} l k[reg]
+{sh} l l[reg]
+{sh} l m[reg]
+{sh} l {sh}[reg]
+{sh} m d[reg]
+{sh} m x[3x]
+{sh} m {'}[3x]
+{sh} m r[reg]
+{s} n '[3']
+{sh} n '[3']
+{sh} n h[3h]
+{sh} {'} h[2x,3h]
+{sh} {'} n[2x]
+{sh} p v[reg]
+{sh} p k[reg]
+{sh} q h[3h]
+{sh} q v[reg]
+{sh} q l[reg]
+{sh} q p[reg]
+{sh} q r[reg]
+{s} r h[3h]
+{s} r p[reg]
+{sh} r p[reg]
+{sh} r c[reg]
+{sh} r t[reg]
+{sh} t h[3h]
+t l h[3h]
+t l l[reg]
+t m h[3h]
+t m k[reg]
+t m m[reg]
+t {'} h[2x,3h]
+t {'} {'}[2x,3x]
+t s s[reg]
+t p s[reg]
+t p r[reg]
+t p {s}[reg]
+t q {'}[3x]
+t q p[reg]
+
+ALIAS VerbRoot C
 
 LEXICON Det
 h<det><def>+:{h}a>
@@ -595,6 +646,7 @@ LEXICON PrepRoot
 't:'ét
 byn:beyn
 mn:min
+mn<pr>+'t:me'et
 mn<pr>+{'}l:me{'}al
 {'}d:{'}ad
 {'}l:{'}al
@@ -623,7 +675,7 @@ ConjPrefix? ['l<pr>+hw'<prn>:] PrepPron(1): :PrepPron(5)[-skip]
 
 LEXICON PrepPron(5)
 <p1><mf><sg> 'otiy    'itiy    liy   'elay
-<p1><mf><sg> :[skip]  :[skip]  l.iy  :[skip] # Dir/LR
+<p1><mf><sg> :[skip]  'it.iy   l.iy  :[skip] # Dir/LR
 <p1><mf><pl> 'ot.enw. 'it.enw. lánw. 'elenu
 <p2><m><sg>  'ot@ká   'it@ká   l@ká  :[skip]
 <p2><f><sg>  'oták    'iták    lák   :[skip]
@@ -639,6 +691,7 @@ LEXICON NounRoot(2)
 'lhym:'ëloh <m>[plonly,im]
 'rc:'éréc <m>
 kl:kál <m>
+myn:miyn <m>[im]
 pnym:pán <f>[plonly,im]
 r'{sh}:ro'o{sh} <m>[hic]
 r'{sh}:re'{sh}iyt <m>[iic]
@@ -841,7 +894,9 @@ sbyb:sábiyb <mf>[im]
 {s}hdw:{s}áhädw.tá' <f>[ot]
 '{sh}:'e{sh} <mf>[im]
 {s}h:{s}éh <mf>[im]
-'{sh}h:'.i{sh}áh <f>[ot]
+'{sh}h:'i{sh}.áh <f>[hic]
+'{sh}h:'e{sh}ét <f>[iic]
+'{sh}h:ná{sh} <f>[im,plonly]
 {sh}km:{sh}@kém <m>[im]
 '{sh}l:'é{sh}él <m>[im]
 {sh}ll:{sh}álál <m>[im]
@@ -1340,8 +1395,8 @@ LEXICON AdverbItg
 mh:mah
 
 PATTERNS
-ConjPrefix? [hw'<prn><pers>:] Pronouns(1): [<sg>:] :Pronouns(2)[-skip]
-ConjPrefix? [hw'<prn><pers>:] Pronouns(1): [<pl>:] :Pronouns(3)[-skip]
+(ConjPrefix|Det)? [hw'<prn><pers>:] Pronouns(1): [<sg>:] :Pronouns(2)[-skip]
+(ConjPrefix|Det)? [hw'<prn><pers>:] Pronouns(1): [<pl>:] :Pronouns(3)[-skip]
 
 LEXICON Pronouns(3)
 <p1><mf> 'äniy   'änax@nw.

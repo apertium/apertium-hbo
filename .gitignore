@@ -21,3 +21,4 @@
 /config.in
 /config
 /*.zhfst
+/test/*-output.txt

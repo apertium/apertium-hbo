@@ -12,7 +12,7 @@ a á e é i o u %@ ä ë ö
 %{%<%*%}:0
 %{%*%>%}:0
 
-%{V%} %{ps%} %{and%}
+%{V%} %{ps%} %{and%} %{andc%}
 %{%~a%}
 %{%~á%}
 %{%~e%}
@@ -25,6 +25,7 @@ a á e é i o u %@ ä ë ö
 %{i%}
 
 %{cons%}
+%{pause%}
  ;
 
 Sets
@@ -43,7 +44,9 @@ Rules
 "move stress away"
 %{%*%}:%{%-%*%} <=> %{%<%*%}: :* _ ;
                     _ :* %{%*%>%}: ;
+                    except %{%<%*%}: ?* _ ?* %{pause%} ;
 
 "move stress to"
 0:%{%+%*%} <=> !%{%*%}: Cons+ Vowel _ :* %{%*%>%}: ;
                %{%<%*%}: :* Vowel _ Skip+ Vowel %{%*%}: ;
+               except _ ?* %{pause%}: ;

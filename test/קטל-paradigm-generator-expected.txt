@@ -1,3 +1,5 @@
+[-0argWbXgKxD#0] וַיִּקָּטְלוּ
+[/-0argWbXgKxD]
 [-yDRI14FZ8_5#0] הִתְקַטַּלְנוּ
 [/-yDRI14FZ8_5]
 [12PBh8AVOPob#0] נִקְטְלָה
@@ -12,6 +14,8 @@
 [/1Voggk-lBp1V]
 [1_DpYCTV8wLX#0] אֶקָּטֵל
 [/1_DpYCTV8wLX]
+[1a-tIg4o3Op1#0] וַיְקַטֶּל
+[/1a-tIg4o3Op1]
 [1qg7A-OUE8ez#0] קְטַלְתֶּם
 [/1qg7A-OUE8ez]
 [2U_2_02VVQEW#0] אֲקַטֵּל
@@ -20,6 +24,8 @@
 [/2VkkvNO73uAJ]
 [2dRHrnyJX5EC#0] תִּקָּטֵל
 [/2dRHrnyJX5EC]
+[2qu-RuhtzIIc#0] וַיִּתְקַטְּלוּ
+[/2qu-RuhtzIIc]
 [3Zn7mmcJsVSe#0] קִטַּלְנוּ
 [/3Zn7mmcJsVSe]
 [3lFLKIDi2Z9T#0] תִּתְקַטֵּלְנָה
@@ -46,6 +52,8 @@
 [/6e1Z-9B_bxdB]
 [76SCyUWSFZQK#0] אָקְטַל
 [/76SCyUWSFZQK]
+[7_UwXH04YpyL#0] וַיָּקְטֶל
+[/7_UwXH04YpyL]
 [8OzHz3G9t9IZ#0] הִקְטַלְתֶּן
 [/8OzHz3G9t9IZ]
 [8SFJm9-GtKDR#0] הָקְטַלְתָּ
@@ -54,6 +62,8 @@
 [/9K2riJo8f5fB]
 [A2tF1F-9nMqg#0] הִתְקַטַּלְתֶּם
 [/A2tF1F-9nMqg]
+[ARHNyayITjkW#0] וַיִּקְטְלוּ
+[/ARHNyayITjkW]
 [ATrVYdtlyfk7#0] תַּקְטִילוּ
 [/ATrVYdtlyfk7]
 [BMXiAcDL50Js#0] הִקְטִיל
@@ -72,6 +82,8 @@
 [/G85O4sRgg2QV]
 [GGbGcyMIG7aj#0] נִקְטַלְתֶּם
 [/GGbGcyMIG7aj]
+[GGyTgctf_OQu#0] וַיַּקְטֶל
+[/GGyTgctf_OQu]
 [HJ5NGPZt-hur#0] הָקְטַלְנוּ
 [/HJ5NGPZt-hur]
 [Hh2ACxRjd478#0] קָטְלָה
@@ -104,6 +116,8 @@
 [/LMwQTC3BUAn4]
 [MD-_QlpwHlWJ#0] תִּקְטְלִי
 [/MD-_QlpwHlWJ]
+[MfcPRUffD3dp#0] וַיְקֻטְּלוּ
+[/MfcPRUffD3dp]
 [NM6TGE7EIhd7#0] הִקְטִילָה
 [/NM6TGE7EIhd7]
 [Ngw4YbsrlpbE#0] תִּקְטֹל
@@ -130,6 +144,8 @@
 [/SlQwa0dYo_7G]
 [T457T8j8QtW0#0] תִּתְקַטְּלוּ
 [/T457T8j8QtW0]
+[T5ylFErsaRXn#0] וַיְקֻטֶּל
+[/T5ylFErsaRXn]
 [TTeIUOiFrumd#0] הִתְקַטַּלְתֶּן
 [/TTeIUOiFrumd]
 [TfgMfWyFHhAL#0] הִתְקַטַּלְתְּ
@@ -142,6 +158,8 @@
 [/XpKxQiR4CBb1]
 [Y3CU0xxeRs_t#0] קִטַּלְתֶּן
 [/Y3CU0xxeRs_t]
+[Y4vm9zATl_xi#0] וַיִּתְקַטֶּל
+[/Y4vm9zATl_xi]
 [Z2gFXOMvZkrl#0] נִקְטַל
 [/Z2gFXOMvZkrl]
 [_5d9qIFwl7Vq#0] תָּקְטְלוּ
@@ -174,6 +192,8 @@
 [/cV_b7UDYfWmO]
 [c_rW835QIRkV#0] הִתְקַטְּלָה
 [/c_rW835QIRkV]
+[cdWwTwle8doV#0] וַיַּקְטִילוּ
+[/cdWwTwle8doV]
 [dBTlJjw3S2IG#0] קֻטַּלְתִּי
 [/dBTlJjw3S2IG]
 [dTcDl6cc2Wht#0] תַּקְטִיל
@@ -212,12 +232,16 @@
 [/lloEDX9ezAf1]
 [mR-l72Oyzgfz#0] הִקְטִילוּ
 [/mR-l72Oyzgfz]
+[maP2jldjwUIF#0] וַיָּקְטְלוּ
+[/maP2jldjwUIF]
 [mobxGn-uA6Zp#0] תָּקְטַל
 [/mobxGn-uA6Zp]
 [mpPTHUxrUrnA#0] נִקְטְלוּ
 [/mpPTHUxrUrnA]
 [n8bfQzdri5nF#0] תְּקַטֵּלְנָה
 [/n8bfQzdri5nF]
+[nZQqkCzodlxz#0] וַיִּקְטֹל
+[/nZQqkCzodlxz]
 [o7Br2Uqpt-yC#0] הִתְקַטֵּל
 [/o7Br2Uqpt-yC]
 [oPqXnb8P7PcW#0] קֻטַּלְתְּ
@@ -226,6 +250,8 @@
 [/r_rkzbKJFMLJ]
 [rxiVLmqM0cjF#0] קֻטְּלָה
 [/rxiVLmqM0cjF]
+[s2HPgrOTYC54#0] וַיִּקָּטֶל
+[/s2HPgrOTYC54]
 [s3lGoVkeJBvG#0] אֶקְטֹל
 [/s3lGoVkeJBvG]
 [syQ2_Zg6VnBU#0] נִקָּטֵל
@@ -242,6 +268,8 @@
 [/uRjRtttcZzbp]
 [ucMiY3B9vOfT#0] נִקְטַלְתֶּן
 [/ucMiY3B9vOfT]
+[vNc5Xwb9AkmQ#0] וַיְקַטְּלוּ
+[/vNc5Xwb9AkmQ]
 [vV37NrgzxZSj#0] קִטַּל
 [/vV37NrgzxZSj]
 [vkf3OnBHrP80#0] הָקְטַלְתֶּם

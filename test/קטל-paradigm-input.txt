@@ -25,6 +25,10 @@
 ^קטל<v><actv><impf><p3><m><pl>$
 ^קטל<v><actv><impf><p3><f><pl>$
 
+# Imperfect Vav-Consecutive
+^ו<cnjcoo>+קטל<v><actv><impf><p3><m><sg><consec>$
+^ו<cnjcoo>+קטל<v><actv><impf><p3><m><pl><consec>$
+
 ##########
 ## Niph'al
 ##########
@@ -51,6 +55,10 @@
 ^קטל<v><pass><impf><p2><f><pl>$
 ^קטל<v><pass><impf><p3><m><pl>$
 ^קטל<v><pass><impf><p3><f><pl>$
+
+# Imperfect Vav-Consecutive
+^ו<cnjcoo>+קטל<v><pass><impf><p3><m><sg><consec>$
+^ו<cnjcoo>+קטל<v><pass><impf><p3><m><pl><consec>$
 
 ##########
 ## Pi'el
@@ -79,6 +87,10 @@
 ^קטל<v><ints><impf><p3><m><pl>$
 ^קטל<v><ints><impf><p3><f><pl>$
 
+# Imperfect Vav-Consecutive
+^ו<cnjcoo>+קטל<v><ints><impf><p3><m><sg><consec>$
+^ו<cnjcoo>+קטל<v><ints><impf><p3><m><pl><consec>$
+
 ##########
 ## Pu'al
 ##########
@@ -105,6 +117,10 @@
 ^קטל<v><ints><pass><impf><p2><f><pl>$
 ^קטל<v><ints><pass><impf><p3><m><pl>$
 ^קטל<v><ints><pass><impf><p3><f><pl>$
+
+# Imperfect Vav-Consecutive
+^ו<cnjcoo>+קטל<v><ints><pass><impf><p3><m><sg><consec>$
+^ו<cnjcoo>+קטל<v><ints><pass><impf><p3><m><pl><consec>$
 
 ##########
 ## Hiph'il
@@ -133,6 +149,10 @@
 ^קטל<v><caus><impf><p3><m><pl>$
 ^קטל<v><caus><impf><p3><f><pl>$
 
+# Imperfect Vav-Consecutive
+^ו<cnjcoo>+קטל<v><caus><impf><p3><m><sg><consec>$
+^ו<cnjcoo>+קטל<v><caus><impf><p3><m><pl><consec>$
+
 ##########
 ## Hoph'al
 ##########
@@ -160,6 +180,10 @@
 ^קטל<v><caus><pass><impf><p3><m><pl>$
 ^קטל<v><caus><pass><impf><p3><f><pl>$
 
+# Imperfect Vav-Consecutive
+^ו<cnjcoo>+קטל<v><caus><pass><impf><p3><m><sg><consec>$
+^ו<cnjcoo>+קטל<v><caus><pass><impf><p3><m><pl><consec>$
+
 ##########
 ## Hithpa'el
 ##########
@@ -186,3 +210,7 @@
 ^קטל<v><recip><impf><p2><f><pl>$
 ^קטל<v><recip><impf><p3><m><pl>$
 ^קטל<v><recip><impf><p3><f><pl>$
+
+# Imperfect Vav-Consecutive
+^ו<cnjcoo>+קטל<v><recip><impf><p3><m><sg><consec>$
+^ו<cnjcoo>+קטל<v><recip><impf><p3><m><pl><consec>$

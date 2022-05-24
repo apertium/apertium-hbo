@@ -10,5 +10,9 @@
     "קטל-paradigm": {
         "input": "קטל-paradigm-input.txt",
         "mode": "hbo-gener"
+    },
+    "אמר-paradigm": {
+        "input": "אמר-paradigm-input.txt",
+        "mode": "hbo-gener"
     }
 }

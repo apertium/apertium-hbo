@@ -1,0 +1,216 @@
+##########
+## Pa'al
+##########
+
+# Perfect
+^אמר<v><actv><perf><p1><mf><sg>$
+^אמר<v><actv><perf><p2><m><sg>$
+^אמר<v><actv><perf><p2><f><sg>$
+^אמר<v><actv><perf><p3><m><sg>$
+^אמר<v><actv><perf><p3><f><sg>$
+^אמר<v><actv><perf><p1><mf><pl>$
+^אמר<v><actv><perf><p2><m><pl>$
+^אמר<v><actv><perf><p2><f><pl>$
+^אמר<v><actv><perf><p3><mf><pl>$
+
+# Imperfect
+^אמר<v><actv><impf><p1><mf><sg>$
+^אמר<v><actv><impf><p2><m><sg>$
+^אמר<v><actv><impf><p2><f><sg>$
+^אמר<v><actv><impf><p3><m><sg>$
+^אמר<v><actv><impf><p3><f><sg>$
+^אמר<v><actv><impf><p1><mf><pl>$
+^אמר<v><actv><impf><p2><m><pl>$
+^אמר<v><actv><impf><p2><f><pl>$
+^אמר<v><actv><impf><p3><m><pl>$
+^אמר<v><actv><impf><p3><f><pl>$
+
+# Imperfect Vav-Consecutive
+^ו<cnjcoo>+אמר<v><actv><impf><p3><m><sg><consec>$
+^ו<cnjcoo>+אמר<v><actv><impf><p3><m><pl><consec>$
+
+##########
+## Niph'al
+##########
+
+# Perfect
+^אמר<v><pass><perf><p1><mf><sg>$
+^אמר<v><pass><perf><p2><m><sg>$
+^אמר<v><pass><perf><p2><f><sg>$
+^אמר<v><pass><perf><p3><m><sg>$
+^אמר<v><pass><perf><p3><f><sg>$
+^אמר<v><pass><perf><p1><mf><pl>$
+^אמר<v><pass><perf><p2><m><pl>$
+^אמר<v><pass><perf><p2><f><pl>$
+^אמר<v><pass><perf><p3><mf><pl>$
+
+# Imperfect
+^אמר<v><pass><impf><p1><mf><sg>$
+^אמר<v><pass><impf><p2><m><sg>$
+^אמר<v><pass><impf><p2><f><sg>$
+^אמר<v><pass><impf><p3><m><sg>$
+^אמר<v><pass><impf><p3><f><sg>$
+^אמר<v><pass><impf><p1><mf><pl>$
+^אמר<v><pass><impf><p2><m><pl>$
+^אמר<v><pass><impf><p2><f><pl>$
+^אמר<v><pass><impf><p3><m><pl>$
+^אמר<v><pass><impf><p3><f><pl>$
+
+# Imperfect Vav-Consecutive
+^ו<cnjcoo>+אמר<v><pass><impf><p3><m><sg><consec>$
+^ו<cnjcoo>+אמר<v><pass><impf><p3><m><pl><consec>$
+
+##########
+## Pi'el
+##########
+
+# Perfect
+^אמר<v><ints><perf><p1><mf><sg>$
+^אמר<v><ints><perf><p2><m><sg>$
+^אמר<v><ints><perf><p2><f><sg>$
+^אמר<v><ints><perf><p3><m><sg>$
+^אמר<v><ints><perf><p3><f><sg>$
+^אמר<v><ints><perf><p1><mf><pl>$
+^אמר<v><ints><perf><p2><m><pl>$
+^אמר<v><ints><perf><p2><f><pl>$
+^אמר<v><ints><perf><p3><mf><pl>$
+
+# Imperfect
+^אמר<v><ints><impf><p1><mf><sg>$
+^אמר<v><ints><impf><p2><m><sg>$
+^אמר<v><ints><impf><p2><f><sg>$
+^אמר<v><ints><impf><p3><m><sg>$
+^אמר<v><ints><impf><p3><f><sg>$
+^אמר<v><ints><impf><p1><mf><pl>$
+^אמר<v><ints><impf><p2><m><pl>$
+^אמר<v><ints><impf><p2><f><pl>$
+^אמר<v><ints><impf><p3><m><pl>$
+^אמר<v><ints><impf><p3><f><pl>$
+
+# Imperfect Vav-Consecutive
+^ו<cnjcoo>+אמר<v><ints><impf><p3><m><sg><consec>$
+^ו<cnjcoo>+אמר<v><ints><impf><p3><m><pl><consec>$
+
+##########
+## Pu'al
+##########
+
+# Perfect
+^אמר<v><ints><pass><perf><p1><mf><sg>$
+^אמר<v><ints><pass><perf><p2><m><sg>$
+^אמר<v><ints><pass><perf><p2><f><sg>$
+^אמר<v><ints><pass><perf><p3><m><sg>$
+^אמר<v><ints><pass><perf><p3><f><sg>$
+^אמר<v><ints><pass><perf><p1><mf><pl>$
+^אמר<v><ints><pass><perf><p2><m><pl>$
+^אמר<v><ints><pass><perf><p2><f><pl>$
+^אמר<v><ints><pass><perf><p3><mf><pl>$
+
+# Imperfect
+^אמר<v><ints><pass><impf><p1><mf><sg>$
+^אמר<v><ints><pass><impf><p2><m><sg>$
+^אמר<v><ints><pass><impf><p2><f><sg>$
+^אמר<v><ints><pass><impf><p3><m><sg>$
+^אמר<v><ints><pass><impf><p3><f><sg>$
+^אמר<v><ints><pass><impf><p1><mf><pl>$
+^אמר<v><ints><pass><impf><p2><m><pl>$
+^אמר<v><ints><pass><impf><p2><f><pl>$
+^אמר<v><ints><pass><impf><p3><m><pl>$
+^אמר<v><ints><pass><impf><p3><f><pl>$
+
+# Imperfect Vav-Consecutive
+^ו<cnjcoo>+אמר<v><ints><pass><impf><p3><m><sg><consec>$
+^ו<cnjcoo>+אמר<v><ints><pass><impf><p3><m><pl><consec>$
+
+##########
+## Hiph'il
+##########
+
+# Perfect
+^אמר<v><caus><perf><p1><mf><sg>$
+^אמר<v><caus><perf><p2><m><sg>$
+^אמר<v><caus><perf><p2><f><sg>$
+^אמר<v><caus><perf><p3><m><sg>$
+^אמר<v><caus><perf><p3><f><sg>$
+^אמר<v><caus><perf><p1><mf><pl>$
+^אמר<v><caus><perf><p2><m><pl>$
+^אמר<v><caus><perf><p2><f><pl>$
+^אמר<v><caus><perf><p3><mf><pl>$
+
+# Imperfect
+^אמר<v><caus><impf><p1><mf><sg>$
+^אמר<v><caus><impf><p2><m><sg>$
+^אמר<v><caus><impf><p2><f><sg>$
+^אמר<v><caus><impf><p3><m><sg>$
+^אמר<v><caus><impf><p3><f><sg>$
+^אמר<v><caus><impf><p1><mf><pl>$
+^אמר<v><caus><impf><p2><m><pl>$
+^אמר<v><caus><impf><p2><f><pl>$
+^אמר<v><caus><impf><p3><m><pl>$
+^אמר<v><caus><impf><p3><f><pl>$
+
+# Imperfect Vav-Consecutive
+^ו<cnjcoo>+אמר<v><caus><impf><p3><m><sg><consec>$
+^ו<cnjcoo>+אמר<v><caus><impf><p3><m><pl><consec>$
+
+##########
+## Hoph'al
+##########
+
+# Perfect
+^אמר<v><caus><pass><perf><p1><mf><sg>$
+^אמר<v><caus><pass><perf><p2><m><sg>$
+^אמר<v><caus><pass><perf><p2><f><sg>$
+^אמר<v><caus><pass><perf><p3><m><sg>$
+^אמר<v><caus><pass><perf><p3><f><sg>$
+^אמר<v><caus><pass><perf><p1><mf><pl>$
+^אמר<v><caus><pass><perf><p2><m><pl>$
+^אמר<v><caus><pass><perf><p2><f><pl>$
+^אמר<v><caus><pass><perf><p3><mf><pl>$
+
+# Imperfect
+^אמר<v><caus><pass><impf><p1><mf><sg>$
+^אמר<v><caus><pass><impf><p2><m><sg>$
+^אמר<v><caus><pass><impf><p2><f><sg>$
+^אמר<v><caus><pass><impf><p3><m><sg>$
+^אמר<v><caus><pass><impf><p3><f><sg>$
+^אמר<v><caus><pass><impf><p1><mf><pl>$
+^אמר<v><caus><pass><impf><p2><m><pl>$
+^אמר<v><caus><pass><impf><p2><f><pl>$
+^אמר<v><caus><pass><impf><p3><m><pl>$
+^אמר<v><caus><pass><impf><p3><f><pl>$
+
+# Imperfect Vav-Consecutive
+^ו<cnjcoo>+אמר<v><caus><pass><impf><p3><m><sg><consec>$
+^ו<cnjcoo>+אמר<v><caus><pass><impf><p3><m><pl><consec>$
+
+##########
+## Hithpa'el
+##########
+
+# Perfect
+^אמר<v><recip><perf><p1><mf><sg>$
+^אמר<v><recip><perf><p2><m><sg>$
+^אמר<v><recip><perf><p2><f><sg>$
+^אמר<v><recip><perf><p3><m><sg>$
+^אמר<v><recip><perf><p3><f><sg>$
+^אמר<v><recip><perf><p1><mf><pl>$
+^אמר<v><recip><perf><p2><m><pl>$
+^אמר<v><recip><perf><p2><f><pl>$
+^אמר<v><recip><perf><p3><mf><pl>$
+
+# Imperfect
+^אמר<v><recip><impf><p1><mf><sg>$
+^אמר<v><recip><impf><p2><m><sg>$
+^אמר<v><recip><impf><p2><f><sg>$
+^אמר<v><recip><impf><p3><m><sg>$
+^אמר<v><recip><impf><p3><f><sg>$
+^אמר<v><recip><impf><p1><mf><pl>$
+^אמר<v><recip><impf><p2><m><pl>$
+^אמר<v><recip><impf><p2><f><pl>$
+^אמר<v><recip><impf><p3><m><pl>$
+^אמר<v><recip><impf><p3><f><pl>$
+
+# Imperfect Vav-Consecutive
+^ו<cnjcoo>+אמר<v><recip><impf><p3><m><sg><consec>$
+^ו<cnjcoo>+אמר<v><recip><impf><p3><m><pl><consec>$

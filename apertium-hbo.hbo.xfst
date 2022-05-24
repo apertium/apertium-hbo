@@ -1,4 +1,5 @@
 [
   ! can't write this one in twol, apparently
-  [ 0 -> %. || .#. [ b | g | d | k | p | t ] _ [ ? - %. ] ]
+  [ 0 -> %. || .#. [ b | g | d | k | p | t ] _ [ ? - %. ] ] .o.
+  [ 0 -> %. || %{andc%} %{%<%*%} [ ? - %' ] _ ]
 ]
