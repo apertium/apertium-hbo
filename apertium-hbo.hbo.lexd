@@ -3,6 +3,7 @@ PATTERNS
 
 LEXICON ConjPrefix
 w<cnjcoo>+:w{and}
+h<itg>+:hä
 
 LEXICON PerfSuffix
 <p1><mf><sg>:t.i{*}y
@@ -634,7 +635,7 @@ NounStem[ot] [<pl><cons>:{cons}wot] PrnSuf?
 
 PATTERN Noun
 Det? CommonNoun
-ProperNoun(1) [<np><sg>:] ProperNoun(2):
+ProperNoun(1) [<np>:] ProperNoun(2): [<sg>:]
 
 PATTERN NounStem
 NounRoot(1) [<n>:] NounRoot(2):
@@ -653,8 +654,8 @@ mn<pr>+{'}l:me{'}al
 {'}m:{'}im
 txt:taxat
 
-PATTERNS
-PrefixPrepRoot [<pr>:] PrnSuf
+#PATTERNS
+#PrefixPrepRoot [<pr>:] PrnSuf
 
 PATTERN PrefixPrep
 PrefixPrepRoot [<pr>+:@>]
@@ -667,11 +668,11 @@ m
 
 PATTERNS
 # TODO: should these two be distinguished in some way?
-ConjPrefix? ['t<pr>+hw'<prn>:] PrepPron(1): :PrepPron(2)[-skip] # def
-ConjPrefix? ['t<pr>+hw'<prn>:] PrepPron(1): :PrepPron(3)[-skip] # with
+ConjPrefix? ['t<pr>+hw'<prn><pers>:] PrepPron(1): :PrepPron(2)[-skip] # def
+ConjPrefix? ['t<pr>+hw'<prn><pers>:] PrepPron(1): :PrepPron(3)[-skip] # with
 
-ConjPrefix? [l<pr>+hw'<prn>:] PrepPron(1): :PrepPron(4)[-skip]
-ConjPrefix? ['l<pr>+hw'<prn>:] PrepPron(1): :PrepPron(5)[-skip]
+ConjPrefix? [l<pr>+hw'<prn><pers>:] PrepPron(1): :PrepPron(4)[-skip]
+ConjPrefix? ['l<pr>+hw'<prn><pers>:] PrepPron(1): :PrepPron(5)[-skip]
 
 LEXICON PrepPron(5)
 <p1><mf><sg> 'otiy    'itiy    liy   'elay
@@ -687,12 +688,11 @@ LEXICON PrepPron(5)
 <p3><f><pl>  'ét@hén  'it@hén  láhén :[skip]
 
 LEXICON NounRoot(2)
-'dn:'ädon <m>[im,iic]
+'dwn:'ädon <m>[im,iic]
 'lhym:'ëloh <m>[plonly,im]
-'rc:'éréc <m>
 kl:kál <m>
 myn:miyn <m>[im]
-pnym:pán <f>[plonly,im]
+pnh:pán <m>[plonly,im]
 r'{sh}:ro'o{sh} <m>[hic]
 r'{sh}:re'{sh}iyt <m>[iic]
 {sh}mym:{sh}ámay <m>[plonly,im]
@@ -861,16 +861,14 @@ qmx:qémax <m>[im]
 q{sh}t:q.a{sh}át <m>[im]
 q{sh}t:qé{sh}ét <f>[ot]
 q{s}yvh:q@{s}iyváh <f>[ot]
-'rb{'}:'ar@b.a{'} <mf>[im]
-'rb{'}:'ar@b.á{'}áh <f>[ot]
 {'}rb:{'}áréb <m>[im]
 rbbh:r@bábáh <f>[ot]
 {'}rb:{'}éréb <m>[im]
 r{'}b:rá{'}áb <m>[im]
 {'}rbwn:{'}erábwon <m>[im]
-'rc:'ar@cáh <mf>[im]
-'rc:'ár@cáh <mf>[im]
-'rc:'éréc <mf>[im]
+'rc:'ar@cáh <f>[im]
+'rc:'ár@cáh <f>[im]
+'rc:'éréc <f>[im]
 r{'}h:rá{'}áh <f>[ot]
 rkb:rékéb <m>[im]
 {'}rlh:{'}ár@láh <f>[ot]
@@ -887,8 +885,6 @@ r'y:rö'iy <m>[im]
 {'}{s}b:{'}e{s}éb <m>[im]
 sbyb:sábiyb <mf>[im]
 {s}dh:{s}ádéh <m>[im]
-{sh}b{'}:{sh}éba{'} <mf>[im]
-{sh}b{'}:{sh}ib@{'}áh <f>[ot]
 {sh}br:{sh}ébér <m>[im]
 {sh}bv:{sh}ebév <m>[im]
 {s}hdw:{s}áhädw.tá' <f>[ot]
@@ -900,16 +896,12 @@ sbyb:sábiyb <mf>[im]
 {sh}km:{sh}@kém <m>[im]
 '{sh}l:'é{sh}él <m>[im]
 {sh}ll:{sh}álál <m>[im]
-{sh}l{sh}:{sh}álo{sh} <mf>[im]
-{sh}l{sh}:{sh}@lo{sh}áh <f>[ot]
 {sh}l{sh}wm:{sh}il@{sh}om <m>[im]
 {sh}l{sh}wm:{sh}il@{sh}wom <m>[im]
 {sh}lwm:{sh}álwom <m>[im]
 '{sh}m:'á{sh}ám <m>[im]
 {sh}m:{sh}em <m>[im]
 {sh}mn:{sh}émén <m>[im]
-{sh}mnh:{sh}@monáh <f>[ot]
-{sh}mnh:{sh}@monéh <mf>[im]
 {'}{sh}n:{'}á{sh}án <m>[im]
 {sh}nh:{sh}ánáh <f>[im]
 {sh}ny:{sh}ániy <m>[im]
@@ -929,11 +921,7 @@ slt:solét <f>[ot]
 {s}m'l:{s}@mo'l <m>[im]
 {s}ph:{s}ápáh <f>[ot]
 {s}q:{s}aq <m>[im]
-{'}{s}r:{'}á{s}ár <mf>[im]
-{'}{s}r:{'}é{s}ér <m>[im]
 {s}{'}r:{s}e{'}ár <m>[im]
-{'}{s}rh:{'}ä{s}áráh <f>[ot]
-{'}{s}rh:{'}é{s}@reh <mf>[im]
 {s}'t:{s}@'et <f>[ot]
 'swn:'áswon <m>[im]
 {'}{s}wr:{'}á{s}wor <m>[im]
@@ -944,7 +932,6 @@ thw:tohw. <m>[im]
 t'nh:t@'enáh <f>[ot]
 trdmh:tar@d.emáh <f>[ot]
 t'r:to'ar <m>[im]
-t{sh}{'}:te{sh}a{'} <mf>[im]
 tw{'}bh:two{'}ebáh <f>[ot]
 t'wh:ta'äwáh <f>[ot]
 txt:táxat <m>[im]
@@ -962,15 +949,10 @@ wld:wálád <m>[im]
 'wt:'wot <mf>[im]
 'x:'áx <m>[im,hic]
 'x:'áx{cons}iy <m>[iic]
-'xd:'axat <f>[ot]
-'xd:'éxád <mf>[im]
-'xd:'éxát <f>[ot]
 xlq:xeléq <m>[im]
 xlwm:xälwom <m>[im]
 xm'h:xém@'áh <f>[ot]
 xmr:xemár <m>[im]
-xm{sh}:xáme{sh} <mf>[im]
-xm{sh}:xämi{sh}.áh <f>[ot]
 xms:xámás <m>[im]
 xmy{sh}yt:xämiy{sh}iyt <f>[ot]
 xn:xen <m>[im]
@@ -1380,19 +1362,26 @@ ConjPrefix? [hnh<adv>:hin.] PrnSuf
 
 PATTERNS
 ConjPrefix? Adverb [<adv>:]
-ConjPrefix? AdverbItg [<adv><itg>:]
+#ConjPrefix? AdverbItg [<adv><itg>:]
+ConjPrefix? AdverbNeg [<adv><neg>:]
+Interjection [<ij>:]
 
 LEXICON Adverb
-'l:'al
 gm:gam
 kn:ken
-l':lo'
-n':ná'
 {'}th:{'}at.áh
 {sh}m:{sh}ám
 
-LEXICON AdverbItg
-mh:mah
+#LEXICON AdverbItg
+#mh:mah
+
+LEXICON AdverbNeg
+'l:'al
+l':lo'
+l':lwo' # Dir/LR
+
+LEXICON Interjection
+n':ná'
 
 PATTERNS
 (ConjPrefix|Det)? [hw'<prn><pers>:] Pronouns(1): [<sg>:] :Pronouns(2)[-skip]
@@ -1456,6 +1445,9 @@ LEXICON PronounSuffixForms(3)
 <p3><f>  {ps}há  {ps}n
 
 PATTERNS
+ConjPrefix? Number
+
+PATTERN Number
 Numerals(1): [<num><m>:] :Numerals(2)
 Numerals(1): [<num><m><cons>:] :Numerals(3)
 Numerals(1): [<num><f>:] :Numerals(4)

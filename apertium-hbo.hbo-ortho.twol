@@ -39,7 +39,7 @@ u:ֻ
 
 %{%*%}:0
 
-%<n%> %<v%> %<pr%> %<cnjsub%>
+%<n%> %<v%> %<pr%> %<cnjsub%> %<adv%> %<np%> %<num%>
 
  ;
 
@@ -51,13 +51,14 @@ a á e é i o u %@ ä ë ö
 
 Vowel = a á e é i o u %@ ä ë ö ;
 
-Tag = %<n%> %<v%> %<pr%> %<cnjsub%> ;
+Tag = %<n%> %<v%> %<pr%> %<cnjsub%> %<adv%> %<np%> %<num%> ;
 
 Rules
 
 "final consonant"
 CL:CH <=> _ ( Vowel: ) .#. ;
           _ Tag ;
+          except .#. _ Tag ;
       where CL in ( k m n p c )
             CH in ( ך ם ן ף ץ )
       matched ;

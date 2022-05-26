@@ -11,7 +11,7 @@ a á e é i o u %@ ä ë ö
 
 %{ps%}:0 %{ps%}:%@ %{ps%}:é %{ps%}:á %{ps%}:e !%{ps%}:i
 
-%{and%}:%. %{and%}:a %{and%}:%@
+%{and%}:%. %{and%}:%@ %{and%}:a
 %{andc%}:a %{andc%}:á
 
 %{%~á%}:á %{%~á%}:%@
@@ -104,9 +104,10 @@ w:á <=> _ .:0 %{%-%*%}: ;
 "3sg poss after y"
 o:0 <=> y %{ps%}: w: _ ;
 
-"weaken final vowel in construct"
+"weaken final vowel in construct when suffix"
 V1:V2 <=> _ [ Cons - y - x ] %{cons%}: ;
-          except .#. Cons ( . ) _ Cons %{cons%}: .#. ;
+          !except .#. Cons ( . ) _ Cons %{cons%}: .#. ;
+          except _ Cons %{cons%}: .#. ;
       where V1 in ( a  á  e  é  )
             V2 in ( %@ %@ %@ %@ )
       matched ;
@@ -129,6 +130,9 @@ i:a <=> _ %{%+%*%}: r ; ! ??? r'h but not qr' - now kind of final?
 "vav consec before aleph"
 %{andc%}:á <=> _ %' ;
                except _ %' ä ;
+
+"{and} only a sometimes"
+%{and%}:a <=> _ [ %' | %{%'%} | x ] :ä ;
 
 "stress shift from hiriq male' - i"
 i:é <=> _ y: %{%-%*%}: ;

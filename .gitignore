@@ -22,3 +22,4 @@
 /config
 /*.zhfst
 /test/*-output.txt
+/corpus/*.txt

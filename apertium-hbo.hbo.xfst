@@ -1,5 +1,10 @@
 [
   ! can't write this one in twol, apparently
-  [ 0 -> %. || .#. [ b | g | d | k | p | t ] _ [ ? - %. ] ] .o.
+  [ 0 -> %. ||
+    [ .#. |
+      %' | b | g | d | h | z | x | v | k | l | m |
+      n | s | %{%'%} | p | c | q | r | %{s%} | %{sh%} | t ]
+    [ b | g | d | k | p | t ] _ [ ? - %. ] ] .o.
+
   [ 0 -> %. || %{andc%} %{%<%*%} [ ? - %' ] _ ]
 ]
