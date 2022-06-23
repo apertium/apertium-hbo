@@ -196,6 +196,7 @@ EXTRA_DIST= \
 		$(BASENAME).$(LANG1).twol	\
 		$(BASENAME).$(LANG1).rlx	\
 		$(BASENAME).post-$(LANG1).dix	\
+		normalize.py			\
 		$(LANG1).prob			\
 		modes.xml
 
@@ -214,6 +215,7 @@ apertium_hbo_DATA=$(TARGETS_COMMON) \
 	$(BASENAME).$(LANG1).twol	\
 	$(BASENAME).$(LANG1).rlx	\
 	$(BASENAME).post-$(LANG1).dix	\
+	normalize.py			\
 	$(LANG1).prob
 
 pkgconfigdir = $(prefix)/share/pkgconfig
