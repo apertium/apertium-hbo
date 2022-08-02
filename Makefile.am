@@ -17,8 +17,9 @@ TARGETS_LT = \
 	$(LANG1).autogen.bin \
 	$(LANG1).autogen.att.gz
 
-#TARGETS_COMMON = $(TARGETS_HFST) $(TARGETS_LT) $(LANG1).zhfst
-TARGETS_COMMON = $(TARGETS_HFST)
+TARGETS_COMMON = $(TARGETS_HFST) $(TARGETS_LT) $(LANG1).zhfst
+
+dev: $(TARGETS_HFST)
 
 # $(LANG1).prob
 

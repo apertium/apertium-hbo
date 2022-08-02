@@ -690,15 +690,19 @@ LEXICON PrepPron(5)
 LEXICON NounRoot(2)
 'dwn:'ädon <m>[im,iic]
 'lhym:'ëloh <m>[plonly,im]
+hr:har <m>[im]
+ym:yám <m>[im]
 kl:kál <m>
+lb:leb <m>[im]
+mym:may <m>[plonly,im]
 myn:miyn <m>[im]
+m{sh}kn:mi{sh}kán <m>[im]
 pnh:pán <m>[plonly,im]
+qd{sh}:qodé{sh} <m>[im]
 r'{sh}:ro'o{sh} <m>[hic]
 r'{sh}:re'{sh}iyt <m>[iic]
-{sh}mym:{sh}ámay <m>[plonly,im]
-mym:may <m>[plonly,im]
-ym:yám <m>[im]
 {s}r:{s}ar <m>[im]
+{sh}mym:{sh}ámay <m>[plonly,im]
 
 # TODO: Hebrew order
 # TODO: vowels might be wrong
@@ -788,6 +792,7 @@ lxm:léxém <mf>[im]
 lylh:lay@láh <m>[im]
 lylh:láy@láh <m>[im]
 {'}m:{'}am <m>[im]
+{'}m:{'}ám <m>[im] # Dir/LR
 mbwl:mab.w.l <m>[im]
 mcbh:mac.ebáh <f>[ot]
 mc{'}r:mic@{'}ár <m>[im]
@@ -1003,10 +1008,12 @@ zyt:zayit <m>[im]
 LEXICON ProperNoun(2)
 'brhm:'ab@ráhám <m>
 'brm:'ab@rám <m>
+'hrn:'ahäron <m>
 ywsp:ywosep <m>
 y{'}qb:ya{'}äqob <m>
 ycxq:yic@xáq <m>
 lbn:lábán <m>
+m{sh}h:mo{sh}éh <m>
 nx:noxa <m>
 {'}{s}w:{'}e{s}áw <m>
 
