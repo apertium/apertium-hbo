@@ -16,7 +16,7 @@ import unicodedata
 # (and have enough RAM), you can drop the `volume` argument
 # to run on everything.
 
-use('bhsa', hoist=globals(), volume='GenesisBook')
+use('bhsa', hoist=globals(), volume='ExodusBook')
 
 def norm(s):
     # normalize and drop cantillation marks

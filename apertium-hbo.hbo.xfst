@@ -1,6 +1,7 @@
 [
   ! can't write this one in twol, apparently
   [ 0 -> %. ||
+    ! [ .#. | Cons ] BegedKefet _ [ ? - %. ]
     [ .#. |
       %' | b | g | d | h | z | x | v | k | l | m |
       n | s | %{%'%} | p | c | q | r | %{s%} | %{sh%} | t ]
