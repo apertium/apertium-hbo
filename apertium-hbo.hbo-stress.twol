@@ -1,7 +1,7 @@
 Alphabet
-%' b g d h w z x v y k l m n s %{'%} p c q r %{s%} %{sh%} t
-a á e é i o u %@ ä ë ö
-.
+א ב ג ד ה ו ז ח ט י כ ל מ נ ס ע פ צ ק ר שׂ שׁ ת
+ַ ָ ֵ ֶ ִ ֹ ֻ ְ ֲ ֱ ֳ
+ּ
 
 %>
 
@@ -30,14 +30,14 @@ a á e é i o u %@ ä ë ö
 
 Sets
 
-Begedkefet = b g d k p t ;
-Vowel = a á e é i o u ä ë ö
+Begedkefet = ב ג ד כ פ ת ;
+Vowel = ַ ָ ֵ ֶ ִ ֹ ֻ ֲ ֱ ֳ
         %{V%} %{ps%} %{and%} %{%~a%} %{%~á%} %{%~e%} %{%~o%} %{i%} ;
-Cons = %' b g d h w z x v y k l m n s %{'%} p c q r %{s%} %{sh%} t . ;
+Cons = א ב ג ד ה ו ז ח ט י כ ל מ נ ס ע פ צ ק ר שׂ שׁ ת ּ ;
 
-Skip = %' b g d h w z x v y k l m n s %{'%} p c q r %{s%} %{sh%} t . %@ %> ;
+Skip = א ב ג ד ה ו ז ח ט י כ ל מ נ ס ע פ צ ק ר שׂ שׁ ת ּ ְ %> ;
 
-DageshAble = z y m c %{s%} %{sh%} ;
+DageshAble = ז י מ צ שׂ שׁ ;
 
 Rules
 

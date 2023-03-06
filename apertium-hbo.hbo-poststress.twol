@@ -1,23 +1,23 @@
 Alphabet
-%' b g d h w z x v y k l m n s %{'%} p c q r %{s%} %{sh%} t
-a á e é i o u %@ ä ë ö
-.
+א ב ג ד ה ו ז ח ט י כ ל מ נ ס ע פ צ ק ר שׂ שׁ ת
+ַ ָ ֵ ֶ ִ ֹ ֻ ְ ֲ ֱ ֳ
+ּ
 
 %>:0
 
 ! the lazy vowel
-%{V%}:a %{V%}:á %{V%}:e %{V%}:é %{V%}:i %{V%}:o %{V%}:u
-%{V%}:%@ %{V%}:ä %{V%}:ë %{V%}:ö
+%{V%}:ַ %{V%}:ָ %{V%}:ֵ %{V%}:ֶ %{V%}:ִ %{V%}:ֹ %{V%}:ֻ
+%{V%}:ְ %{V%}:ֲ %{V%}:ֱ %{V%}:ֳ
 
-%{ps%}:0 %{ps%}:%@ %{ps%}:é %{ps%}:á %{ps%}:e !%{ps%}:i
+%{ps%}:0 %{ps%}:ְ %{ps%}:ֶ %{ps%}:ָ %{ps%}:ֵ !%{ps%}:i
 
-%{and%}:%. %{and%}:%@ %{and%}:a
-%{andc%}:a %{andc%}:á
+%{and%}:%. %{and%}:ְ %{and%}:ַ
+%{andc%}:ַ %{andc%}:ָ
 
-%{%~á%}:á %{%~á%}:%@
-%{%~e%}:e %{%~e%}:%@
+%{%~á%}:ָ %{%~á%}:ְ
+%{%~e%}:ֵ %{%~e%}:ְ
 
-%{%~iy%}:i %{%~iy%}:0 %{%~iy%}:é
+%{%~iy%}:ִ %{%~iy%}:0 %{%~iy%}:ֶ
 
 %{short%}:0
 %{consec%}:0
@@ -27,37 +27,37 @@ a á e é i o u %@ ä ë ö
 %{%+%*%}:%{%*%}
 %{%-%*%}:0
 
-0:%@
-0:i
+0:ְ
+0:ִ
  ;
 
 Sets
 
-Begedkefet = b g d k p t ;
-Vowel = a á e é i o u %@ ä ë ö ;
-Cons = %' b g d h w z x v y k l m n s %{'%} p c q r %{s%} %{sh%} t ;
+Begedkefet = ב ג ד כ פ ת ;
+Vowel = ַ ָ ֵ ֶ ִ ֹ ֻ ְ ֲ ֱ ֳ ;
+Cons = א ב ג ד ה ו ז ח ט י כ ל מ נ ס ע פ צ ק ר שׂ שׁ ת ;
 
-NonVowCons = b g d h z x v k l m n s %{'%} p c q r %{s%} %{sh%} t ;
+NonVowCons = ב ג ד ה ז ח ט כ ל מ נ ס ע פ צ ק ר שׂ שׁ ת ;
 
 Stress = %{%+%*%} %{%-%*%} ;
 
 Rules
 
 "null @ or @ after final k"
-0:%@ <=> :NonVowCons ( . ) _ :NonVowCons ;
-         :NonVowCons ( . ) _ %' ;
-         h _ y [ :Vowel | w: ] ;
-         k ( :0 | :. )* _ .#. ;
+0:ְ <=> :NonVowCons ( ּ ) _ :NonVowCons ;
+         :NonVowCons ( ּ ) _ א ;
+         ה _ י [ :Vowel | ו: ] ;
+         כ ( :0 | :ּ )* _ .#. ;
 
 "final y"
-0:i <=> :Cons _ y :0* .#. ;
+0:ִ <=> :Cons _ י :0* .#. ;
 
 !!!!!!!!!!!!!!!
 !!! h
 !!!!!!!!!!!!!!!
 
 "lamed-he verbs"
-h:0 <=> _ %>: %{short%}: ;
+ה:0 <=> _ %>: %{short%}: ;
         %{%-%*%}: _ ;
 
 !!!!!!!!!!!!!!!
@@ -65,84 +65,84 @@ h:0 <=> _ %>: %{short%}: ;
 !!!!!!!!!!!!!!!
 
 "blah"
-a:á <=> _ %{%-%*%}: %' ;
+ַ:ָ <=> _ %{%-%*%}: א ;
 
 "ay → ey cons"
-a:e <=> _ y ?* %{cons%}: ;
+ַ:ֵ <=> _ י ?* %{cons%}: ;
 
 "stress shift a"
-a:é <=> _ %{%-%*%}: ;
-        except _ %{%-%*%}: [ %' | h: | x ] ;
+ַ:ֶ <=> _ %{%-%*%}: ;
+        except _ %{%-%*%}: [ א | ה: | ח ] ;
 
 "shress shift é h"
-é:0 <=> _ %{%-%*%}: h: ;
+ֶ:0 <=> _ %{%-%*%}: ה: ;
 
 "stress shift e"
-e:é <=> _ %{%-%*%}: ;
+ֵ:ֶ <=> _ %{%-%*%}: ;
         except !. _ ; ! TODO: is this right?
           _ :* %{pause%}: ;
 
 "stress shift to ä"
-ä:a <=> _ %{%+%*%}: ;
-        except _ %{%+%*%}: y :0* .#. ;
+ֲ:ַ <=> _ %{%+%*%}: ;
+        except _ %{%+%*%}: י :0* .#. ;
 
 "stress shift to äy#"
-ä:i <=> _ %{%+%*%}: y :0* .#. ;
+ֲ:ִ <=> _ %{%+%*%}: י :0* .#. ;
 
 "stress shift hollow verbs 1"
-w:á <=> _ .:0 %{%-%*%}: ;
-        except _ .: %{%-%*%}: .#. ;
+ו:ָ <=> _ ּ:0 %{%-%*%}: ;
+        except _ ּ: %{%-%*%}: .#. ;
 
 "stress shift hollow verbs 2"
-.:0 <=> w:á _ %{%-%*%}: ;
-        %{andc%}: y _ :%@ ;
+ּ:0 <=> ו:ָ _ %{%-%*%}: ;
+        %{andc%}: י _ :ְ ;
 
 !!!!!!!!!!!!!!!
 !!! OTHER
 !!!!!!!!!!!!!!!
 
 "3sg poss after y"
-o:0 <=> y %{ps%}: w: _ ;
+ֹ:0 <=> י %{ps%}: ו: _ ;
 
 "weaken final vowel in construct when suffix"
-V1:V2 <=> _ [ Cons - y - x ] %{cons%}: ;
+V1:V2 <=> _ [ Cons - י - ח ] %{cons%}: ;
           !except .#. Cons ( . ) _ Cons %{cons%}: .#. ;
           except _ Cons %{cons%}: .#. ;
-      where V1 in ( a  á  e  é  )
-            V2 in ( %@ %@ %@ %@ )
+      where V1 in ( ַ  ָ  ֵ  ֶ  )
+            V2 in ( ְ ְ ְ ְ )
       matched ;
 
 "weaken only vowel in construct"
-V1:V2 <=> .#. Cons ( . ) _ [ Cons - y - x ] %{cons%}: .#. ;
-      where V1 in ( e )
-            V2 in ( é )
+V1:V2 <=> .#. Cons ( ּ ) _ [ Cons - י - ח ] %{cons%}: .#. ;
+      where V1 in ( ֵ )
+            V2 in ( ֶ )
       matched ;
 
 "weaken final vowel in construct before guttural?"
-á:é => _ x %{cons%}: ;
+ָ:ֶ => _ ח %{cons%}: ;
 
 "stress shift to i"
-i:a <=> _ %{%+%*%}: r ; ! ??? r'h but not qr' - now kind of final?
+ִ:ַ <=> _ %{%+%*%}: ר ; ! ??? r'h but not qr' - now kind of final?
 
 "double schwa"
-%@:i <=> _ Cons :%@ ;
+ְ:ִ <=> _ Cons :ְ ;
 
 "vav consec before aleph"
-%{andc%}:á <=> _ %' ;
-               except _ %' ä ;
+%{andc%}:ָ <=> _ א ;
+               except _ א ֲ ;
 
 "{and} only a sometimes"
-%{and%}:a <=> _ [ %' | %{%'%} | x ] :ä ;
+%{and%}:ַ <=> _ [ א | %{%'%} | ח ] :ֲ ;
 
 "stress shift from hiriq male' - i"
-i:é <=> _ y: %{%-%*%}: ;
-        except _ y: %{%-%*%}: %' ;
+ִ:ֶ <=> _ י: %{%-%*%}: ;
+        except _ י: %{%-%*%}: א ;
 
 "stress shift from hiriq male' - iy'"
-i:e <=> _ y: %{%-%*%}: %' ;
+ִ:ֵ <=> _ י: %{%-%*%}: א ;
 
 "stress shift from hiriq male' - y"
-y:0 <=> [ i:é | i:e ] _ %{%-%*%}: ;
+י:0 <=> [ ִ:ֶ | ִ:ֵ ] _ %{%-%*%}: ;
 
 ! Resources:
 ! http://wiki.apertium.org/wiki/Starting_a_new_language_with_HFST#Enter_twol

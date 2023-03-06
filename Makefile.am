@@ -93,10 +93,10 @@ dev: $(TARGETS_HFST)
 	hfst-compose-intersect -1 .deps/$(LANG1).LR.lexd-stress.hfst -2 .deps/$(LANG1)-poststress.twol.hfst -o $@
 
 .deps/$(LANG1).RL.hfst: .deps/$(LANG1).RL-lat.hfst .deps/$(LANG1).ortho.twol.hfst
-	hfst-compose-intersect -1 .deps/$(LANG1).RL-lat.hfst -2 .deps/$(LANG1).ortho.twol.hfst | hfst-invert | hfst-compose-intersect -1 - -2 .deps/$(LANG1).ortho.twol.hfst | hfst-invert -o $@
+	hfst-compose-intersect -1 .deps/$(LANG1).RL-lat.hfst -2 .deps/$(LANG1).ortho.twol.hfst -o $@
 
 .deps/$(LANG1).LR.hfst: .deps/$(LANG1).LR-lat.hfst .deps/$(LANG1).ortho.twol.hfst
-	hfst-compose-intersect -1 .deps/$(LANG1).LR-lat.hfst -2 .deps/$(LANG1).ortho.twol.hfst | hfst-invert | hfst-compose-intersect -1 - -2 .deps/$(LANG1).ortho.twol.hfst | hfst-invert -o $@
+	hfst-compose-intersect -1 .deps/$(LANG1).LR-lat.hfst -2 .deps/$(LANG1).ortho.twol.hfst -o $@
 
 $(LANG1).autogen.hfst: .deps/$(LANG1).RL.hfst
 	hfst-fst2fst -O $< -o $@

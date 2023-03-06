@@ -1,42 +1,12 @@
 Alphabet
-':א
-b:ב
-g:ג
-d:ד
-h:ה
-w:ו w:וֹ
-z:ז
-x:ח
-v:ט
-y:י
-k:כ k:ך
-l:ל
-m:מ m:ם
-n:נ n:ן
-s:ס
-%{'%}:ע
-p:פ p:ף
-c:צ c:ץ
-q:ק
-r:ר
-%{s%}:שׂ
-%{sh%}:שׁ
-t:ת
+א ב ג ד ה ו ז ח ט י כ ל מ נ ס ע פ צ ק ר שׂ שׁ ת
+ַ ָ ֵ ֶ ִ ֻ ְ ֲ ֱ ֳ 
+ּ
 
-a:ַ
-á:ָ
-e:ֵ
-é:ֶ
-i:ִ
-o:ֹ o:0
-u:ֻ
-%@:ְ
-ä:ֲ
-ë:ֱ
-ö:ֳ
-
-%.:ּ
-
+ו:וֹ
+ ֹ:0
+ ֹ:ֹ  
+  כ:ך מ:ם נ:ן פ:ף צ:ץ
 %{%*%}:0
 
 %<n%> %<v%> %<pr%> %<cnjsub%> %<adv%> %<np%> %<num%>
@@ -45,29 +15,25 @@ u:ֻ
 
 Sets
 
-Alpha = ' b g d h w z x v y k l m n s %{'%} p c q r %{s%} %{sh%} t
-a á e é i o u %@ ä ë ö
-%. %{.%} ;
+Alpha = א ב ג ד ה ו ז ח ט י כ ל מ נ ס ע פ צ ק ר שׂ שׁ ת
+ַ ָ ֵ ֶ ִ ֹ ֻ ְ ֲ ֱ ֳ
+ּ %{.%} ;
 
-Vowel = a á e é i o u %@ ä ë ö ;
-
-Tag = %<n%> %<v%> %<pr%> %<cnjsub%> %<adv%> %<np%> %<num%> ;
+Vowel = ַ ָ ֵ ֶ ִ ֹ ֻ ְ ֲ ֱ ֳ ;
 
 Rules
 
 "final consonant"
 CL:CH <=> _ ( Vowel: ) .#. ;
-          _ Tag ;
-          except .#. _ Tag ;
-      where CL in ( k m n p c )
+      where CL in ( כ מ נ פ צ )
             CH in ( ך ם ן ף ץ )
       matched ;
 
 "holam male 1"
-w:וֹ <=> _ o: ;
+ו:וֹ <=> _ ֹ: ;
 
 "holam male 2"
-o:0 <=> w: _ ;
+ֹ:0 <=> ו: _ ;
 
 ! Resources:
 ! http://wiki.apertium.org/wiki/Starting_a_new_language_with_HFST#Enter_twol
