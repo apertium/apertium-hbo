@@ -58,7 +58,7 @@ Definitions
 ImpfPref = %{i%}: ( %{%*%}: ) %>: ;
 ImpfBd = %>: Binyan: ;
 HollowVerb = [ Cons [ ו: | %{%~w%}: ] | ב ֹ: ] ;
-PehGuttural = [ א | ה | %{%'%} | ח ] ;
+PehGuttural = [ א | ה | ע | ח ] ;
 
 C2Hollow = [ ו: | %{%~w%}: | ֹ: ] ;
 V2DelC1 = [ %{%~h%}:0 | נ:0 | י:0 ] Cons ( 0:ּ ) ;
@@ -86,8 +86,9 @@ Rules
 !!!!!!!!!!!!!!!
 
 "determiner before gutturals"
-ַ:ָ <=> %{h%}: _ %>: [ א: | %{%'%}: ] ;
-        %{piel%}: Cons _ Cons ּ:0 ;
+ַ:ָ <=> %{h%}: _ %>: [ א: | ע: ] ;
+       %{h%}: ַ: %>: ע _ ;
+       %{piel%}: Cons _ Cons ּ:0 ;
 
 !!!!!!!!!!!!!!!
 !!! á
@@ -204,7 +205,7 @@ Rules
             except _ ImpfBd [ PehGuttural | HollowVerb | י:0 | %{%~h%}:0 ] ;
 
 "{i} before guttural or in hiph'il"
-%{i%}:ַ <=> _ ImpfBd %{%'%} ;
+%{i%}:ַ <=> _ ImpfBd ע ;
             _ %>: %{hif%}: ;
             except
               _ %>: %{hif%}: [ י: | ו: ] ;
@@ -227,7 +228,7 @@ Rules
 "impf → @"
 %{i%}:ְ <=> _ %>: [ %{piel%}: | %{pual%}: ] ;
              _ %>: %{paal%}: [ ה | ח ] ;
-             except _ %>: Binyan: %{%'%} ;
+             except _ %>: Binyan: ע ;
 
 "drop impf i"
 %{i%}:ו <=> _ %>: %{hif%}: י: ;
