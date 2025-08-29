@@ -30,6 +30,8 @@ Alphabet
 %{h%}:ה %{h%}:0
 %{%~h%}:ה %{%~h%}:0
 
+%{.%}:0 %{.%}:ּ
+
 %{short%}
 %{consec%}
 %{cons%}
@@ -80,6 +82,9 @@ Rules
 "drop dagesh"
 ּ:0 <=> ה:י %>: ת _ ;
         ר _ ;
+
+"drop maybe dagesh"
+%{.%}:0 <=> _ .#. ;
 
 !!!!!!!!!!!!!!!
 !!! a
@@ -323,4 +328,3 @@ Cx:0 <=> %{i%}: %>: [ %{paal%}: | %{hif%}: ] _ ;
 ! https://github.com/hfst/
 ! http://wiki.apertium.org/wiki/Twol
 ! http://wiki.apertium.org/wiki/Hfst
-

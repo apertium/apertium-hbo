@@ -34,6 +34,9 @@ BinyanStems
 PATTERN Verb
 VerbStem[perf] [<perf>:>] PerfSuffix
 :ImperfAffix(2) [:>] VerbStem[impf] [<impf>:>] ImperfAffix(1): :ImperfAffix(3)
+VerbStem[part] [<part><m><sg>:] # TODO
+[ישׁ<v>:יֵשׁ]
+[אין<v>:אֵינ]
 
 PATTERNS
 ConjPrefix? Verb
@@ -69,6 +72,8 @@ C(1) [:ֲ] C(2) [:{~é}{*?}] C(3)[1x,3h] [[impf]]
 C(1): C(2) [:ּ{~a}{*?}] C(3)[1y,3x] [[impf]]
 C(1) C(2): [:וֹ{*?}] C(3)[2w,3'] [[impf]]
 C(1) C(2): [:ֹ{*?}] C(3)[2w,3'] [[impf]]
+
+C(1) [:ֹ] C(2) [:ֵ] C(3) [[part]]
 
 PATTERN Niph'al
 [:נִ] C(1) C(2) [:{~a}{*?}] C(3)[reg] [[perf]]
@@ -646,6 +651,7 @@ LEXICON PrepRoot
 את:אֵת
 את:אֶת
 בין:בֵינ
+למען:לְמַעַנ
 מן:מִנ
 מן<pr>+את:מֵאֵת
 מן<pr>+על:מֵעַל
@@ -654,8 +660,8 @@ LEXICON PrepRoot
 עם:עִמ
 תחת:תַחַת
 
-#PATTERNS
-#PrefixPrepRoot [<pr>:] PrnSuf
+PATTERNS
+PrefixPrepRoot [<pr>:] PrnSuf
 
 PATTERN PrefixPrep
 PrefixPrepRoot [<pr>+:ְ>]
@@ -673,28 +679,32 @@ ConjPrefix? [את<pr>+הוא<prn><pers>:] PrepPron(1):PrepPron(3)[-skip] # with
 
 ConjPrefix? [ל<pr>+הוא<prn><pers>:] PrepPron(1):PrepPron(4)[-skip]
 ConjPrefix? [אל<pr>+הוא<prn><pers>:] PrepPron(1):PrepPron(5)[-skip]
+ConjPrefix? [על<pr>+הוא<prn><pers>:] PrepPron(1):PrepPron(6)[-skip]
 
-LEXICON PrepPron(5)
-<p1><mf><sg> אֹתִי    אִתִי    לִי   אֵלַי
-<p1><mf><sg> :[skip]  אִתִּי   לִּי  :[skip] # Dir/LR
-<p1><mf><pl> אֹתֵּנוּ אִתֵּנוּ לָנוּ אֵלֵנֻ
-<p2><m><sg>  אֹתְכָ   אִתְכָ   לְכָ  :[skip]
-<p2><f><sg>  אֹתָכ    אִתָכ    לָכ   :[skip]
-<p2><m><pl>  אֶתְכֶמ  אִתְכֶמ  לָכֶמ :[skip]
-<p2><f><pl>  :[skip]  :[skip]  לָכֶנ :[skip]
-<p3><m><sg>  אֹתוֹ    אִתּוֹ   לוֹ   אֵלָיו
-<p3><f><sg>  אֹתָהּ   אִתָהּ   לָהּ  אֵלַה
-<p3><m><pl>  אֹתָמ    אִתָמ    לָהֶמ אֲלֵהֶמ
-<p3><f><pl>  אֶתְהֶנ  אִתְהֶנ  לָהֶנ :[skip]
+LEXICON PrepPron(6)
+<p1><mf><sg> אֹתִי    אִתִי    לִי   אֵלַי :[skip]
+<p1><mf><sg> :[skip]  אִתִּי   לִּי  :[skip] :[skip] # Dir/LR
+<p1><mf><pl> אֹתֵּנוּ אִתֵּנוּ לָנוּ אֵלֵנֻ :[skip]
+<p2><m><sg>  אֹתְכָ   אִתְכָ   לְכָ  :[skip] :[skip]
+<p2><f><sg>  אֹתָכ    אִתָכ    לָכ   :[skip] :[skip]
+<p2><m><pl>  אֶתְכֶמ  אִתְכֶמ  לָכֶמ אֲלֵיכֶמ :[skip]
+<p2><f><pl>  :[skip]  :[skip]  לָכֶנ :[skip] :[skip]
+<p3><m><sg>  אֹתוֹ    אִתּוֹ   לוֹ   אֵלָיו עָלָיו
+<p3><f><sg>  אֹתָהּ   אִתָהּ   לָהּ  אֵלַה :[skip]
+<p3><m><pl>  אֹתָמ    אִתָמ    לָהֶמ אֲלֵיהֶמ עֲלֵיהֶמ
+<p3><f><pl>  אֶתְהֶנ  אִתְהֶנ  לָהֶנ :[skip] :[skip]
 
 LEXICON NounRoot(2)
 אדון:אֲדֹנ <m>[im,iic]
+אישׁ:אִישׁ <m>
+אישׁ:אֲנָשׁ <m>[plonly,im]
 אלהים:אֱלֹה <m>[plonly,im]
 הר:הַר <m>[im]
 ים:יָמ <m>[im]
 כל:כָל <m>
 לב:לֵב <m>[im]
 מים:מַי <m>[plonly,im]
+משׁיח:מָשִׁיחַ <m>[im] # TODO: plural uncertain
 מין:מִינ <m>[im]
 משׁכן:מִשׁכָנ <m>[im]
 פנה:פָנ <m>[plonly,im]
@@ -703,6 +713,7 @@ LEXICON NounRoot(2)
 ראשׁ:רֵאשִׁית <m>[iic]
 שׂר:שַׂר <m>[im]
 שׁמים:שָׁמַי <m>[plonly,im]
+תורה:תוֹרָה <f>[ot]
 
 # TODO: Hebrew order
 # TODO: vowels might be wrong
@@ -1009,12 +1020,15 @@ LEXICON ProperNoun(2)
 אברהם:אַבְרָהָמ <m>
 אברם:אַבְרָמ <m>
 אהרן:אַהֲרֹנ <m>
+יוחנן:יוֹחָנָנ <m>
 יוסף:יוֹסֵפ <m>
 יעקב:יַעֲקֹב <m>
 יצחק:יִצְחָק <m>
 לבן:לָבָנ <m>
 משׁה:מֹשֶׁה <m>
 נח:נֹחַ <m>
+פולוס:פוֹלוֹס <m>
+פטרוס:פֶטְרוֹס <m>
 עשׂו:עֵשָׂו <m>
 
 
@@ -1025,6 +1039,8 @@ LEXICON ProperNoun(2)
 יהוה:יְהוָה <m>
 
 
+
+ישׁוע:יֵשׁוּעַ <m>
 
 
 
@@ -1361,7 +1377,18 @@ LEXICON ProperNoun(2)
 זלפה:זִלְפָּה <f>
 זמרן:זִמְרָנ <m>
 
+PATTERNS
+ConjPrefix? Adjective
 
+PATTERN Adjective
+AdjectiveRoot [<adj><m><sg>:]
+#AdjectiveRoot [<adj><f><sg>:] # TODO: which vowel?
+AdjectiveRoot [<adj><m><pl>:>ִימ]
+AdjectiveRoot [<adj><f><pl>:>וֹת]
+
+LEXICON AdjectiveRoot
+רב:רַב{.}
+טוב:טוֹב
 
 PATTERNS
 ConjPrefix? [הנה<adv>:הִנֵּה]
@@ -1369,18 +1396,20 @@ ConjPrefix? [הנה<adv>:הִנּ] PrnSuf
 
 PATTERNS
 ConjPrefix? Adverb [<adv>:]
-#ConjPrefix? AdverbItg [<adv><itg>:]
+ConjPrefix? AdverbItg [<adv><itg>:]
 ConjPrefix? AdverbNeg [<adv><neg>:]
 Interjection [<ij>:]
 
 LEXICON Adverb
+אז:אָז
 גם:גַמ
 כן:כֵנ
 עתה:עַתָּה
+רק:רַק
 שׁם:שָׁמ
 
-#LEXICON AdverbItg
-#mh:mah
+LEXICON AdverbItg
+מה:מָה
 
 LEXICON AdverbNeg
 אל:אַל
@@ -1388,10 +1417,11 @@ LEXICON AdverbNeg
 לא:לוֹא # Dir/LR
 
 LEXICON Interjection
+אמן:אָמֵנ # TODO: right POS?
 נא:נָא
 
 PATTERNS
-(ConjPrefix|Det)? [הוא<prn><pers>:] Pronouns(1):Pronouns(1)[-skip] [<sg>:]
+(ConjPrefix|Det)? [הוא<prn><pers>:] Pronouns(1):Pronouns(2)[-skip] [<sg>:]
 (ConjPrefix|Det)? [הוא<prn><pers>:] Pronouns(1):Pronouns(3)[-skip] [<pl>:]
 
 LEXICON Pronouns(3)
@@ -1432,6 +1462,7 @@ Conjunctions
 
 LEXICON Conjunctions
 או<cnjcoo>:אוֹ
+אך<cnjcoo>:אַכְ
 אם<cnjsub>:אִמ
 ו<cnjcoo>+אם<cnjsub>:וְאִמ
 אשׁר<cnjsub>:אֲשֶׁר

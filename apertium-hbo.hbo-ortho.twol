@@ -1,11 +1,12 @@
 Alphabet
 א ב ג ד ה ו ז ח ט י כ ל מ נ ס ע פ צ ק ר שׂ שׁ ת
-ַ ָ ֵ ֶ ִ ֻ ְ ֲ ֱ ֳ 
-ּ
+ַ ָ ֵ ֶ ִ ֻ ְ ֲ ֱ ֳ
 
+וֹ
+ּ
 ו:וֹ
  ֹ:0
- ֹ:ֹ  
+ ֹ:ֹ
   כ:ך מ:ם נ:ן פ:ף צ:ץ
 %{%*%}:0
 
@@ -41,4 +42,3 @@ CL:CH <=> _ ( Vowel: ) .#. ;
 ! https://github.com/hfst/
 ! http://wiki.apertium.org/wiki/Twol
 ! http://wiki.apertium.org/wiki/Hfst
-
